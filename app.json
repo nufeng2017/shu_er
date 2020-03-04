@@ -1,8 +1,42 @@
 {
   "pages": [
     "main/pages/index/index",
-    "main/pages/logs/logs"
+    "main/pages/logs/logs",
+    "main/pages/mall/mall",
+    "main/pages/car/car",
+    "main/pages/my/my"
   ],
+  "tabBar": {
+    "color":"#999",
+    "selectedColor":"#b20a0a",
+    "backgroundColor":"#fff",
+    "list": [
+      {
+        "pagePath": "main/pages/index/index",
+        "text": "首页",
+        "iconPath":"main/assets/img/navbar/nav-1.png",
+        "selectedIconPath":"main/assets/img/navbar/nav-1-a.png"
+      },
+      {
+        "pagePath": "main/pages/mall/mall",
+        "text": "商城",
+        "iconPath": "main/assets/img/navbar/nav-2.png",
+        "selectedIconPath": "main/assets/img/navbar/nav-2-a.png"
+      },
+      {
+        "pagePath": "main/pages/car/car",
+        "text": "购物车",
+        "iconPath": "main/assets/img/navbar/nav-3.png",
+        "selectedIconPath": "main/assets/img/navbar/nav-3-a.png"
+      },
+      {
+        "pagePath": "main/pages/my/my",
+        "text": "我的",
+        "iconPath": "main/assets/img/navbar/nav-4.png",
+        "selectedIconPath": "main/assets/img/navbar/nav-4-a.png"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
