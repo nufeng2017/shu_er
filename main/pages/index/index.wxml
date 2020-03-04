@@ -1,2 +1,40 @@
 <!--main/pages/index/index.wxml-->
-<text>main/pages/index/index.wxml</text>
+<view class="z-wrap">
+
+  <!-- 门店地址 -->
+  <view class=""></view>
+
+  <!-- banner头部链接 -->
+  <view class="z-view-box z-index-head-link z-cl">
+    <view class="z-fl z-flex z-flex-center z-flex-direction">
+      <view class="z-icon-box">
+        <van-image
+          width="100%"
+          height="100%"
+          src="/main/assets/img/index/member-code-icon.png"
+        />
+      </view>
+      <view class="z-link-txt">会员码</view>
+    </view>
+    <view class="z-fl z-flex z-flex-center z-flex-direction">
+      <view class="z-icon-box">
+        <van-image
+          width="100%"
+          height="100%"
+          src="/main/assets/img/index/recharge-icon.png"
+        />
+      </view>
+      <view class="z-link-txt">会员充值</view>
+    </view>
+    <view class="z-fl z-flex z-flex-center z-flex-direction">
+      <view class="z-icon-box">
+        <van-image
+          width="100%"
+          height="100%"
+          src="/main/assets/img/index/shop-icon.png"
+        />
+      </view>
+      <view class="z-link-txt">招商加盟</view>
+    </view>
+  </view>
+</view>
