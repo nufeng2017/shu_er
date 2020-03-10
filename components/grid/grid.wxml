@@ -1,0 +1,5 @@
+<!-- 九宫格组件 -->
+<view class="~z-grid-container ~z-flex z-flex-center ~z-flex-direction">
+  <image src="{{imgUrl}}" mode="aspectFit"></image>
+  <view>{{title}}</view>
+</view>

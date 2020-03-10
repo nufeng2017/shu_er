@@ -5,7 +5,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    headLink:[//头部导航数据
+      {
+        imgUrl:'/main/assets/img/index/member-code-icon.png',
+        title:'会员码'
+      },{
+        imgUrl: '/main/assets/img/index/recharge-icon.png',
+        title: '会员充值'
+      },{
+        imgUrl: '/main/assets/img/index/shop-icon.png',
+        title: '招商加盟'
+      }
+    ],
+    proLink:[//项目数据
+      {
+        imgUrl:'/main/assets/img/index/pro-1.png',
+        title:'精致洗鼻'
+      }, {
+        imgUrl: '/main/assets/img/index/pro-2.png',
+        title: '特色洗眼'
+      },{
+        imgUrl: '/main/assets/img/index/pro-3.png',
+        title: '专业采耳'
+      }, {
+        imgUrl: '/main/assets/img/index/pro-4.png',
+        title: '头部SPA'
+      }
+    ],
+    swiper:{//轮播属性配置
+      indicatorDots:true,
+      autoplay:false,
+      interval:3000,
+      duration:500,
+      item:[{
+        img: '/main/assets/img/index/banner.png',
+      },{
+        img: '/main/assets/img/index/banner.png',
+      }],
+    },
   },
 
   /**

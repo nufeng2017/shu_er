@@ -1,4 +1,5 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText":"舒耳空间"
+  "usingComponents": {
+    "grid": "/components/grid/grid"
+  }
 }
