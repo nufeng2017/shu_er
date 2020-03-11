@@ -1,5 +1,7 @@
 <!-- 九宫格组件 -->
-<view class="~z-grid-container ~z-flex z-flex-center ~z-flex-direction">
-  <image src="{{imgUrl}}" mode="aspectFit"></image>
-  <view>{{title}}</view>
+<view class="z-grid-container ~z-flex ~z-flex-center ~z-flex-direction {{'~' + cssStyle}}" bindtap="enterPage">
+  <view class="z-icon-box">
+    <image src="{{imgUrl}}" mode="aspectFit"></image>
+  </view>
+  <view class="z-grid-title">{{title}}</view>
 </view>

@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "grid": "/components/grid/grid"
-  }
+    "grid": "/components/grid/grid",
+    "shop-item":"/main/components/shop-item/shop-item"
+  },
+  "navigationBarTitleText": "首页"
 }

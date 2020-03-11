@@ -1,1 +1,15 @@
-/* main/pages/mall/mall.wxss */
+.z-list-container{
+  padding: 40rpx 45rpx;
+}
+shop-item{
+  margin-right: 40rpx;
+  margin-bottom: 45rpx;
+}
+.z-tab{
+  font-size: 34rpx !important;
+  color:#666 !important;
+}
+.z-tab-active{
+  color:#333 !important;
+  font-weight: 900 !important;
+}

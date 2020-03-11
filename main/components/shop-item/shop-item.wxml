@@ -1,0 +1,13 @@
+<!-- 商品列表项 -->
+<navigator class="z-item">
+  <view class="z-item-img">
+    <lazy-load mode="aspectFill" original-image="/main/assets/img/index/banner.png"></lazy-load>
+  </view>
+  <view class="~z-text-hidden z-item-title ~c-584133">一次性采耳理疗服务一次性采耳理疗服务</view>
+  <view class="~z-cl">
+    <view class="~z-fl ~c-ff3e3e z-price">￥89</view>
+    <view class="~z-fr z-item-icon ~z-cl">
+      <image mode="aspectFill" src="./img/shop-car-icon.png" class="~z-fr"></image>
+    </view>
+  </view>
+</navigator>

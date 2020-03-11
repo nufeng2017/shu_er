@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "shop-item": "/main/components/shop-item/shop-item",
+    "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index"
+  },
+  "navigationBarTitleText": "商品列表"
 }

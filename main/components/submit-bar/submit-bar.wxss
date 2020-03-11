@@ -1,0 +1,45 @@
+.z-submit-bar{
+  background: #333;
+  color:#fff;
+  box-sizing:border-box;
+  width:100%;
+  padding-left: 26rpx;
+  height: 108rpx;
+  line-height: 1;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+}
+.z-submit-bar-btn{
+  width:200rpx;
+  height: 100%;
+  line-height: 108rpx;
+  color:#fff;
+  font-size: 30rpx;
+  text-align: center;
+  font-weight: 900;
+  background: #b20a0a;
+}
+.z-submit-bar-txt{
+  padding-right: 50rpx;
+}
+.z-submit-bar-txt view{
+  width:100%;
+  text-align: right;
+}
+.z-submit-price{
+  font-size: 34rpx;
+}
+.z-price{
+  color:#ff3e3e
+}
+.z-has-freight{
+  color:#acacac;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.z-check-txt{
+  color:#fff;
+  font-size: 30rpx;
+}

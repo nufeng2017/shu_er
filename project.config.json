@@ -32,13 +32,35 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"gamePlugin": {
 			"current": -1,
 			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "main/pages/mall/mall",
+					"pathName": "main/pages/mall/mall",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/car/car",
+					"pathName": "main/pages/car/car",
+					"scene": null
+				}
+			]
 		}
 	}
 }

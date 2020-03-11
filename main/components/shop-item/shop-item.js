@@ -3,24 +3,21 @@ Component({
     imgUrl: {//图片地址
       type: String,
     },
-    title:{//九宫格标题
-      type:String,
+    title: {//九宫格标题
+      type: String,
     },
-    linkType:{//转跳链接类型
-      type:String,
-      value:'navigateTo'
+    linkType: {//转跳链接类型
+      type: String,
+      value: 'navigateTo'
     },
-    link:{//转跳链接
-      type:String,
-      value:''
+    link: {//转跳链接
+      type: String,
+      value: ''
     }
   },
-  options: {
-    styleIsolation: 'apply-shared'
-  },
-  methods:{
-    enterPage(){
-      switch(this.data.linkType){
+  methods: {
+    enterPage() {
+      switch (this.data.linkType) {
         case 'navigateTo':
           wx.redirectTo({
             url: this.data.link

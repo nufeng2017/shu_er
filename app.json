@@ -45,6 +45,7 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "van-image": "@vant/weapp/image/index"
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index"
   }
 }

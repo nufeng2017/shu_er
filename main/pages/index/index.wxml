@@ -1,50 +1,48 @@
-<!--main/pages/index/index.wxml-->
+<!--首页-->
+
 <view class="z-wrap">
+  <view class="z-main">
+    <!-- 门店地址 -->
+    <navigator url="" hover-class="none" class="z-shop-info">
+      <text class="z-shop-name">济南万达店</text>
+      <text class="z-shop-address">地址：万达广场18楼900号</text>
+    </navigator>
 
-  <!-- 门店地址 -->
-  <navigator url="" hover-class="none" class="z-shop-info">
-    <text class="z-shop-name">济南万达店</text>
-    <text class="z-shop-address">地址：万达广场18楼900号</text>
-  </navigator>
-
-  <!-- banner头部链接 -->
-  <view class="z-view-box z-index-head-link z-cl">
-    <view class="z-fl z-flex z-flex-center z-flex-direction" wx:for="{{headLink}}" wx:key="index">
-      <view class="z-icon-box">
-        <van-image width="100%" height="100%" src="{{item.imgUrl}}" />
-      </view>
-      <view class="z-link-txt">{{item.title}}</view>
+    <!-- banner头部链接 -->
+    <view class="z-view-box z-index-head-link z-cl">
+      <grid wx:for="{{headLink}}" wx:key="index" img-url="{{item.imgUrl}}" title="{{item.title}}" class="z-fl" link="{{item.link}}"></grid>
     </view>
-    <grid wx:for="{{headLink}}" wx:key="index" img-url="{{item.imgUrl}}">111</grid>
-  </view>
 
-  <!-- 轮播 -->
-  <view class="z-swiper-container">
-    <swiper 
-      indicator-dots="{{swiper.indicatorDots}}" 
-      autoplay="{{swiper.autoplay}}" 
-      interval="{{swiper.interval}}" 
-      duration="{{swiper.duration}}"
-      indicator-color="rgba(178,10,10)"
-      class="z-swiper-wrap"
-    >
-      <swiper-item wx:for="{{swiper.item}}" wx:key="index">
-        <view class="z-swiper-img-box">
-          <view class="z-swiper-img-container">
-            <van-image width="100%" height="100%" src="{{item.img}}" fit="cover"/>
+    <!-- 轮播 -->
+    <view class="z-swiper-container">
+      <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" indicator-color="rgba(178,10,10)" class="z-swiper-wrap">
+        <swiper-item wx:for="{{swiper.item}}" wx:key="index">
+          <view class="z-swiper-img-box">
+            <view class="z-swiper-img-container">
+              <image width="100%" height="100%" src="{{item.img}}" mode="aspectFill" />
+            </view>
           </view>
-        </view>
-      </swiper-item>
-    </swiper>
-  </view>
+        </swiper-item>
+      </swiper>
+    </view>
 
-  <!-- 项目分类 -->
-  <view class="z-view-box z-pro-link">
-    <view class="z-fl z-flex z-flex-center z-flex-direction" wx:for="{{proLink}}" wx:key="index">
-      <view class="z-icon-box">
-        <van-image width="100%" height="100%" src="{{item.imgUrl}}" />
+    <!-- 项目分类 -->
+    <view class="z-view-box z-pro-link z-flex z-flex z-flex-justify">
+      <grid wx:for="{{proLink}}" wx:key="index" img-url="{{item.imgUrl}}" title="{{item.title}}" link="{{item.link}}"></grid>
+    </view>
+
+    <!-- 热销产品 -->
+    <view class="z-hot-production z-view-box">
+      <view class="z-check-more z-flex z-flex-justify">
+        <view class="z-check-more-title">热销成品</view>
+        <navigator class="c-999999" hover-class="none">查看更多</navigator>
       </view>
-      <view class="z-link-txt">{{item.title}}</view>
+      <view class="z-shop-box z-cl">
+        <shop-item class="z-fl"></shop-item>
+        <shop-item class="z-fl z-mr-0"></shop-item>
+        <shop-item class="z-fl"></shop-item>
+        <shop-item class="z-fl z-mr-0"></shop-item>
+      </view>
     </view>
   </view>
 </view>

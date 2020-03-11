@@ -1,2 +1,30 @@
-<!--main/pages/mall/mall.wxml-->
-<text>main/pages/mall/mall.wxml</text>
+<!-- 商城 -->
+
+<view class="z-wrap">
+  <view class="z-main">
+    <van-tabs 
+      active="{{tabActive}}" 
+      bind:change="onChange" 
+      swipeable color="#b20a0a" 
+      border="{{false}}" 
+      sticky="{{true}}"
+      tab-class="z-tab"
+      tab-active-class="z-tab-active"
+    >
+      <van-tab title="{{item}}" wx:for="{{tabs}}" wx:key="index">
+        <view class="z-list-container z-cl" >
+          <shop-item class="z-fl"></shop-item>
+          <shop-item class="z-fl z-mr-0"></shop-item>
+          <shop-item class="z-fl"></shop-item>
+          <shop-item class="z-fl z-mr-0"></shop-item>
+          <shop-item class="z-fl"></shop-item>
+          <shop-item class="z-fl z-mr-0"></shop-item>
+          <shop-item class="z-fl"></shop-item>
+          <shop-item class="z-fl z-mr-0"></shop-item>
+          <shop-item class="z-fl"></shop-item>
+          <shop-item class="z-fl z-mr-0"></shop-item>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

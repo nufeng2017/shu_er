@@ -1,2 +1,16 @@
-<!--main/pages/car/car.wxml-->
-<text>main/pages/car/car.wxml</text>
+<!--购物车-->
+<view class="z-wrap">
+  <view class="z-main">
+    <shop-car-item icon-url="{{iconUrl}}"/>
+  </view>
+
+  <!-- 底部提交栏 -->
+  <submit-bar 
+    bind:checkall="onChange" 
+    check-all="{{checkAll}}" 
+    price="{{price}}" 
+    submit-count="{{submitCount}}"
+    has-freight="{{hasFreight}}"
+    bind:submit="barSubmit"
+  />
+</view>

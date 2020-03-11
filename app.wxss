@@ -6,6 +6,7 @@ page{
   font-style: normal;
   -webkit-tap-highlight-color: transparent;
   font-family: "microsoft yahei";
+  color:#333;
 }
 .z-wrap{
   width:100%;
@@ -39,7 +40,9 @@ page{
 .z-fr {
   float: right;
 }
-
+.z-mr-0{
+  margin-right: 0 !important;
+}
 /*文字隐藏*/
 .z-text-hidden {
   overflow: hidden;
@@ -179,4 +182,14 @@ page{
   -moz-box-orient: vertical;
   -ms-box-orient: vertical;
   -o-box-orient: vertical;
+}
+/* 字体颜色 */
+.c-999999{
+  color:#999;
+}
+.c-ff3e3e{
+  color:#ff3e3e;
+}
+.c-584133{
+  color:#584133;
 }

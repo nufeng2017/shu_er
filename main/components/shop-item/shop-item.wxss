@@ -1,0 +1,26 @@
+.z-item {
+  width:310rpx;
+  font-size: 30rpx;
+}
+.z-item .z-item-img{
+  width:100%;
+  height: 230rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  border:1rpx solid #584133;
+}
+.z-item .z-item-img image,.z-item-icon image{
+  width:100%;
+  height: 100%;
+}
+.z-item-title{
+  font-size: 30rpx;
+  line-height: 66rpx;
+}
+.z-item-icon{
+  height: 32rpx;
+  width:100rpx;
+}
+.z-item-icon image{
+  width:34rpx;
+}

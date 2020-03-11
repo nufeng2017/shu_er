@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "lazy-load": "/components/lazy-load/lazy-load",
+    "van-stepper": "/miniprogram_npm/@vant/weapp/stepper/index"
+  }
+}

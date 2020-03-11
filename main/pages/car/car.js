@@ -1,11 +1,16 @@
 // main/pages/car/car.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    checkAll:false,//是否全选
+    price:12.3,//价格
+    submitCount:2,//提交数量
+    hasFreight:'（不包含运费）',
+    iconUrl:'/main/assets/img/delete.jpg',
   },
 
   /**
@@ -14,53 +19,13 @@ Page({
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onChange(val){ //底部栏点击全选
+    console.log(val)
+    this.setData({
+      checkAll: val.detail
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  barSubmit(){
+    console.log('结算')
   }
 })
