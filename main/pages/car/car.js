@@ -8,7 +8,7 @@ Page({
   data: {
     checkAll:false,//是否全选
     price:12.3,//价格
-    submitCount:2,//提交数量
+    submitCount:'结算(2)',//提交数量
     hasFreight:'（不包含运费）',
     iconUrl:'/main/assets/img/delete.jpg',
   },

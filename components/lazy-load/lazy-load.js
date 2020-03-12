@@ -8,7 +8,10 @@ Component({
     //原始图片
     originalImage: String,
     //图片剪裁mode，同Image组件的mode
-    mode: String
+    mode: {
+      type:String,
+      value:'aspectFill'
+    }
   },
   data: {
     finishLoadFlag: false

@@ -1,2 +1,57 @@
-<!--main/pages/my/my.wxml-->
-<text>main/pages/my/my.wxml</text>
+<!--我的-->
+
+<view class="z-wrap">
+  <view class="z-main">
+    <view class="z-page-head">
+      <image src="./img/bg.jpg"></image>
+
+      <!-- 会员码 -->
+      <grid img-url="/main/assets/img/member-code-icon.png" title="会员码"  link="" class="z-member-code"/>
+
+      <!-- 会员信息 -->
+      <view class="z-member-info-box z-flex z-flex-align-center">
+        <view class="z-img-box">
+          <lazy-load 
+            default-image="/main/assets/img/default-avatar.png"
+            original-image=""
+          />
+        </view>
+        <view class="z-member-info z-flex z-flex-direction z-flex-align-center">
+          <view class="z-member-num z-flex  z-flex-align-center">
+            <text>23423423423</text>
+            <view>普卡会员</view>
+          </view>
+          <view class="z-last-money">账户余额 <text>￥470.23</text></view>
+        </view>
+      </view>
+
+      <!-- 立即充值 -->
+      <view class="z-add-money-box z-flex z-flex-center">
+        <view class="z-add-money-tips z-flex z-flex-center"><image src="./img/king-map.png"/>尊贵的会员，充值有加送，多充多送！</view>
+        <navigator class="z-add-money-btn" url="/main/pages/recharge/recharge" hover-class="none">立即充值</navigator>
+      </view>
+
+      <!-- 我的跳转项 -->
+      <view class="z-cell-box">
+        <van-cell 
+          custom-class="z-cell"
+          wx:for="{{cells}}"
+          wx:key="index"
+          icon="{{item.icon}}" 
+          is-link 
+          url="{{item.url}}"
+          border="{{index===cells.length-1?false:true}}"
+        >
+          <view slot="title">
+            <view class="z-cell-text">{{item.title}}</view>
+          </view>
+        </van-cell>
+      </view>
+
+      <!-- 退出登陆 -->
+      <view class="z-log-out">
+        <view class="z-log-out-btn">退出登录</view>
+      </view>
+    </view>
+  </view>
+</view>

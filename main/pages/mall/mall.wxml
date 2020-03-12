@@ -10,6 +10,7 @@
       sticky="{{true}}"
       tab-class="z-tab"
       tab-active-class="z-tab-active"
+      custom-class="z-tabs"
     >
       <van-tab title="{{item}}" wx:for="{{tabs}}" wx:key="index">
         <view class="z-list-container z-cl" >

@@ -2,14 +2,26 @@
 <view class="z-shop-car-item">
   <van-checkbox value="{{ checkAll }}" bind:change="change" checked-color="#b20a0a" icon-size="40rpx" />
   <view class="z-shop-car-item-main">
-    <view class="z-shop-car-item-title"> 
-      <text>一次性</text> 
-      <view class="z-delete-icon"><image src="{{iconUrl}}"/></view>
+    <view class="z-shop-car-item-img"><lazy-load original-image="/main/assets/img/index/banner.png" /></view>
+    <view class="z-shop-car-item-title ~z-text-hidden"> 
+      <text>一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性</text> 
+      <view class="z-delete-icon"><image src="/main/assets/img/delete.jpg" /></view>
     </view>
-    <view class="z-select-shop-item">常规服务</view>
-    <view class="z-price ~z-flex">
+    <view class="z-select-shop-item">
+      <text>常规服务</text><text class="z-arrow" style="background-image:url({{downArrow}})"></text>
+    </view>
+    <view class="z-price ~z-cl">
       <text class="~c-ff3e3e">￥89.00</text>
-      <view><van-stepper value="{{ 1 }}" bind:change="onChange" /></view>
+      <view class="~z-fr">
+        <van-stepper 
+          value="{{ 1 }}" 
+          bind:change="onChange" 
+          input-class="z-stepper-input" 
+          disable-input="{{true}}"
+          plus-class="z-stepper-plus"
+          minus-class="z-stepper-minus"
+        />
+      </view>
     </view>
   </view>
 </view>

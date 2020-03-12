@@ -13,3 +13,11 @@ shop-item{
   color:#333 !important;
   font-weight: 900 !important;
 }
+.z-tabs .van-tab{
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.z-tabs .van-tabs__wrap{
+  height: 90rpx !important;
+  border-bottom: 1px solid #eaeaea;
+}

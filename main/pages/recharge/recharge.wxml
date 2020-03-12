@@ -1,0 +1,27 @@
+<!-- 充值有礼 -->
+<view class="z-wrap">
+  <view class="z-main">
+    <view class="z-banner">
+      <image src="./img/banner.jpg"></image>
+    </view>
+  </view>
+  <view class="z-main-box">
+    <view class="z-block-title">账户余额（元）</view>
+    <view class="z-last-money"><text>￥</text>0.00</view>
+    <view class="z-block-title">请选择充值金额</view>
+    <view class="z-cl z-sel-item-box">
+      <view 
+        class="z-fl z-rechage-item {{item.recommend?'z-recommend':''}} {{active===index+1?'z-sel-this':''}} z-flex z-flex-center z-flex-direction"
+        wx:for="{{rechargeItem}}" 
+        wx:key="index"
+        data-index="{{index+1}}"
+        bindtap="selectPrice"
+      >
+        <view class="z-price"><text>￥</text>{{item.price}}</view>
+        <view class="z-gift">{{item.gift}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<submit-bar show-checkbox="{{false}}" board-text="已选充值金额：" price="{{active==0?0:rechargeItem[active-1].price}}" btn-text="立即充值" bind:submit="submit"/>

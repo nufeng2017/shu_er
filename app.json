@@ -4,18 +4,21 @@
     "main/pages/logs/logs",
     "main/pages/mall/mall",
     "main/pages/car/car",
-    "main/pages/my/my"
+    "main/pages/my/my",
+    "main/pages/recharge/recharge",
+    "main/pages/order-details/order-details",
+    "main/pages/my-order/my-order"
   ],
   "tabBar": {
-    "color":"#999",
-    "selectedColor":"#b20a0a",
-    "backgroundColor":"#fff",
+    "color": "#999",
+    "selectedColor": "#b20a0a",
+    "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "main/pages/index/index",
         "text": "首页",
-        "iconPath":"main/assets/img/navbar/nav-1.png",
-        "selectedIconPath":"main/assets/img/navbar/nav-1-a.png"
+        "iconPath": "main/assets/img/navbar/nav-1.png",
+        "selectedIconPath": "main/assets/img/navbar/nav-1-a.png"
       },
       {
         "pagePath": "main/pages/mall/mall",
@@ -46,6 +49,7 @@
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "van-checkbox": "@vant/weapp/checkbox/index",
-    "van-checkbox-group": "@vant/weapp/checkbox-group/index"
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-button": "@vant/weapp/button/index"
   }
 }

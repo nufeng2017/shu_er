@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "submit-bar": "/main/components/submit-bar/submit-bar"
+  },
+  "navigationBarTitleText": "充值有礼"
+}

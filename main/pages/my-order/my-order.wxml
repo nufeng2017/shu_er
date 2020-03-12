@@ -1,0 +1,22 @@
+<!--我的订单-->
+<!-- 商城 -->
+
+<view class="z-wrap">
+  <view class="z-main">
+    <van-tabs 
+      active="{{tabActive}}" 
+      bind:change="onChange" 
+      swipeable
+      swipe-threshold="{{5}}"
+      border="{{false}}" 
+      sticky="{{true}}"
+      custom-class="z-tab"
+    >
+      <van-tab title="{{item}}" wx:for="{{tabs}}" wx:key="index">
+        <view class="z-list-container z-cl" >
+          {{item}}
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>
