@@ -9,8 +9,10 @@
     bind:checkall="onChange" 
     check-all="{{checkAll}}" 
     price="{{price}}" 
-    submit-count="{{submitCount}}"
+    board-text="合计："
+    btn-text="{{submitCount}}"
     has-freight="{{hasFreight}}"
     bind:submit="barSubmit"
+    no-tabbar="{{false}}"
   />
 </view>

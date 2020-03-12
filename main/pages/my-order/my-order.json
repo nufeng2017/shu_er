@@ -4,5 +4,5 @@
     "lazy-load": "/components/lazy-load/lazy-load",
     "van-cell": "/miniprogram_npm/@vant/weapp/cell/index"
   },
-  "navigationBarTitleText": "个人中心"
+  "navigationBarTitleText": "我的订单"
 }

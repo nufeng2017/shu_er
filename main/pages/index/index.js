@@ -7,28 +7,28 @@ Page({
   data: {
     headLink:[//头部导航数据
       {
-        imgUrl:'/main/assets/img/index/member-code-icon.png',
+        imgUrl:'/main/pages/assets/img/member-code-icon.png',
         title:'会员码'
       },{
-        imgUrl: '/main/assets/img/index/recharge-icon.png',
+        imgUrl: '/main/pages/index/img/recharge-icon.png',
         title: '会员充值'
       },{
-        imgUrl: '/main/assets/img/index/shop-icon.png',
+        imgUrl: '/main/pages/index/img/shop-icon.png',
         title: '招商加盟'
       }
     ],
     proLink:[//项目数据
       {
-        imgUrl:'/main/assets/img/index/pro-1.png',
+        imgUrl:'/main/pages/index/img/pro-1.png',
         title:'精致洗鼻'
       }, {
-        imgUrl: '/main/assets/img/index/pro-2.png',
+        imgUrl: '/main/pages/index/img/pro-2.png',
         title: '特色洗眼'
       },{
-        imgUrl: '/main/assets/img/index/pro-3.png',
+        imgUrl: '/main/pages/index/img/pro-3.png',
         title: '专业采耳'
       }, {
-        imgUrl: '/main/assets/img/index/pro-4.png',
+        imgUrl: '/main/pages/index/img/pro-4.png',
         title: '头部SPA'
       }
     ],
@@ -38,9 +38,9 @@ Page({
       interval:3000,
       duration:500,
       item:[{
-        img: '/main/assets/img/index/banner.png',
+        img: '/main/pages/index/img/banner.png',
       },{
-        img: '/main/assets/img/index/banner.png',
+        img: '/main/pages/index/img/banner.png',
       }],
     },
   },

@@ -1,1 +1,139 @@
-/* main/pages/my/my.wxss */
+.z-page-head{
+  width:100%;
+  height: 352rpx;
+  position: relative;
+}
+.z-member-info-box{
+  position: absolute;
+  height: 128rpx;
+  width:100%;
+  left: 0;
+  top:53rpx;
+  box-sizing: border-box;
+
+}
+.z-member-info-box .z-img-box{
+  padding: 0 30rpx;
+  width:128rpx;
+  height: 128rpx;
+}
+.z-member-info-box .z-member-num{
+  color:#fff;
+  font-size: 34rpx;
+  width:100%;
+}
+.z-member-info-box .z-member-num view{
+  padding: 0 12rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  background: #d35353;
+  border-radius: 50px;
+  margin-left: 6rpx;
+}
+.z-member-info-box .z-member-num view:after{
+  content: '';
+  width:12rpx;
+  height: 12rpx;
+  box-sizing: border-box;
+  border:1px solid #ffb7b7;
+  transform: rotate(45deg);
+  display: inline-block;
+  border-left: none;
+  border-bottom: none;
+  vertical-align: 1%;
+  margin-left: 5rpx;
+}
+.z-member-info-box .z-last-money{
+  font-size:24rpx;
+  color:#fe9999;
+  width:100%;
+  margin-top: 14rpx;
+}
+.z-member-info-box .z-last-money text{
+  font-size: 30rpx;
+  color:#fec2c2;
+  margin-left: 5rpx;
+}
+.z-member-code{
+  width:122rpx;
+  height: 104rpx;
+  position: absolute;
+  right: 0;
+  top:65rpx;
+}
+.z-member-code .z-grid-container{
+  height: 100%;
+  width:74rpx;
+}
+.z-member-code .z-grid-title{
+  font-size: 24rpx;
+  color:#fff;
+  margin-top: 14rpx;
+}
+
+/* 立即充值 */
+.z-add-money-box{
+  position: absolute;
+  width:100%;
+  height: 123rpx;
+  left: 0;
+  bottom: 0;
+  font-size: 24rpx;
+  color:#fac04e;
+}
+.z-add-money-box .z-add-money-tips image{
+  width:57rpx;
+  height: 39rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.z-add-money-box .z-add-money-btn{
+  height: 58rpx;
+  width:160rpx;
+  color:#fff;
+  background: #e4ac3f;
+  line-height: 58rpx;
+  text-align: center;
+  border-radius: 50px;
+}
+
+/* 单元格 */
+.z-cell-box{
+  padding-top: 30rpx;
+}
+.z-cell{
+  padding: 0rpx 45rpx 0rpx 53rpx !important;
+  box-sizing: border-box !important;
+  height: 96rpx !important;
+  line-height: 96rpx !important;
+  align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  -ms-align-items: center;
+  box-align: center;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+}
+.z-cell:after{
+  left: 53rpx !important;
+}
+.z-cell .van-icon{
+  font-size: 40rpx;
+}
+.z-cell-text{
+  font-size: 28rpx;
+}
+.z-log-out{
+  padding: 22rpx 50rpx 30rpx;
+}
+.z-log-out-btn{
+  border:1px solid #b20a0a;
+  border-radius: 8rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color:#b20a0a;
+}

@@ -1,18 +1,23 @@
 <!-- 底部结算栏 -->
-<view class="z-submit-bar ~z-flex ~z-flex-align-center ~z-flex-justify">
-  <view class="z-submit-bar-checkbox">
-    <van-checkbox value="{{ checkAll }}" bind:change="change" checked-color="#b20a0a" icon-size="40rpx">
-      <text class="z-check-txt">全选</text>
-    </van-checkbox>
-  </view>
-  <view class="~z-flex">
-    <view class="z-submit-bar-txt ~z-flex-direction ~z-flex ~z-flex-center">
-      <view class="z-submit-price">
-        <text>合计：</text>
-        <text class="z-price">￥{{price}}</text>
-      </view>
-      <view class="z-has-freight">{{hasFreight}}</view>
+<view 
+  class="z-submit-bar-container {{isIPX?'z-iphonex':''}}" 
+  style="{{borderColor?'border-top:1px solid '+ borderColor:''}} {{shadow?'box-shadow:' + shadow:''}}"
+>
+  <view class="z-submit-bar ~z-flex ~z-flex-align-center ~z-flex-justify">
+    <view class="z-submit-bar-checkbox" wx:if="{{showCheckbox}}">
+      <van-checkbox value="{{ checkAll }}" bind:change="change" checked-color="#b20a0a" icon-size="40rpx">
+        <text class="z-check-txt">全选</text>
+      </van-checkbox>
     </view>
-    <view class="z-submit-bar-btn" bindtap="submit">结算({{submitCount}})</view> 
+    <view class="~z-flex z-submit-main ~z-flex-item">
+      <view class="z-submit-bar-txt ~z-flex-direction ~z-flex ~z-flex-center">
+        <view class="z-submit-price">
+          <text>{{boardText}}</text>
+          <text class="z-submit-price-count">￥{{price}}</text>
+        </view>
+        <view class="z-has-freight" wx:if="{{hasFreight}}">{{hasFreight}}</view>
+      </view>
+      <view class="z-submit-bar-btn" bindtap="submit">{{btnText}}</view> 
+    </view>
   </view>
 </view>
