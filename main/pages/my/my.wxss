@@ -102,38 +102,11 @@
 .z-cell-box{
   padding-top: 30rpx;
 }
-.z-cell{
-  padding: 0rpx 45rpx 0rpx 53rpx !important;
-  box-sizing: border-box !important;
-  height: 96rpx !important;
-  line-height: 96rpx !important;
-  align-items: center;
-  -moz-align-items: center;
-  -o-align-items: center;
-  -ms-align-items: center;
-  box-align: center;
-  -webkit-box-align: center;
-  -o-box-align: center;
-  -moz-box-align: center;
-}
-.z-cell:after{
-  left: 53rpx !important;
-}
-.z-cell .van-icon{
-  font-size: 40rpx;
-}
-.z-cell-text{
-  font-size: 28rpx;
-}
 .z-log-out{
   padding: 22rpx 50rpx 30rpx;
 }
 .z-log-out-btn{
   border:1px solid #b20a0a;
-  border-radius: 8rpx;
-  height: 84rpx;
-  line-height: 84rpx;
-  text-align: center;
-  font-size: 32rpx;
   color:#b20a0a;
+  width:100%;
 }

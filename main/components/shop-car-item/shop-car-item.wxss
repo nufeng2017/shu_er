@@ -1,7 +1,7 @@
 .z-shop-car-item{
   position: relative;
   padding-left: 58rpx;
-  height: 146rpx;
+  min-height: 146rpx;
 }
 .z-shop-car-item van-checkbox{
   position: absolute;
@@ -18,25 +18,20 @@
 .z-shop-car-item-title{
   box-sizing: border-box;
   width:100%;
-  padding-right: 60rpx;
-  height: 40rpx;
+  padding-right: 170rpx;
+  min-height: 40rpx;
   line-height: 40rpx;
   position: relative;
   color:#584133;
   font-size: 30rpx;
 }
-.z-shop-car-item-title .z-delete-icon{
+.z-shop-car-item-title .z-title-side-box{
   position: absolute;
-  width:60rpx;
+  width:170rpx;
   height: 40rpx;
   text-align: right;
   right: 0;
   top:0;
-}
-.z-shop-car-item-title .z-delete-icon image{
-  display: inline-block;
-  width:40rpx;
-  height: 40rpx;
 }
 .z-shop-car-item-img{
   box-sizing: border-box;
@@ -50,29 +45,8 @@
   left: 0;
 }
 .z-select-shop-item{
-  color:#999;
-  font-size: 24rpx;
-  height: 40rpx;
-  line-height: 40rpx;
-  padding: 0 40rpx 0 13rpx;
-  position: relative;
-  overflow: hidden;
-  border-radius: 4rpx;
-  display: inline-block;
-  background: #f4f4f4;
   margin: 12rpx 0 5rpx;
 }
-.z-select-shop-item .z-arrow{
-  position: absolute;
-  height: 40rpx;
-  width:40rpx;
-  background-position: 10rpx center;
-  background-size: 18rpx 9rpx;
-  right: 0;
-  top:0;
-  background-repeat: no-repeat;
-}
-
 .z-stepper-input{
   width:69rpx;
   height: 40rpx;

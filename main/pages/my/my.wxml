@@ -50,7 +50,7 @@
 
       <!-- 退出登陆 -->
       <view class="z-log-out">
-        <view class="z-log-out-btn">退出登录</view>
+        <view class="z-log-out-btn z-btn">退出登录</view>
       </view>
     </view>
   </view>

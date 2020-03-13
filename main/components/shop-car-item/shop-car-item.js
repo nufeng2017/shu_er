@@ -1,13 +1,17 @@
-import background from '../../assets/img/bg/bg.js';
 
 Component({
   properties: {
-    iconUrl: {//图标地址
-      type: String,
-    },
+    showSelect:Boolean,
+    showStepper:Boolean,
+    imgUrl:String,
+    defaultImg:String
   },
   data: {
-    downArrow: background.downArrow
+   
+  },
+  options: {
+    styleIsolation: 'apply-shared',
+    multipleSlots: true
   },
   methods: {
     

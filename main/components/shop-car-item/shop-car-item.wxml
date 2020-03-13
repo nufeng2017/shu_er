@@ -1,18 +1,18 @@
 <!-- 购物车列表项 -->
-<view class="z-shop-car-item">
-  <van-checkbox value="{{ checkAll }}" bind:change="change" checked-color="#b20a0a" icon-size="40rpx" />
+<view class="z-shop-car-item" style="{{!showSelect?'padding-left:0':''}}">
+  <van-checkbox value="{{ checkAll }}" bind:change="change" checked-color="#b20a0a" icon-size="40rpx" wx:if="{{showSelect}}"/>
   <view class="z-shop-car-item-main">
-    <view class="z-shop-car-item-img"><lazy-load original-image="/main/assets/img/index/banner.png" /></view>
-    <view class="z-shop-car-item-title ~z-text-hidden"> 
-      <text>一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性一次性</text> 
-      <view class="z-delete-icon"><image src="/main/assets/img/delete.jpg" /></view>
+    <view class="z-shop-car-item-img"><lazy-load original-image="{{imgUrl}}" default-image="{{defaultImg}}"/></view>
+    <view class="z-shop-car-item-title"> 
+      <slot name="head-title"></slot>
+      <view class="z-title-side-box"><slot name="head"></slot></view>
     </view>
     <view class="z-select-shop-item">
-      <text>常规服务</text><text class="z-arrow" style="background-image:url({{downArrow}})"></text>
+      <slot name="body"></slot>
     </view>
-    <view class="z-price ~z-cl">
-      <text class="~c-ff3e3e">￥89.00</text>
-      <view class="~z-fr">
+    <view class="~z-cl">
+      <view class="~z-fl"><slot name="foot"></slot></view>
+      <view class="~z-fr" wx:if="{{showStepper}}">
         <van-stepper 
           value="{{ 1 }}" 
           bind:change="onChange" 

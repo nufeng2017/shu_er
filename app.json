@@ -7,7 +7,12 @@
     "main/pages/my/my",
     "main/pages/recharge/recharge",
     "main/pages/order-details/order-details",
-    "main/pages/my-order/my-order"
+    "main/pages/my-order/my-order",
+    "main/pages/manage-address/manage-address",
+    "main/pages/my-comment/my-comment",
+    "main/pages/my-complaint/my-complaint",
+    "main/pages/my-record/my-record",
+    "main/pages/help/help"
   ],
   "tabBar": {
     "color": "#999",
@@ -50,6 +55,11 @@
   "usingComponents": {
     "van-checkbox": "@vant/weapp/checkbox/index",
     "van-checkbox-group": "@vant/weapp/checkbox-group/index",
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-rate": "@vant/weapp/rate/index"
   }
 }

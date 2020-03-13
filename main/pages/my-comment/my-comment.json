@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "shop-car-item": "/main/components/shop-car-item/shop-car-item"
+  },
+  "navigationBarTitleText": "我的评价"
+}

@@ -13,3 +13,55 @@
 .z-tab .van-tab--active{
   color:#b20a0a;
 }
+/* 单元格 */
+.z-cell .van-cell__title{
+  color:#999;
+  font-size: 30rpx;
+}
+.z-cell{
+  padding:0rpx 30rpx !important;
+}
+.z-cell:after{
+  left: 30rpx !important;
+}
+.z-inf-tips{
+  font-size: 24rpx;
+  line-height: 1;
+  padding: 30rpx 0 20rpx;
+}
+.z-inf-tips .z-fl{
+  padding-top: 10rpx;
+}
+.z-inf-tips .z-total{
+  color:#666;
+}
+.z-inf-tips .z-total .z-total-num{
+  color:#333;
+  font-size: 34rpx;
+}
+.z-inf-tips .z-total .z-total-num .z-unit{
+  font-size: 24rpx;
+}
+.z-inf-foot{
+  text-align: right;
+  padding-top: 26rpx !important;
+  padding-bottom: 26rpx !important;
+}
+.z-inf-foot .z-btn{
+  margin-left: 20rpx;
+}
+/* 列表项 */
+.z-price{
+  color:#ff3e3e;
+  font-size: 32rpx;
+}
+.z-service{
+  font-size: 24rpx;
+  color:#999;
+}
+.z-service .z-fr{
+  color:#666;
+}
+.z-shop-car-item{
+  margin-top: 40rpx;
+}

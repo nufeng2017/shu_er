@@ -1,8 +1,7 @@
 {
   "usingComponents": {
     "grid": "/components/grid/grid",
-    "lazy-load": "/components/lazy-load/lazy-load",
-    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index"
+    "lazy-load": "/components/lazy-load/lazy-load"
   },
   "navigationBarTitleText": "个人中心"
 }

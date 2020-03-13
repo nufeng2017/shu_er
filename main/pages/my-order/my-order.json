@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
-    "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index"
+    "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
+    "shop-car-item":"/main/components/shop-car-item/shop-car-item"
   },
   "navigationBarTitleText": "我的订单"
 }

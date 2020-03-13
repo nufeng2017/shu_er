@@ -1,11 +1,9 @@
 <!--我的订单-->
-<!-- 商城 -->
 
 <view class="z-wrap">
   <view class="z-main">
     <van-tabs 
       active="{{tabActive}}" 
-      bind:change="onChange" 
       swipeable
       swipe-threshold="{{5}}"
       border="{{false}}" 
@@ -14,7 +12,46 @@
     >
       <van-tab title="{{item}}" wx:for="{{tabs}}" wx:key="index">
         <view class="z-list-container z-cl" >
-          {{item}}
+          <view class="z-inf-box">
+            <view class="z-inf-head">
+              <van-cell 
+                title="订单号24234234242"
+                custom-class="z-cell"
+                is-link 
+                url="{{item.url}}"
+              />
+            </view>
+            <view class="z-inf-body">
+              <view class="z-inf-main">
+                <shop-car-item show-select="{{false}}" show-stepper="{{false}}">
+                  <view slot="head" class="z-price">￥30.00</view>
+                  <view slot="body" class="z-service z-cl">
+                    <view class="z-fl">常规服务</view>
+                    <view class="z-fr">X1</view>
+                  </view>
+                </shop-car-item>
+                <shop-car-item show-select="{{false}}" show-stepper="{{false}}">
+                  <view slot="head" class="z-price">￥30.00</view>
+                  <view slot="body" class="z-service z-cl">
+                    <view class="z-fl">常规服务</view>
+                    <view class="z-fr">X1</view>
+                  </view>
+                </shop-car-item>
+              </view>
+              <view class="z-inf-tips z-cl">
+                <view class="z-fl c-999999">2020.07.14 13:00:30</view>
+                <view class="z-fr z-total">
+                  <text>共三件商品 合计：</text>
+                  <text class="z-total-num"><text class="z-unit">￥</text>337.00</text>
+                </view>
+              </view>
+            </view>
+            <view class="z-inf-foot">
+              <view class="z-btn">取消订单</view>
+              <view class="z-btn z-btn-1">立即付款</view>
+            </view>
+          </view>
+          
         </view>
       </van-tab>
     </van-tabs>

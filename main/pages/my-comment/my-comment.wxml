@@ -1,0 +1,24 @@
+<!--我的评价-->
+<view class="z-wrap">
+  <view class="z-main">
+    <view class="z-inf-box">
+      <view class="z-inf-body">
+        <shop-car-item 
+          img-url="/main/assets/img/cell-2.png"
+          class="z-my-comment"
+        >   
+          <view slot="head-title">方晓华 112312323</view>
+          <view slot="head" class="z-delete-btn">
+            <image src="/main/assets/img/delete.jpg"></image>
+          </view>
+          <view slot="body" class="z-comment-star z-flex z-flex-align-center">
+            <text>总体评分：</text>
+            <van-rate value="{{ 1 }}" readonly size="26rpx"/>
+          </view>
+          <view slot="foot" class="z-comment-txt">老板很热情，采耳手法很好，感觉很舒服哈~</view>
+        </shop-car-item>
+      </view>
+      <view class="z-inf-foot"></view>
+    </view>
+  </view>
+</view>
