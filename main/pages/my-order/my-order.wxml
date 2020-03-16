@@ -13,7 +13,7 @@
       <van-tab title="{{item}}" wx:for="{{tabs}}" wx:key="index">
         <view class="z-list-container z-cl" >
           <view class="z-inf-box">
-            <view class="z-inf-head">
+            <view class="z-inf-head" bindtap="checkDetails">
               <van-cell 
                 title="订单号24234234242"
                 custom-class="z-cell"

@@ -1,0 +1,43 @@
+.z-goods-action{
+  position: fixed;
+  z-index: 1;
+  width:100%;
+  left: 0;
+  bottom: 0;
+  border-top:1rpx solid #d4d4d4;
+  box-shadow: 0 -4rpx 10rpx 4rpx rgba(0,0,0,0.2)
+}
+.z-goods-action .z-goods-action-main{
+  width:100%;
+  height: 120rpx;
+  background: #fff;
+}
+.z-goods-action .z-goods-action-main .z-left-btns{
+  padding-left: 20rpx;
+}
+.z-goods-action .z-goods-action-main .z-left-btns,.z-goods-action .z-goods-action-main .z-right-btns{
+  height: 100%;
+}
+.z-goods-action .z-goods-action-main .z-left-btns .z-left-btn{
+  height: 100%;
+  width:90rpx;
+  font-size: 22rpx;
+  color:#999;
+  border:none;
+  outline: none;
+  background: #fff;
+  padding: 0;
+  line-height: 1;
+}
+.z-goods-action .z-goods-action-main .z-left-btns .z-left-btn .z-left-btn-icon{
+  width:42rpx;
+  height: 42rpx;
+  margin-bottom: 10rpx;
+}
+button::after{
+  display: none;
+  width:0 !important;
+  height: 0 !important;
+  border: none;
+  outline: none;
+}

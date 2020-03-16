@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "shop-car-item": "/main/components/shop-car-item/shop-car-item",
+    "goods-action": "/main/components/goods-action/goods-action"
+  },
+  "navigationBarTitleText": "订单详情"
 }

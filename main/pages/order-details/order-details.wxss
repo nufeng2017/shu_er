@@ -1,1 +1,96 @@
-/* main/pages/order-details/order-details.wxss */
+.z-main{
+  padding-bottom: 250rpx;
+}
+.z-inf-box .z-inf-body{
+  padding: 47rpx 30rpx 30rpx;
+}
+.z-address .z-shop-car-item .z-shop-car-item-main{
+  padding-left: 60rpx;
+}
+.z-address .z-shop-car-item .z-shop-car-item-main .z-shop-car-item-img{
+  width:40rpx;
+  height: 40rpx;
+  border-radius: 0;
+  border: none;
+}
+.z-address .z-shop-car-item .z-shop-car-item-main .z-shop-car-item-title{
+  color:#212121;
+  font-weight: 900;
+  font-size: 28rpx;
+}
+.z-address-info{
+  line-height: 40rpx;
+  color:#333;
+  font-size: 22rpx;
+}
+/* 单元格 */
+.z-cell .van-cell__title{
+  color:#999;
+  font-size: 30rpx;
+}
+.z-cell{
+  padding:0rpx 30rpx !important;
+}
+.z-cell:after{
+  left: 30rpx !important;
+}
+.z-shops-item{
+  padding: 44rpx 30rpx 10rpx 50rpx !important;
+}
+.z-shop-item .z-shop-car-item{
+  margin-bottom: 50rpx;
+}
+.z-shop-item .z-shop-car-item .z-shop-item-title{
+  font-size: 30rpx;
+  font-weight: 900;
+  color:#584133;
+}
+.z-shop-item .z-shop-car-item .z-shop-item-num{
+  font-size: 24rpx;
+  color:#666666;
+}
+.z-shop-item .z-shop-item-info{
+  font-size: 24rpx;
+  color:#999999;
+  margin: 10rpx 0;
+}
+.z-shop-item .z-shop-item-price{
+  color:#ff3e3e;
+  font-size: 36rpx;
+  font-weight: 900;
+}
+.z-shops-info{
+  font-size: 30rpx;
+  color:#333;
+}
+.z-info-count{
+  font-weight: 900;
+}
+.z-shops-item.z-inf-foot{
+  font-size: 30rpx;
+}
+.z-shops-item.z-inf-foot:after{
+  left: 50rpx;
+}
+.z-totle-price{
+  color:#ff3e3e;
+}
+.z-order-details{
+  margin-top: 30rpx;
+  font-size: 30rpx;
+}
+.z-order-details .z-shops-item .z-flex{
+  margin-bottom: 10rpx;
+}
+.z-order-details .z-shops-item .z-flex .z-blue{
+  color:#3399ff;
+}
+.z-order-details .z-shops-item .z-flex .z-red{
+  color:#ff3e3e;
+}
+.z-order-details .z-shops-item .z-flex .z-gray{
+  color:#999999;
+}
+.z-btn{
+  margin-right: 20rpx;
+}

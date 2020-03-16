@@ -1,0 +1,22 @@
+<!-- 商品导航 -->
+<view class="z-goods-action {{isIPX?'z-iphonex':''}}">
+  <view class="z-flex ~z-flex-justify z-goods-action-main">
+    <view class="z-left-btns ~z-flex ~z-flex-align-center">
+      <button class="~z-flex ~z-flex-center ~z-flex-direction z-left-btn" wx:if="{{btn1}}">
+        <view class="z-left-btn-icon"><image src="/main/components/goods-action/img/car-icon.png"></image></view>
+        <view>购物车</view>
+      </button>
+      <button class="~z-flex ~z-flex-center ~z-flex-direction z-left-btn" wx:if="{{btn2}}">
+        <view class="z-left-btn-icon"><image src="/main/components/goods-action/img/kefu-icon.png"></image></view>
+        <view>客服</view>
+      </button>
+      <button class="~z-flex ~z-flex-center ~z-flex-direction z-left-btn" wx:if="{{btn3}}">
+        <view class="z-left-btn-icon"><image src="/main/components/goods-action/img/share-icon.png"></image></view>
+        <view>分享</view>
+      </button>
+    </view>
+    <view class="z-right-btns ~z-flex ~z-flex-center">
+      <slot></slot>
+    </view>
+  </view>
+</view>

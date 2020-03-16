@@ -205,6 +205,20 @@
 					"id": -1,
 					"name": "main/pages/vip-code/vip-code",
 					"pathName": "main/pages/vip-code/vip-code",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/my-order/my-order",
+					"pathName": "main/pages/my-order/my-order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/order-details/order-details",
+					"pathName": "main/pages/order-details/order-details",
 					"scene": null
 				}
 			]

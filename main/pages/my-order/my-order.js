@@ -15,5 +15,9 @@ Page({
   onLoad: function (options) {
 
   },
-
+  checkDetails(){
+    wx.navigateTo({
+      url: '/main/pages/order-details/order-details'
+    })
+  }
 })
