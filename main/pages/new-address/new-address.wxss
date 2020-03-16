@@ -1,0 +1,36 @@
+.z-inf-box .z-inf-body{
+  padding: 0 0 0 30rpx;
+}
+.van-cell__title{
+  font-size: 30rpx;
+  text-align: right;
+  line-height: 95rpx;
+}
+.van-field__body input{
+  font-size: 30rpx;
+  height: 95rpx;
+}
+.van-cell{
+  min-height: 95rpx;
+  padding: 0 !important;
+}
+.van-cell:after{
+  left:0rpx !important;
+}
+.z-checkbox{
+  height: 95rpx;
+  line-height: 95rpx;
+  font-size: 30rpx;
+  padding-right: 30rpx;
+}
+.z-btn-box{
+  bottom:100rpx;
+  left: 0;
+  padding: 0 50rpx;
+  position: fixed;
+  width:100%;
+  box-sizing: border-box;
+}
+.z-btn-box .z-btn{
+  width:100%;
+}

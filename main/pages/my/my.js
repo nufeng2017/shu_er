@@ -26,7 +26,7 @@ Page({
       title:'消费记录',
       icon:'/main/pages/my/img/cell-5.png'
     },{
-      url: '/main/pages/help/help',
+      url: '',
       title:'客服帮助',
       icon:'/main/pages/my/img/cell-6.png'
     }]

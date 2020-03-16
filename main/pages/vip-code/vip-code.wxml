@@ -1,0 +1,20 @@
+<!--会员码-->
+<view class="z-wrap">
+  <view class="z-main" style="{{'background-image:url(' + bg + ')'}}">
+    <view class="z-content-container">
+      <view class="z-info-box">
+        <view class="z-vip-code">普卡：134****5124</view>
+        <view class="z-bar-code">2185 1384 4883 0091 1</view>
+        <view class="z-bar-code-img"><image src=""></image></view>
+        <view class="z-bar-code-tips">
+          <view><image src="./img/icon.png"></image></view>  
+          每30S自动更新，请在店内消费时出示
+        </view>
+      </view>
+      <view class="z-banner">
+        <image src="./img/banner.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>
+

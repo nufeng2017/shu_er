@@ -1,19 +1,35 @@
 .z-inf-box .z-inf-body{
   padding: 40rpx 30rpx 35rpx;
 }
-.z-my-comment .z-shop-car-item-main{
+.z-my-comment .z-shop-car-item-main,.z-comment-reply .z-shop-car-item-main{
   padding-left: 80rpx;
 }
-.z-my-comment .z-shop-car-item-main .z-shop-car-item-img{
+.z-my-comment .z-shop-car-item-main .z-shop-car-item-img,.z-comment-reply .z-shop-car-item-main .z-shop-car-item-img{
   width:52rpx;
   height: 52rpx;
   border-radius: 50%;
   border:none;
   top:4rpx;
 }
+.z-comment-reply .z-shop-car-item-main .z-shop-car-item-title{
+  font-size: 30rpx;
+  color:#999;
+}
+.z-comment-reply .z-shop-car-item-main .z-comment-reply-content{
+  font-size: 28rpx;
+  color:#333;
+  line-height: 65rpx;
+}
+.z-inf-foot {
+  padding:24rpx 30rpx 0 110rpx !important;
+}
 .z-my-comment .z-shop-car-item-main .z-shop-car-item-title{
   font-size: 32rpx;
   color:#333;
+}
+.z-comment-reply .z-shop-car-item-main .z-comment-reply-time{
+  color:#ccc;
+  font-size: 24rpx;
 }
 .z-delete-btn{
   height: 40rpx;
@@ -32,4 +48,35 @@
   font-size: 28rpx;
   color:#333;
   line-height: 35rpx;
+}
+.z-comment-item-box{
+  margin-left: 80rpx;
+  border-radius: 8rpx;
+  background: #f2f2f2;
+  padding: 28rpx;
+}
+.z-comment-item .z-shop-car-item-main{
+  padding-left: 180rpx;
+}
+.z-comment-item .z-shop-car-item-img{
+  width:154rpx;
+  height: 114rpx;
+}
+.z-comment-item .z-shop-car-item-title{
+  padding-right: 0;
+  color:#584133;
+  font-size: 28rpx;
+}
+.z-comment-item .z-shop-car-item {
+  min-height: 114rpx;
+}
+.z-comment-item .z-select-shop-item{
+  margin: 0 0 5rpx;
+}
+.z-comment-item .z-comment-item-content{
+  font-size: 24rpx;
+  color:#999;
+}
+.z-comment-item .z-comment-item-price{
+  font-size: 26rpx;
 }

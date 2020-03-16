@@ -1,1 +1,4 @@
-/* main/pages/my-complaint/my-complaint.wxss */
+@import "../my-comment/my-comment.wxss";
+.z-my-comment .z-shop-car-item{
+  min-height:auto; 
+}

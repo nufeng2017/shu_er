@@ -1,11 +1,13 @@
-// main/pages/my-record/my-record.js
+import background from '../../assets/img/bg/bg.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageType:'消费记录',
+    bg: background.arcBg,
+    headData:['时间','操作','金额（元）']
   },
 
   /**

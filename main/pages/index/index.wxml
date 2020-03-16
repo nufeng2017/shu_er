@@ -3,7 +3,7 @@
 <view class="z-wrap">
   <view class="z-main">
     <!-- 门店地址 -->
-    <navigator url="" hover-class="none" class="z-shop-info">
+    <navigator url="/main/pages/nearby-store/nearby-store" hover-class="none" class="z-shop-info">
       <text class="z-shop-name">济南万达店</text>
       <text class="z-shop-address">地址：万达广场18楼900号</text>
     </navigator>

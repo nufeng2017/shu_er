@@ -1,0 +1,49 @@
+.z-main-container{
+  padding: 0 30rpx;
+}
+.z-main-container-tips{
+  color:#333;
+  font-weight: 900;
+  margin-bottom: 50rpx;
+  font-size: 30rpx;
+}
+.z-main-list .z-main-list-item{
+  padding: 50rpx 30rpx;
+  position: relative;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx 2rpx rgba(0,0,0,0.2);
+}
+.z-main-list .z-main-list-item .z-shop-car-item-main{
+  padding-left: 50rpx;
+}
+.z-main-list .z-main-list-item .z-shop-car-item-main .z-shop-car-item-img{
+  width:30rpx;
+  height: 38rpx;
+  border: none;
+}
+.z-shop-car-item-title {
+  color:#212121 !important;
+  font-size: 36rpx !important;
+  font-weight: 900 !important;
+}
+.z-shop-car-item-title .z-title-side-box{
+  font-size: 30rpx !important;
+  color:#666 !important;
+  line-height:50rpx;
+}
+.z-store-info{
+  color:#666666;
+  font-size: 30rpx;
+}
+.z-address{
+  color:#999999;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.z-icon{
+  width:97rpx;
+  height: 93rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

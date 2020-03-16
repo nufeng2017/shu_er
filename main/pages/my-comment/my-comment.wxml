@@ -17,8 +17,26 @@
           </view>
           <view slot="foot" class="z-comment-txt">老板很热情，采耳手法很好，感觉很舒服哈~</view>
         </shop-car-item>
+        <view class="z-comment-item-box">
+          <shop-car-item 
+            class="z-comment-item"
+          >   
+            <view slot="head-title">方晓华 112312323</view>
+            <view slot="body" class="z-comment-item-content">常规服务</view>
+            <view slot="foot" class="z-comment-item-price">￥89.00</view>
+          </shop-car-item>
+        </view>
       </view>
-      <view class="z-inf-foot"></view>
+      <view class="z-inf-foot">
+        <shop-car-item 
+          class="z-comment-reply"
+          img-url="/main/assets/img/cell-2.png"
+        >   
+          <view slot="head-title">平台回复：</view>
+          <view slot="body" class="z-comment-reply-content">感谢您对本服务的认可！欢迎下次再来~ </view>
+          <view slot="foot" class="z-comment-reply-time">2020.02.03 13:20:22 拷贝</view>
+        </shop-car-item>
+      </view>
     </view>
   </view>
 </view>

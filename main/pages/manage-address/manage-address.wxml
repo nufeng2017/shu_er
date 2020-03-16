@@ -30,5 +30,5 @@
 
 <!-- 提交按钮 -->
 <view class="z-btn-box">
-  <view class="z-btn z-btn-1">添加新地址</view>
+  <navigator class="z-btn z-btn-1" url="/main/pages/new-address/new-address" hover-class="none">添加新地址</navigator>
 </view>

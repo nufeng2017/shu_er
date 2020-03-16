@@ -1,0 +1,28 @@
+<!--附近门店-->
+<view class="z-wrap">
+  <view class="z-main">
+    <view class="z-main-container">
+      <view class="z-main-container-tips">当前您所在的位置附近门店有：</view>
+      <view class="z-main-list">
+        <view class="z-main-list-item">
+          <view class="z-icon">
+            <image src="./img/selected-icon.png"></image>
+          </view>
+          <shop-car-item img-url="/main/pages/nearby-store/img/position.png" class="z-my-comment">
+            <view slot="head-title">雨花台区自在城大方路店</view>
+            <view slot="head">2.0km</view>
+            <view slot="body">
+              <view class="z-store-info">在店销售82个</view>
+            </view>
+            <view slot="foot">
+              <view class="z-address">
+                <view>地址：金地自在城跌街区1幢101室内</view>
+                <view>门店营业时间：8:00-20:00</view>
+              </view>
+            </view>
+          </shop-car-item>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

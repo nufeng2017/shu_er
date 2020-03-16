@@ -8,13 +8,15 @@ Page({
     headLink:[//头部导航数据
       {
         imgUrl:'/main/assets/img/member-code-icon.png',
-        title:'会员码'
+        title:'会员码',
+        link: '/main/pages/vip-code/vip-code'
       },{
         imgUrl: '/main/pages/index/img/recharge-icon.png',
         title: '会员充值'
       },{
         imgUrl: '/main/pages/index/img/shop-icon.png',
-        title: '招商加盟'
+        title: '招商加盟',
+        link:'/main/pages/webview/webview'
       }
     ],
     proLink:[//项目数据

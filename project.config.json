@@ -135,6 +135,76 @@
 					"id": -1,
 					"name": "main/pages/my-comment/my-comment",
 					"pathName": "main/pages/my-comment/my-comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/my-complaint/my-complaint",
+					"pathName": "main/pages/my-complaint/my-complaint",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/my-record/my-record",
+					"pathName": "main/pages/my-record/my-record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/nearby-store/nearby-store",
+					"pathName": "main/pages/nearby-store/nearby-store",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/my-record/my-record",
+					"pathName": "main/pages/my-record/my-record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/help/help",
+					"pathName": "main/pages/help/help",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/my/my",
+					"pathName": "main/pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/new-address/new-address",
+					"pathName": "main/pages/new-address/new-address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/webview/webview",
+					"pathName": "main/pages/webview/webview",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/index/index",
+					"pathName": "main/pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/vip-code/vip-code",
+					"pathName": "main/pages/vip-code/vip-code",
 					"scene": null
 				}
 			]

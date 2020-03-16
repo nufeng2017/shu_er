@@ -1,0 +1,8 @@
+<!--广告招商-->
+<view class="z-wrap">
+  <view class="z-main" style="{{'background-image:url(' + bgUrl + ')'}}">
+    <view class="z-sss">
+    111
+    </view>
+  </view>
+</view>

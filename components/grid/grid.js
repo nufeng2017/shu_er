@@ -22,7 +22,7 @@ Component({
     enterPage(){
       switch(this.data.linkType){
         case 'navigateTo':
-          wx.redirectTo({
+          wx.navigateTo({
             url: this.data.link
           })
           break;

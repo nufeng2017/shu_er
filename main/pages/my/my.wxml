@@ -43,7 +43,16 @@
           border="{{index===cells.length-1?false:true}}"
         >
           <view slot="title">
-            <view class="z-cell-text">{{item.title}}</view>
+            <view class="z-cell-text">
+              <block wx:if="{{item.title === '客服帮助'}}">
+                <button class="z-ke-fu" open-type="contact" bindcontact="handleContact">
+                  <view class="z-btn-text">客服帮助</view>
+                </button>
+              </block>
+              <block wx:else>
+                {{item.title}}
+              </block>
+            </view>
           </view>
         </van-cell>
       </view>

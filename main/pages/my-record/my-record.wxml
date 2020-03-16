@@ -1,2 +1,59 @@
-<!--main/pages/my-record/my-record.wxml-->
-<text>main/pages/my-record/my-record.wxml</text>
+<!--消费记录-->
+<view class="z-wrap">
+  <view class="z-main" style="{{'background-image:url(' + bg + ')'}}">
+    <view class="z-content-container">
+      <view class="z-last-money-show">
+        <view>账户余额（元）</view>
+        <view class="z-last-num">￥450.24</view>
+      </view>
+      <view class="z-info-box">
+        <view class="z-info-box-head z-cl">
+          <view class="z-fl" wx:for="{{headData}}" wx:key="index">{{item}}</view>
+        </view>
+        <view class="z-info-box-body">
+          <view class="z-cl">
+            <view class="z-fl">2019.12.10 13:10</view>
+            <view class="z-fl">消费</view>
+            <view class="z-fl z-green">-35.00</view>
+          </view>
+          <view class="z-cl">
+            <view class="z-fl">2019.12.10 13:10</view>
+            <view class="z-fl">消费</view>
+            <view class="z-fl z-red">-35.00</view>
+          </view>
+          <view class="z-cl">
+            <view class="z-fl">2019.12.10 13:10</view>
+            <view class="z-fl">消费</view>
+            <view class="z-fl z-red">-35.00</view>
+          </view>
+          <view class="z-cl">
+            <view class="z-fl">2019.12.10 13:10</view>
+            <view class="z-fl">消费</view>
+            <view class="z-fl z-red">-35.00</view>
+          </view>
+          <view class="z-cl">
+            <view class="z-fl">2019.12.10 13:10</view>
+            <view class="z-fl">消费</view>
+            <view class="z-fl z-red">-35.00</view>
+          </view>
+          <view class="z-cl">
+            <view class="z-fl">2019.12.10 13:10</view>
+            <view class="z-fl">消费</view>
+            <view class="z-fl z-red">-35.00</view>
+          </view>
+          <view class="z-cl">
+            <view class="z-fl">2019.12.10 13:10</view>
+            <view class="z-fl">消费</view>
+            <view class="z-fl z-red">-35.00</view>
+          </view>
+          <view class="z-cl">
+            <view class="z-fl">2019.12.10 13:10</view>
+            <view class="z-fl">消费</view>
+            <view class="z-fl z-red">-35.00</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
