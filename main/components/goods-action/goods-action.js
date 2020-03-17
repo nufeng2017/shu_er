@@ -1,7 +1,7 @@
 const app = getApp();
 Component({
   properties: {
-    btn1:Boolean,
+    btn1:Number,
     btn2: Boolean,
     btn3: Boolean
   },
@@ -19,11 +19,9 @@ Component({
   methods: {
     isIPX() {
       console.log(app.globalData.isIphoneX)
-      if (this.data.noTabbar) {
-        this.setData({
-          isIPX: app.globalData.isIphoneX
-        });
-      }
+      this.setData({
+        isIPX: app.globalData.isIphoneX
+      });
     }
   }
 })

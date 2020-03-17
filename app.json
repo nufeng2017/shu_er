@@ -15,7 +15,12 @@
     "main/pages/nearby-store/nearby-store",
     "main/pages/new-address/new-address",
     "main/pages/webview/webview",
-    "main/pages/vip-code/vip-code"
+    "main/pages/vip-code/vip-code",
+    "main/pages/confirm-order/confirm-order",
+    "main/pages/shop-details/shop-details",
+    "main/pages/all-comment/all-comment",
+    "main/pages/check-img/check-img",
+    "main/pages/message-login/message-login"
   ],
   "tabBar": {
     "color": "#999",

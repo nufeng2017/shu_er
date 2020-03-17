@@ -1,1 +1,35 @@
-/* main/pages/logs/logs.wxss */
+.z-login-main{
+  padding-top: 90rpx;
+  line-height: 1;
+  text-align: center;
+}
+.z-logo{
+  width:210rpx;
+  height: 210rpx;
+  margin: 0 auto 45rpx;
+}
+.z-app-title{
+  font-size: 46rpx;
+  color:#000;
+  margin-bottom: 30rpx;
+}
+.z-app-introduce{
+  font-size: 24rpx;
+  color:#999999;
+  line-height: 40rpx;
+}
+.z-checkbox{
+  font-size: 22rpx;
+  color:#b0b0b0;
+  margin-top: 38rpx;
+}
+.z-checkbox .z-xy{
+  color:#a06541;
+}
+.z-no-login{
+  text-align: center;
+  margin-top: 80rpx;
+  font-size: 30rpx;
+  color:#a06541;
+  text-decoration: underline;
+}

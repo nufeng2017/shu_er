@@ -1,5 +1,5 @@
 <!-- 商品列表项 -->
-<navigator class="z-item">
+<view class="z-item" bindtap="enterPage">
   <view class="z-item-img">
     <lazy-load mode="aspectFill" original-image="/main/assets/img/index/banner.png"></lazy-load>
   </view>
@@ -10,4 +10,4 @@
       <image mode="aspectFill" src="./img/shop-car-icon.png" class="~z-fr"></image>
     </view>
   </view>
-</navigator>
+</view>

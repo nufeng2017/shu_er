@@ -1,0 +1,120 @@
+<!--确认订单-->
+<view class="z-wrap">
+  <view class="z-main">
+
+    <!-- 通知 -->
+    <view class="z-notice z-flex z-flex-center">因购买商品分类不同，订单已拆分显示</view>
+
+    <view class="z-inf-box">
+      <view class="z-inf-body">
+        <shop-car-item img-url="/main/assets/img/cell-2.png" class="z-address" show-arrow="{{true}}" url="/main/pages/manage-address/manage-address">
+          <view slot="head-title">方晓华 112312323</view>
+          <view slot="body" class="z-address-info">方小花 13478978978 收货地址：江苏省 南京市 雨花区 板桥街道金地自在城XX 小区XX号XXX室</view>
+        </shop-car-item>
+      </view>
+    </view>
+
+    <!-- 商品展示  -->
+    <view class="z-shop-show">
+      <view class="z-inf-box">
+        <view class="z-inf-head">
+          <van-cell title="订单号202003021245" custom-class="z-cell" />
+        </view>
+        <view class="z-inf-body z-shops-item">
+          <view class="z-shops-box">
+            <shop-car-item img-url="/main/assets/img/cell-2.png" class="z-shop-item">
+              <view slot="head-title">
+                <view class="z-shop-item-title">方晓华 112312323</view>
+              </view>
+              <view slot="head">
+                <view class="z-shop-item-num">X1</view>
+              </view>
+              <view slot="body">
+                <view class="z-shop-item-info">常规服务</view>
+              </view>
+              <view slot="foot">
+                <view class="z-shop-item-price">90.00</view>
+              </view>
+            </shop-car-item>
+            <shop-car-item img-url="/main/assets/img/cell-2.png" class="z-shop-item">
+              <view slot="head-title">
+                <view class="z-shop-item-title">方晓华 112312323</view>
+              </view>
+              <view slot="head">
+                <view class="z-shop-item-num">X1</view>
+              </view>
+              <view slot="body">
+                <view class="z-shop-item-info">常规服务</view>
+              </view>
+              <view slot="foot">
+                <view class="z-shop-item-price">90.00</view>
+              </view>
+            </shop-car-item>
+          </view>
+        </view>
+      </view>
+      <view class="z-inf-box">
+        <view class="z-inf-head">
+          <van-cell title="订单号202003021245" custom-class="z-cell" />
+        </view>
+        <view class="z-inf-body z-shops-item">
+          <view class="z-shops-box">
+            <shop-car-item img-url="/main/assets/img/cell-2.png" class="z-shop-item">
+              <view slot="head-title">
+                <view class="z-shop-item-title">方晓华 112312323</view>
+              </view>
+              <view slot="head">
+                <view class="z-shop-item-num">X1</view>
+              </view>
+              <view slot="body">
+                <view class="z-shop-item-info">常规服务</view>
+              </view>
+              <view slot="foot">
+                <view class="z-shop-item-price">90.00</view>
+              </view>
+            </shop-car-item>
+            <shop-car-item img-url="/main/assets/img/cell-2.png" class="z-shop-item">
+              <view slot="head-title">
+                <view class="z-shop-item-title">方晓华 112312323</view>
+              </view>
+              <view slot="head">
+                <view class="z-shop-item-num">X1</view>
+              </view>
+              <view slot="body">
+                <view class="z-shop-item-info">常规服务</view>
+              </view>
+              <view slot="foot">
+                <view class="z-shop-item-price">90.00</view>
+              </view>
+            </shop-car-item>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="z-inf-box">
+      <view class="z-inf-body">
+        <view class="z-flex z-flex-justify">
+          <view>商品数量</view>
+          <view class="z-info-count">3</view>
+        </view>
+        <view class="z-flex z-flex-justify">
+          <view>商品金额</view>
+          <view class="z-info-count">￥121.00</view>
+        </view>
+        <view class="z-flex z-flex-justify">
+          <view>运费</view>
+          <view class="z-info-count">+￥5.00</view>
+        </view>
+      </view>
+      <view class="z-inf-foot">
+        <view class="z-flex z-flex-justify" style="padding-top:22rpx;">
+          <view>应付合计</view>
+          <view class="z-info-count z-totle-price">￥5.00</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 提交按钮 -->
+<submit-bar show-checkbox="{{false}}" board-text="应付金额：" price="{{active==0?0:rechargeItem[active-1].price}}" btn-text="提交订单" bind:submit="submit" />

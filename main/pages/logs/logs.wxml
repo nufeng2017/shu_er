@@ -1,2 +1,27 @@
-<!--main/pages/logs/logs.wxml-->
-<text>main/pages/logs/logs.wxml</text>
+<!--授权登录-->
+<view class="z-wrap">
+  <view class="z-main">
+    <view class="z-login-main">
+        <view class="z-logo"><image src="/main/assets/img/logo.png"></image></view>
+        <view class="z-app-title">专业采耳</view>
+        <view class="z-app-introduce">您正在访问的是舒耳空间客户中心，</view>
+        <view class="z-app-introduce">在查看您的个人信息和参与活动前请先进行身份验证。</view>
+    </view>
+    <view class="z-login-btn">
+      <button class="z-flex z-flex-center z-authorized-login">
+        <view class="z-wx-icon"><image src="./img/wx-icon.png" mode="aspectFit"></image></view>
+        <text>使用微信授权登录</text>
+      </button>
+      <button class="z-flex z-flex-center z-message-login" bindtap="messageLogin">
+        <view class="z-wx-icon"><image src="./img/phone-icon.png" mode="aspectFit"></image></view>
+        <text>使用手机验证码登录</text>
+      </button>
+    </view>
+    <view class="z-checkbox z-flex z-flex-center">
+      <van-checkbox value="{{true}}" checked-color="#a06541" icon-size="26rpx">
+        <text>我已阅读并同意</text><text class="z-xy">《舒耳空间会员服务协议》</text>
+      </van-checkbox >
+    </view>
+    <view class="z-no-login">暂不登录，先去逛逛</view>
+  </view>
+</view>

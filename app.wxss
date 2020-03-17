@@ -270,3 +270,86 @@ image{
   background: #b20a0a;
   color:#fff;
 }
+/* 登录按钮 */
+.z-login-btn{
+  margin-top: 130rpx;
+  padding: 0 50rpx;
+}
+.z-login-btn button{
+  background: #fff;
+  margin-bottom: 26rpx;
+  border: none;
+  outline: none;
+  text-align: center;
+  height: 87rpx;
+  font-size: 32rpx;
+  color:#fff;
+  background: #b20a0a;
+  box-sizing: border-box;
+}
+.z-login-btn .z-wx-icon{
+  margin-right: 10rpx;
+}
+.z-login-btn .z-wx-icon{
+  width:46rpx;
+  height: 100%;
+}
+.z-login-btn .z-message-login{
+  background: #fff !important;
+  color:#b20a0a !important;
+  border:1px solid #b20a0a !important;
+}
+.z-login-btn .z-message-login .z-wx-icon{
+  width:34rpx !important;
+  height: 100%;
+}
+.z-login-btn button::before,.z-login-btn button::after{
+  display: none;
+}
+/* 查看更多 */
+.z-check-more{
+  color:#000;
+  font-size: 40rpx;
+  font-weight: 900;
+}
+.z-check-more .c-999999{
+  font-size: 26rpx;
+  line-height: 70rpx;
+  font-weight: 400;
+}
+.z-check-more .c-999999 image{
+  width:9rpx;
+  height: 15rpx;
+  margin-left: 5rpx;
+}
+
+/* 评论 */
+.z-my-comment .z-shop-car-item-main,.z-comment-reply .z-shop-car-item-main{
+  padding-left: 80rpx;
+}
+.z-my-comment .z-shop-car-item-main .z-shop-car-item-img,.z-comment-reply .z-shop-car-item-main .z-shop-car-item-img{
+  width:52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  border:none;
+  top:4rpx;
+}
+.z-my-comment .z-shop-car-item-main .z-shop-car-item-title{
+  font-size: 32rpx;
+  color:#333;
+}
+.z-comment-star text{
+  color:#999;
+  font-size:24rpx;
+  line-height: 1;
+}
+.z-comment-txt{
+  font-size: 28rpx;
+  color:#333;
+  line-height: 35rpx;
+}
+.z-my-comment .z-comment-time{
+  line-height: 40rpx;
+  color:#cccccc;
+  font-size: 24rpx;
+}

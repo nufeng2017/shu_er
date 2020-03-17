@@ -26,6 +26,8 @@ Page({
     });
   },
   barSubmit(){
-    console.log('结算')
+    wx.navigateTo({
+      url: '/main/pages/confirm-order/confirm-order'
+    })
   }
 })

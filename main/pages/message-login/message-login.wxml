@@ -1,0 +1,12 @@
+<!--短信登录-->
+<view class="z-wrap">
+  <view class="z-main">
+    <view class="z-page-title">欢迎来到舒耳空间！</view>
+    <view class="z-input-box">
+      <van-field value="{{ username }}" placeholder="请输入手机号码" clearable type="number">
+        <van-button slot="button" size="small" type="primary">发送验证码</van-button>
+      </van-field>
+      <van-field value="{{ phone }}" placeholder="请输入短信验证码" clearable type="number" />
+    </view>
+  </view>
+</view>

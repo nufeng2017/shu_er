@@ -5,7 +5,8 @@
   left: 0;
   bottom: 0;
   border-top:1rpx solid #d4d4d4;
-  box-shadow: 0 -4rpx 10rpx 4rpx rgba(0,0,0,0.2)
+  box-shadow: 0 -4rpx 10rpx 4rpx rgba(0,0,0,0.2);
+  background:#fff;
 }
 .z-goods-action .z-goods-action-main{
   width:100%;
@@ -28,6 +29,7 @@
   background: #fff;
   padding: 0;
   line-height: 1;
+  position: relative;
 }
 .z-goods-action .z-goods-action-main .z-left-btns .z-left-btn .z-left-btn-icon{
   width:42rpx;
@@ -40,4 +42,18 @@ button::after{
   height: 0 !important;
   border: none;
   outline: none;
+}
+.z-info-num{
+  font-size: 20rpx;
+  color:#fff;
+  padding: 5rpx;
+  background: #fa3735;
+  border-radius: 50rpx;
+  position: absolute;
+  line-height: 1;
+  right: 0;
+  top:10rpx;
+  box-sizing: border-box;
+  min-width: 30rpx;
+  min-inline-size: 30rpx;
 }

@@ -1,7 +1,7 @@
 <!-- 购物车列表项 -->
-<view class="z-shop-car-item" style="{{!showSelect?'padding-left:0':''}}">
+<view class="z-shop-car-item" style="{{!showSelect?'padding-left:0':''}}" bindtap="navigateTo">
   <van-checkbox value="{{ checkAll }}" bind:change="change" checked-color="#b20a0a" icon-size="40rpx" wx:if="{{showSelect}}"/>
-  <view class="z-shop-car-item-main">
+  <view class="z-shop-car-item-main {{showArrow?'z-show-arrow':''}}">
     <view class="z-shop-car-item-img"><lazy-load original-image="{{imgUrl}}" default-image="{{defaultImg}}"/></view>
     <view class="z-shop-car-item-title"> 
       <slot name="head-title"></slot>

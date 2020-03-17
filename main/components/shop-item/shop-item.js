@@ -19,6 +19,7 @@ Component({
     enterPage() {
       switch (this.data.linkType) {
         case 'navigateTo':
+          console.log(this.data.link)
           wx.redirectTo({
             url: this.data.link
           })

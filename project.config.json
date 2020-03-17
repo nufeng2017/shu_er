@@ -219,6 +219,55 @@
 					"id": -1,
 					"name": "main/pages/order-details/order-details",
 					"pathName": "main/pages/order-details/order-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/order-details/order-details",
+					"pathName": "main/pages/order-details/order-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/confirm-order/confirm-order",
+					"pathName": "main/pages/confirm-order/confirm-order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/shop-details/shop-details",
+					"pathName": "main/pages/shop-details/shop-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/all-comment/all-comment",
+					"pathName": "main/pages/all-comment/all-comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/shop-details/shop-details",
+					"pathName": "main/pages/shop-details/shop-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/logs/logs",
+					"pathName": "main/pages/logs/logs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/message-login/message-login",
+					"pathName": "main/pages/message-login/message-login",
 					"scene": null
 				}
 			]

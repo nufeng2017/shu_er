@@ -1,0 +1,25 @@
+<!--所有评论-->
+<view class="z-wrap">
+  <view class="z-main">
+    <view class="z-shop-info z-comment">
+      <view class="z-check-more z-flex z-flex-justify ">
+        <view class="z-shop-block-title">精彩评论(20)</view>
+      </view>
+      <view class="z-comment-box">
+        <view class="z-comment-item">
+          <shop-car-item img-url="/main/assets/img/cell-2.png" class="z-my-comment">
+            <view slot="head-title">方晓华 112312323</view>
+            <view slot="head">
+              <view class="z-comment-time">2020.2.29</view>
+            </view>
+            <view slot="body" class="z-comment-star z-flex z-flex-align-center">
+              <text>总体评分：</text>
+              <van-rate value="{{ 1 }}" readonly size="26rpx" />
+            </view>
+            <view slot="foot" class="z-comment-txt">老板很热情，采耳手法很好，感觉很舒服哈~</view>
+          </shop-car-item>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

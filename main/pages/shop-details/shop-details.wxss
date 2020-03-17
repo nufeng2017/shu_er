@@ -1,0 +1,104 @@
+.z-main{
+  padding-bottom: 210rpx;
+}
+/* 轮播 */
+.z-swiper-container{
+  margin-bottom: 48rpx;
+}
+.z-swiper-container ,.z-swiper-wrap{
+  height: 550rpx;
+}
+
+.z-shop-info{
+  padding: 0 30rpx 50rpx;
+  overflow: hidden;
+}
+.z-shop-info-head .z-shop-title{
+  font-size: 38rpx;
+  color:#333;
+  margin-bottom: 20rpx;
+  font-weight: 900;
+}
+.z-shop-info-head .z-shop-pirce .z-price-txt{
+  font-size: 40rpx;
+  color:#ff3e3e;
+  font-weight: 900;
+} 
+.z-shop-info-head .z-shop-pirce .z-last-price{
+  color:#999999;
+  font-size: 26rpx;
+  margin: 0 12rpx;
+  text-decoration: line-through;
+}
+.z-shop-info-head .z-shop-pirce .z-price-icon{
+  padding: 5rpx 7rpx;
+  color:#ec6941;
+  font-size: 22rpx;
+  border:1px solid #ec6941;
+  border-radius: 4rpx;
+  line-height: 1;
+}
+.z-shop-num{
+  color:#666666;
+  font-size: 30rpx;
+}
+.z-shop-num text{
+  color:#999;
+}
+.z-support-service{
+  color:#999999;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+.z-support-service::before{
+  content: '';
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTM2QjMyOTg2ODEwMTFFQThCQTJBNjg0REM3NTlCNUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTM2QjMyOTk2ODEwMTFFQThCQTJBNjg0REM3NTlCNUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFMzZCMzI5NjY4MTAxMUVBOEJBMkE2ODREQzc1OUI1QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFMzZCMzI5NzY4MTAxMUVBOEJBMkE2ODREQzc1OUI1QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiLx0v4AAAOlSURBVHjatJhZSFZBFMf1ZmoobQRm2UMkGAVttIEtSrRo0UYP7YuG4UNFmUkSFbTylWBFL7a8KPUQGBK0EWahD6kPRdBLe+ZGEpZGm5/2n/gPnIbvu4vf9cAP7p07d+bcM2fOOXOjf1QXR3mUQWACyADzwBwwGvSCNtAIakENeA2CXgaP8dBXTboP7Ld5bziYCDbzXil5HpSAZjeTWC76JIBy0AoOevwIix/xCdwEIyNVKAt0ii/W0g6OgvlgPK2nSAVLwQXQbbyzDnwGW+0mjA7jQ9HgNCgy2q+BY6DJhXXUGFPBRfqalEqwHvxxYyE1UJmhTAMYC3JdKqOkDzyjFWeBDvFsLZ1/iBuFzoKd4v4Ed1JLVP+lkR9UKdqmgEdOu2wxKBD3e2hyP+Q32AC6QCzbUuwspHbTHXF/3EdltCvcEMooWWCn0CVhsQbuIj+lmL6jZRl4G06hJLBNtK+mU/olK+mLWg6D+3Zx6IBouxKhA5syCVQZW/6kXRxSuemnWK5xjKx+yAjwESTy/iV3V9AuUqcKZZp9VGYweC6U6WT4CDqljoXivswnZdS4d2ltnWSnh0gnevftBpdVoIwxwvpjh4lywCJQ6OBnAfbTovLb+zB9M5n7/q2QRTNqsVuueHAVbATvQFqYfrlGcFXKP3Rp2TUWs7SWLodI+43XsXTQmUafudylWirAOQclPsh0Ynnwi15a5YvwkwaxNOrD6oyEvN3FuNII3RbLTi2JDi+3sf55I9rUcuwFL0Rc66BvuClf48R1ixqgXjSkuBhALdtk8FS0lYJRwpIzwHeXlk8W1/UWC3ItGS4H+QXSwe0wu6bJgytME9e1Fk8HWvI8DKSWYxXjhxYVT554jFk54rrGr9SRxZ1X5fG9oeArr3tUaLH4paVGJvYqd/uhjJIthh8GdZGfZOy2MTz2DKTEMb/Fi7DRboljTblRIlgDrFBAKFNBHf6bNJ/rqCNu6QAqk8l6XftOfqgSVsWN5caO2TEAyqQZuW2FrALMZXnAc7g8GBawRPBDZjMH6nlLzFI2lJ8UGglSJcd7YFiE9dEhRndLlMqFbg6KfQyQAdG2hEm1iMclL4pksow9ZTh0XqiDhGVzDFaTZwtHV33PcL1vUckklqpyvASe6Y8wk1fz1KodOJtj93n52WD+jiljYRaJXAe7wpSxnv4Pqd23iVk5ICzmRnr4TjLH6HY83vbzl14qfSOdJbAuIVrpuHVM2q+8/tL7K8AA5zfSvESWWS0AAAAASUVORK5CYII=) no-repeat center;
+  width:36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+  background-size:100%;
+}
+.z-shop-block-title{
+  font-size: 40rpx;
+  color:#333;
+  font-weight: 900;
+}
+.z-shop-intruduction-text{
+  color:#666666;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-top: 24rpx;
+}
+.z-comment-item{
+  padding: 35rpx 0;
+  position: relative;
+}
+.z-comment-item:after{
+  content: '';
+  height: 1px;
+  width:750rpx;
+  background: #eaeaea;
+  position: absolute;
+  bottom: 0;
+  left: 0rpx;
+}
+
+/* 商品导航栏 */
+.z-btn-box{
+  height: 100%;
+}
+.z-btn{
+  height: 100%;
+  width:230rpx;
+  background-color:#ff963a;
+  color:#fff;
+  line-height: 98rpx;
+  border: none;
+  border-radius: 0;
+}
+.z-btn.z-btn-1{
+  background: #ff3938;
+}
+.z-goods-action .z-goods-action-main{
+  height: 98rpx !important;
+}

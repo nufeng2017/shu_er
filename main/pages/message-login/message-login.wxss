@@ -1,0 +1,23 @@
+/* 短信登录 */
+.z-main{
+  padding: 0 50rpx;
+}
+.z-page-title{
+  margin-bottom: 60rpx;
+  color:#313131;
+  font-size: 54rpx;
+  font-weight: 900;
+}
+.z-input-box .van-cell{
+  padding:0;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.z-input-box .van-field__body,.z-input-box .van-field__body input{
+  height: 100%;
+}
+
+.z-input-box .van-cell:after{
+  left: 0;
+}
