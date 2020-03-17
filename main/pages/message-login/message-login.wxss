@@ -21,3 +21,29 @@
 .z-input-box .van-cell:after{
   left: 0;
 }
+.z-code-btn{
+  font-size: 32rpx;
+  color:#ff1919;
+}
+.z-wx-login{
+  margin-top: 70rpx;
+  color:#666;
+  font-size: 24rpx;
+}
+.z-wx-login image{
+  width:34rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+.z-login-btn{
+  padding: 0;
+  margin-top: 20rpx;
+}
+.z-checkbox{
+  font-size: 22rpx;
+  color:#b0b0b0;
+  margin-top: 38rpx;
+}
+.z-checkbox .z-xy{
+  color:#a06541;
+}

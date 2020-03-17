@@ -268,6 +268,13 @@
 					"id": -1,
 					"name": "main/pages/message-login/message-login",
 					"pathName": "main/pages/message-login/message-login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/message-login/message-login",
+					"pathName": "main/pages/message-login/message-login",
 					"scene": null
 				}
 			]

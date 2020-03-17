@@ -4,9 +4,25 @@
     <view class="z-page-title">欢迎来到舒耳空间！</view>
     <view class="z-input-box">
       <van-field value="{{ username }}" placeholder="请输入手机号码" clearable type="number">
-        <van-button slot="button" size="small" type="primary">发送验证码</van-button>
+        <view slot="button" class="z-code-btn">发送验证码</view>
       </van-field>
       <van-field value="{{ phone }}" placeholder="请输入短信验证码" clearable type="number" />
+    </view>
+    <view class="z-cl z-wx-login">
+      <view class="z-fr z-flex z-flex-align-center">
+        <image src="./img/wx-icon.png"></image>
+        <text>使用微信授权登录</text>
+      </view>
+    </view>
+    <view class="z-login-btn">
+      <button class="z-flex z-flex-center z-authorized-login">
+        <text>注册/登录</text>
+      </button>
+    </view>
+    <view class="z-checkbox z-flex z-flex-center">
+      <van-checkbox value="{{true}}" checked-color="#a06541" icon-size="26rpx">
+        <text>我已阅读并同意</text><text class="z-xy">《舒耳空间会员服务协议》</text>
+      </van-checkbox >
     </view>
   </view>
 </view>
