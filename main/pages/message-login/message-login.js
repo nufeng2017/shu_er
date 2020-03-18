@@ -31,12 +31,12 @@ Page({
     if (this.data.sendCode){
       return;
     } 
-    this.countDown();
     let that = this;
     sendCode({
       phone: this.data.phone,
       type:1
     }).then((res) => {
+      that.countDown();
       console.log(res)
     })
   },
@@ -45,7 +45,7 @@ Page({
     this.setData({
       sendCode: true
     });
-    let time = 10;
+    let time = 60;
     let timer = setInterval(() => {
       time--;
       this.setData({
@@ -67,7 +67,7 @@ Page({
           loginByCode({
             phone:that.data.phone,
             code:that.data.code,
-            openid:res.code
+            wx_code:res.code
           }).then((res) => {
             console.log(res)
           })

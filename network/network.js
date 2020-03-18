@@ -27,10 +27,11 @@ function network (config){
     wx.request({
       url: baseUrl + config.url,
       data: config.data ? config.data : '',
-      header: config.header ? config.header : {},
+      header: config.header ? config.header : { 'Content-Type':'application/x-www-form-urlencoded '},
       timeout: config.timeout ?timeout:7000,
       method: config.method ? config.method : 'GET',
       success:(res) => {
+        console.log(res)
         if (res.data.result === 1) {
           resolve(res);
         } else {

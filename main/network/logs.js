@@ -4,7 +4,7 @@ import network from '../../network/network.js';
 
 
 /**
- * 获取验证码
+ * 登录
 */
 export function loginByCode (data){
   return network({
@@ -15,7 +15,7 @@ export function loginByCode (data){
 }
 
 /**
- * 登录
+ * 获取验证码
 */
 export function sendCode(data) {
   return network({
