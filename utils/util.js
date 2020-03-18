@@ -14,17 +14,6 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-const loginInfo = () => {
-  wx.checkSession({
-    success() {
-      //session_key 未过期，并且在本生命周期一直有效
-    },
-    fail() {
-      console.log(111)
-      //wx.login() //重新登录
-    }
-  })
-}
 
 module.exports = {
   formatTime: formatTime

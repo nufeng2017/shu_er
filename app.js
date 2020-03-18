@@ -1,3 +1,4 @@
+import { getStorage,setStorage } from './cache/cache.js';
 App({
   onLaunch: function () {
     this.isIpx();//判断是否是IPONEX
@@ -17,10 +18,13 @@ App({
   checkSession(){
     wx.checkSession({
       success() {
-        console.log('登录有效期内')
+        if (!getStorage('user_id')){
+          console.log('未登录')
+          wx.clearStorageSync();
+        }
       },
       fail() {
-        //重新登录清除所有缓存
+        //过期了重新登录清除所有缓存
         wx.clearStorageSync();
       }
     })

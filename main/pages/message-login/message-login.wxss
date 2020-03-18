@@ -28,9 +28,11 @@
   text-align: right;
 }
 .z-wx-login{
-  margin-top: 70rpx;
   color:#666;
   font-size: 24rpx;
+}
+.z-wx-login>.z-fr{
+  height: 70rpx;
 }
 .z-wx-login image{
   width:34rpx;

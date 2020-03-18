@@ -31,10 +31,21 @@ function network (config){
       timeout: config.timeout ?timeout:7000,
       method: config.method ? config.method : 'GET',
       success:(res) => {
-        resolve(res);
+        if (res.data.result === 1) {
+          resolve(res);
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          });
+        }
       },
       fail:(res) => {
         reject(res);
+        wx.showToast({
+          title: '无网络连接',
+          icon: 'none'
+        });
       },
       complete:() => {
         wx.hideLoading();

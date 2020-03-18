@@ -1,5 +1,4 @@
-import { sendCode } from '../../network/logs.js';
-import utils from '../../../utils/util.js';
+import { sendCode, loginByCode } from '../../network/logs.js';
 Page({
 
   /**
@@ -16,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(utils)
+    
   },
   inputPhone(e){
     this.setData({
@@ -32,27 +31,21 @@ Page({
     if (this.data.sendCode){
       return;
     } 
+    this.countDown();
     let that = this;
     sendCode({
       phone: this.data.phone,
       type:1
     }).then((res) => {
-      if (res.data.result === 0){
-        wx.showToast({
-          title: res.data.msg,
-          icon:'none'
-        })
-      } else {
-        that.setData({
-          sendCode: true
-        });
-        that.countDown();
-      }
+      console.log(res)
     })
   },
-  countDown(){
+  countDown(){//短信倒计时
     console.log(this.data.sendCode)
-    let time = 60;
+    this.setData({
+      sendCode: true
+    });
+    let time = 10;
     let timer = setInterval(() => {
       time--;
       this.setData({
@@ -65,6 +58,30 @@ Page({
         })
       }
     },1000);
+  },
+  login(){//登录
+    let that = this;
+    wx.login({
+      success(res) {
+        if (res.code) {
+          loginByCode({
+            phone:that.data.phone,
+            code:that.data.code,
+            openid:res.code
+          }).then((res) => {
+            console.log(res)
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }               
+      },
+      fail(err){
+        wx.showToast({
+          title:'无网络连接',
+          icon:'none'
+        });
+      }
+    })
   },
   wxLogin(){
     wx.redirectTo({
