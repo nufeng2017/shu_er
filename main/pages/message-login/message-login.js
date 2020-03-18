@@ -41,7 +41,6 @@ Page({
     })
   },
   countDown(){//短信倒计时
-    console.log(this.data.sendCode)
     this.setData({
       sendCode: true
     });
