@@ -3,13 +3,13 @@
   <view class="z-main">
     <view class="z-page-title">欢迎来到舒耳空间！</view>
     <view class="z-input-box">
-      <van-field value="{{ username }}" placeholder="请输入手机号码" clearable type="number">
-        <view slot="button" class="z-code-btn">发送验证码</view>
+      <van-field value="{{ phone }}" placeholder="请输入手机号码" clearable type="number" bindinput="inputPhone">
+        <view slot="button" class="z-code-btn"  bindtap="sendCode">{{time===0?'发送验证码':time + 's'}}</view>
       </van-field>
-      <van-field value="{{ phone }}" placeholder="请输入短信验证码" clearable type="number" />
+      <van-field value="{{ code }}" placeholder="请输入短信验证码" clearable type="number" bindinput="inputCode"/>
     </view>
     <view class="z-cl z-wx-login">
-      <view class="z-fr z-flex z-flex-align-center">
+      <view class="z-fr z-flex z-flex-align-center" bindtap="wxLogin">
         <image src="./img/wx-icon.png"></image>
         <text>使用微信授权登录</text>
       </view>

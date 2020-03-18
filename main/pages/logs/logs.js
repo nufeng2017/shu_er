@@ -1,4 +1,4 @@
-// main/pages/logs/logs.js
+import { sendCode } from '../../network/logs.js'
 Page({
 
   /**
@@ -15,7 +15,7 @@ Page({
     
   },
   messageLogin(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/main/pages/message-login/message-login',
     })
   },

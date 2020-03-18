@@ -1,9 +1,9 @@
-//app.js
 App({
   onLaunch: function () {
-    this.isIpx();
+    this.isIpx();//判断是否是IPONEX
+    this.checkSession();//检查登录是否过期
   },
-  isIpx(){//判断是否是IPONEX
+  isIpx(){
     let _self = this;
     wx.getSystemInfo({
       success: res => {
@@ -14,7 +14,19 @@ App({
       }
     })
   },
+  checkSession(){
+    wx.checkSession({
+      success() {
+        console.log('登录有效期内')
+      },
+      fail() {
+        //重新登录清除所有缓存
+        wx.clearStorageSync();
+      }
+    })
+  },
   globalData: {
-    isIphoneX: false
+    isIphoneX: false,
+    env: wx.getAccountInfoSync().miniProgram.envVersion,//判断版本
   }
 })

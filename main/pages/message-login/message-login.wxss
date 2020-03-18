@@ -24,6 +24,8 @@
 .z-code-btn{
   font-size: 32rpx;
   color:#ff1919;
+  width:220rpx;
+  text-align: right;
 }
 .z-wx-login{
   margin-top: 70rpx;

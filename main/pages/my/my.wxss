@@ -13,9 +13,19 @@
 
 }
 .z-member-info-box .z-img-box{
-  padding: 0 30rpx;
+  margin: 0 30rpx;
   width:128rpx;
   height: 128rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  position:  relative;
+}
+.z-member-info-box .z-img-box open-data{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  left: 0;
+  top:0;
 }
 .z-member-info-box .z-member-num{
   color:#fff;

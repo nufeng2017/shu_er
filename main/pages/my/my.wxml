@@ -6,22 +6,19 @@
       <image src="./img/bg.jpg"></image>
 
       <!-- 会员码 -->
-      <grid img-url="/main/assets/img/member-code-icon.png" title="会员码"  link="" class="z-member-code"/>
+      <grid img-url="/main/assets/img/member-code-icon.png" title="会员码"  link="" class="z-member-code" wx:if="{{user_id}}"/>
 
       <!-- 会员信息 -->
       <view class="z-member-info-box z-flex z-flex-align-center">
         <view class="z-img-box">
-          <lazy-load 
-            default-image="/main/assets/img/default-avatar.png"
-            original-image=""
-          />
+          <open-data type="userAvatarUrl" default-avatar="../../assets/img/default-avatar.png"></open-data>
         </view>
         <view class="z-member-info z-flex z-flex-direction z-flex-align-center">
           <view class="z-member-num z-flex  z-flex-align-center">
-            <text>23423423423</text>
-            <view>普卡会员</view>
+            <text>{{user_id?'已经登录':'注册/登录'}}</text>
+            <view wx:if="{{user_id}}">普卡会员</view>
           </view>
-          <view class="z-last-money">账户余额 <text>￥470.23</text></view>
+          <view class="z-last-money" wx:if="{{user_id}}">账户余额 <text>￥470.23</text></view>
         </view>
       </view>
 
@@ -58,7 +55,7 @@
       </view>
 
       <!-- 退出登陆 -->
-      <view class="z-log-out">
+      <view class="z-log-out" wx:if="{{user_id}}">
         <view class="z-log-out-btn z-btn">退出登录</view>
       </view>
     </view>

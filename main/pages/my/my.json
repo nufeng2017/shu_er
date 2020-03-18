@@ -1,7 +1,6 @@
 {
   "usingComponents": {
-    "grid": "/components/grid/grid",
-    "lazy-load": "/components/lazy-load/lazy-load"
+    "grid": "/components/grid/grid"
   },
   "navigationBarTitleText": "个人中心"
 }

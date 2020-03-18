@@ -1,0 +1,23 @@
+@import '../message-login/message-login.wxss';
+.z-input-box textarea{
+  height: 160rpx;
+  line-height: 1.3;
+}
+.z-input-box .z-textarea .van-cell{
+  height: 160rpx;
+  line-height: 1.3; 
+}
+.z-textarea-text-num{
+  text-align: right;
+  font-size: 22rpx;
+  color:#9a9a9a;
+  line-height: 60rpx;
+}
+.z-phone-num{
+  margin-bottom: 56rpx;
+  margin-top: 100rpx;
+}
+.z-phone-num-title{
+  font-size: 30rpx;
+  margin-bottom: 24rpx;
+}

@@ -20,7 +20,8 @@
     "main/pages/shop-details/shop-details",
     "main/pages/all-comment/all-comment",
     "main/pages/check-img/check-img",
-    "main/pages/message-login/message-login"
+    "main/pages/message-login/message-login",
+    "main/pages/complaint/complaint"
   ],
   "tabBar": {
     "color": "#999",

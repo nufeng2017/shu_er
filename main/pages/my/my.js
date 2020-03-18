@@ -1,10 +1,11 @@
-// main/pages/my/my.js
+import { getStorage, setStorage  } from '../../../cache/cache.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    user_id:'',//登录所需ID
     cells:[{
       url:'/main/pages/my-order/my-order',
       title:'我的订单',
@@ -36,6 +37,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.checkLogin();//检查登录情况
   },
+  checkLogin(){
+    if (getStorage('user_id')){
+      this.setData({
+        user_id: getStorage('user_id')
+      });
+    }
+  }
 })
