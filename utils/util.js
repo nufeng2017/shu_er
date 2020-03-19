@@ -1,4 +1,6 @@
-const formatTime = date => {//获得日期格式
+import { getStorage,setStorage } from '../cache/cache.js';
+
+const formatTime = date => { //获得日期格式
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -13,8 +15,30 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+const login = (e) => {
+  let url = e.currentTarget.dataset.url;
+  if (!getStorage('user_id')) {
+    wx.navigateTo({
+      url: '/main/pages/logs/logs',
+    })
+  } else {
+    wx.navigateTo({
+      url: url,
+    })
+  }
+}
 
-
+const getLocation = () => {
+  return new Promise((resolve,reject)=>{
+    wx.getLocation({
+      complete(res) {
+        resolve(res);
+      }
+    })
+  })
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime, //获得日期格式
+  login: login, //检查是否需要登录
+  getLocation: getLocation,//获得位置信息
 }

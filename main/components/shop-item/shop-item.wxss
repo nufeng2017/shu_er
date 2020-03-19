@@ -18,9 +18,12 @@
   line-height: 66rpx;
 }
 .z-item-icon{
-  height: 32rpx;
+  height: 40rpx;
   width:100rpx;
 }
 .z-item-icon image{
   width:34rpx;
+}
+.z-price{
+  line-height: 40rpx;
 }

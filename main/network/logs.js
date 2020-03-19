@@ -4,13 +4,24 @@ import network from '../../network/network.js';
 
 
 /**
- * 登录
+ * 普通登录
 */
 export function loginByCode (data){
   return network({
     url:'loginByCode',
     data:data,
     method:'POST'
+  })
+}
+
+/**
+ * 授权登录
+*/
+export function loginByWeixinPhone(data) {
+  return network({
+    url: 'loginByWeixinPhone',
+    data: data,
+    method: 'POST'
   })
 }
 

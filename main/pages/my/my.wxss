@@ -110,6 +110,9 @@
 .z-cell-text{
   color:#333;
 }
+.z-cell{
+  background: #fff !important;
+}
 /* 客服按钮 */
 .z-ke-fu{
   background: #fff;
@@ -120,9 +123,7 @@
   width:100%;
   display: block;
 }
-.z-ke-fu:active{
-  background: #f2f3f5;
-}
+
 .z-ke-fu:after,.z-ke-fu::before{
   display: none;
 }
@@ -131,4 +132,13 @@
   color:#333;
   font-weight: 400;
   text-align: left;
+  background: #fff;
+}
+/* 弹窗 */
+.z-popup-content{
+  height: 160rpx;
+  color:#5a5a5a;
+  font-size: 36rpx;
+  line-height: 160rpx;
+  text-align: center;
 }

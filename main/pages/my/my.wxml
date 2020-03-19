@@ -9,7 +9,7 @@
       <grid img-url="/main/assets/img/member-code-icon.png" title="会员码"  link="" class="z-member-code" wx:if="{{user_id}}"/>
 
       <!-- 会员信息 -->
-      <view class="z-member-info-box z-flex z-flex-align-center">
+      <view class="z-member-info-box z-flex z-flex-align-center" bindtap="login">
         <view class="z-img-box">
           <open-data type="userAvatarUrl" default-avatar="../../assets/img/default-avatar.png"></open-data>
         </view>
@@ -25,25 +25,26 @@
       <!-- 立即充值 -->
       <view class="z-add-money-box z-flex z-flex-center">
         <view class="z-add-money-tips z-flex z-flex-center"><image src="./img/king-map.png"/>尊贵的会员，充值有加送，多充多送！</view>
-        <navigator class="z-add-money-btn" url="/main/pages/recharge/recharge" hover-class="none">立即充值</navigator>
+        <view class="z-add-money-btn" data-url="/main/pages/recharge/recharge"  bindtap="login">立即充值</view>
       </view>
 
       <!-- 我的跳转项 -->
       <view class="z-cell-box">
         <van-cell 
+          bind:click="login"
           custom-class="z-cell"
           wx:for="{{cells}}"
           wx:key="index"
           icon="{{item.icon}}" 
           is-link 
-          url="{{item.url}}"
+          url="{{user_id?item.url:''}}"
           border="{{index===cells.length-1?false:true}}"
         >
           <view slot="title">
             <view class="z-cell-text">
               <block wx:if="{{item.title === '客服帮助'}}">
-                <button class="z-ke-fu" open-type="contact" bindcontact="handleContact">
-                  <view class="z-btn-text">客服帮助</view>
+                <button class="z-ke-fu" open-type="contact" bindcontact="handleContact" disabled="{{user_id?false:true}}">
+                  <view class="z-btn-text"  bindtap="login">客服帮助</view>
                 </button>
               </block>
               <block wx:else>
@@ -56,8 +57,13 @@
 
       <!-- 退出登陆 -->
       <view class="z-log-out" wx:if="{{user_id}}">
-        <view class="z-log-out-btn z-btn">退出登录</view>
+        <view class="z-log-out-btn z-btn" bindtap="logout">退出登录</view>
       </view>
+
+      <!-- 咨询弹窗 -->
+      <popup title="{{'提示'}}" show="{{popopShow}}" bind:cancel="logoutCancel" bind:confirm="logoutConfirm">
+        <view class="z-popup-content">是否退出登录？</view>
+      </popup>
     </view>
   </view>
 </view>

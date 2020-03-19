@@ -1,0 +1,25 @@
+.z-title{
+  position: relative;
+  font-size:36rpx;
+  font-weight: 900;
+  color:#212121;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #eaeaea;
+}
+.z-title .z-icon{
+  position: absolute;
+  top:-10rpx;
+  right: 28rpx;
+  box-sizing: border-box;
+  height: 50rpx;
+  width:100rpx;
+  padding:  10rpx 35rpx;
+}
+.z-popup-foot{
+  padding: 0rpx 50rpx 60rpx;
+}
+.z-popup-foot>view.z-foot-btn{
+  margin-right: 20rpx;
+  color:#b20a0a;
+  border-color:#b20a0a;
+}

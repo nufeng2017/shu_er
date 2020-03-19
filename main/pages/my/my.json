@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "grid": "/components/grid/grid"
+    "grid": "/components/grid/grid",
+    "popup":"/main/components/popup/popup"
   },
   "navigationBarTitleText": "个人中心"
 }

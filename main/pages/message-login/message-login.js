@@ -1,4 +1,5 @@
 import { sendCode, loginByCode } from '../../network/logs.js';
+import { getStorage, setStorage } from '../../../cache/cache.js';
 Page({
 
   /**
@@ -8,7 +9,8 @@ Page({
     phone:'',
     code:'',
     time:0,
-    sendCode:false
+    sendCode:false,
+    isRead: true//是否已经阅读协议
   },
 
   /**
@@ -68,7 +70,12 @@ Page({
             code:that.data.code,
             wx_code:res.code
           }).then((res) => {
-            console.log(res)
+            wx.showToast({
+              title: '登录成功',
+              icon: 'none'
+            });
+            setStorage('user_id', res.data.data.user_id);
+            that.closeLoginPage();
           })
         } else {
           console.log('登录失败！' + res.errMsg)
@@ -82,9 +89,17 @@ Page({
       }
     })
   },
+  closeLoginPage() {
+    wx.navigateBack();
+  },
   wxLogin(){
     wx.redirectTo({
       url: '/main/pages/logs/logs',
     })
-  }
+  },
+  onChange(event) {
+    this.setData({
+      isRead: event.detail
+    });
+  },
 })

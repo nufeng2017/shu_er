@@ -1,0 +1,21 @@
+<van-dialog
+  use-slot
+  show="{{ show }}"
+  show-cancel-button="{{false}}"
+  showConfirmButton="{{false}}"
+  close-on-click-overlay="{{true}}"
+  use-title-slot="{{true}}"
+>
+  <view class="z-popup">
+    <slot></slot>
+    <view class="z-popup-foot ~z-flex ~z-flex-center">
+      <view class="~z-btn ~z-flex-item z-foot-btn" wx:if="{{showCancel}}" bindtap="cancel">{{cancelTxt}}</view>
+      <view class="~z-btn ~z-btn-1 ~z-flex-item" bindtap="confirm">{{confirmTxt}}</view>
+    </view>
+  </view>
+  <view slot="title" class="z-title">
+      {{title}}
+    <view class="z-icon" bindtap="closePopup">
+    <image src="./img/close.png"></image>
+  </view></view>
+</van-dialog>

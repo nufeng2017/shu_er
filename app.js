@@ -17,18 +17,13 @@ App({
   },
   checkSession(){
     wx.checkSession({
-      success() {
-        if (!getStorage('user_id')){
-          console.log('未登录')
-          wx.clearStorageSync();
-        }
-      },
       fail() {
         //过期了重新登录清除所有缓存
         wx.clearStorageSync();
       }
     })
   },
+  
   globalData: {
     isIphoneX: false,
     env: wx.getAccountInfoSync().miniProgram.envVersion,//判断版本

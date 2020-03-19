@@ -14,5 +14,5 @@ export function setStorage (key,data){
 }
 
 export function getStorage (key){
-  wx.getStorageSync(key);
+  return wx.getStorageSync(key);
 }

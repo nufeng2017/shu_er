@@ -1,4 +1,5 @@
 import { getStorage, setStorage  } from '../../../cache/cache.js';
+import utils from '../../../utils/util.js';
 Page({
 
   /**
@@ -6,6 +7,7 @@ Page({
    */
   data: {
     user_id:'',//登录所需ID
+    popopShow:false,//弹窗显示
     cells:[{
       url:'/main/pages/my-order/my-order',
       title:'我的订单',
@@ -37,7 +39,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.login = utils.login;//获取检查登录ID再选择是否登录的函数
+  },
+  onShow(){
     this.checkLogin();//检查登录情况
+  },
+  logout(){//退出登录弹窗
+    this.setData({
+      popopShow:true
+    })
+  },
+  logoutCancel(){//退出登录弹窗取消
+    this.setData({
+      popopShow: false
+    })
+  },
+  logoutConfirm() {//退出登录弹窗确定
+    this.setData({
+      popopShow: false,
+      user_id:''
+    })
+    wx.clearStorageSync();
   },
   checkLogin(){
     if (getStorage('user_id')){
