@@ -30,8 +30,13 @@ const login = (e) => {
 
 const getLocation = () => {
   return new Promise((resolve,reject)=>{
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
     wx.getLocation({
       complete(res) {
+        console.log(res)
         resolve(res);
       }
     })

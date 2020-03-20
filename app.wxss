@@ -20,6 +20,7 @@ image{
   height: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  position: static;
 }
 .z-ellipsis-2 {
   display: -webkit-box;
@@ -353,4 +354,16 @@ image{
   line-height: 40rpx;
   color:#cccccc;
   font-size: 24rpx;
+}
+/* 空数据 */
+.z-empty{
+  width:100%;
+  padding-top: 200rpx;
+  font-size: 32rpx;
+  color:#666;
+}
+.z-empty image{
+  width:372rpx;
+  height: 293rpx;
+  margin-bottom: 56rpx;
 }

@@ -3,5 +3,7 @@
     "grid": "/components/grid/grid",
     "shop-item":"/main/components/shop-item/shop-item"
   },
-  "navigationBarTitleText": "首页"
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

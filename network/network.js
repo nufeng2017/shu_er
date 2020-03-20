@@ -13,6 +13,7 @@ if (env === 'develop'){
  * header:请求头,
  * timeout:网络延时,
  * hideloading:隐藏加载框,
+ * notNeedHideLoding:不需要隐藏加载框的函数
  * loadTitle:加载框文字
  * method:请求方式
  */
@@ -41,15 +42,17 @@ function network (config){
           });
         }
       },
-      fail:(res) => {
-        reject(res);
+      fail:(err) => {
+        reject(err);
         wx.showToast({
           title: '无网络连接',
           icon: 'none'
         });
       },
-      complete:() => {
-        wx.hideLoading();
+      complete:(res) => {
+        if (!config.notNeedHideLoding){
+          wx.hideLoading();
+        }
       }
     });
   });

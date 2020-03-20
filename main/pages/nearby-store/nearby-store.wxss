@@ -12,6 +12,7 @@
   position: relative;
   border-radius: 10rpx;
   box-shadow: 0 0 10rpx 2rpx rgba(0,0,0,0.2);
+  margin-bottom: 40rpx;
 }
 .z-main-list .z-main-list-item .z-shop-car-item-main{
   padding-left: 50rpx;

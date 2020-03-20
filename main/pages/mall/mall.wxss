@@ -1,9 +1,12 @@
 .z-list-container{
   padding: 40rpx 45rpx;
 }
-shop-item{
+.z-shop-block{
   margin-right: 40rpx;
   margin-bottom: 45rpx;
+}
+.z-shop-block:nth-child(2n){
+  margin-right: 0;
 }
 .z-tab{
   font-size: 34rpx !important;

@@ -3,7 +3,7 @@ Component({
     imgUrl: {//图片地址
       type: String,
     },
-    title: {//九宫格标题
+    title: {//标题
       type: String,
     },
     linkType: {//转跳链接类型
@@ -13,14 +13,15 @@ Component({
     link: {//转跳链接
       type: String,
       value: ''
-    }
+    },
+    price: String,
   },
   methods: {
     enterPage() {
       switch (this.data.linkType) {
         case 'navigateTo':
           console.log(this.data.link)
-          wx.redirectTo({
+          wx.navigateTo({
             url: this.data.link
           })
           break;

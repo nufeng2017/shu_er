@@ -94,7 +94,10 @@
 .z-shop-box{
   margin-top: 15rpx;
 }
-.z-shop-box>.z-fl{
+.z-shop-box .z-shop-item{
   margin-right: 40rpx;
   margin-bottom: 40rpx;
+}
+.z-shop-box .z-shop-item:nth-child(2n){
+  margin-right: 0;
 }

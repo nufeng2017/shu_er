@@ -1,4 +1,5 @@
 import { getIndex } from '../../network/index.js';
+import { getStorage, setStorage } from '../../../cache/cache.js';
 import utils from '../../../utils/util.js';
 Page({
 
@@ -40,13 +41,11 @@ Page({
       autoplay:false,
       interval:3000,
       duration:500,
-      item:[{
-        img: '/main/pages/index/img/banner.png',
-      },{
-        img: '/main/pages/index/img/banner.png',
-      }],
     },
+    indexData:{},//首页数据
     locationInfo:{},//位置信息
+    watchStoreId:'',//监视门店ID变化
+    isFirstEnter:true,//是否第一次打开这个页面
   },
 
   /**
@@ -55,9 +54,51 @@ Page({
   onLoad(options) {
     this.getLocationInfo();
   },
-  getLocationInfo(){
-    utils.getLocation().then((res)=>{
-      console.log(res)
+  onShow(){
+    if (this.data.isFirstEnter){
+      return;
+    } else {
+      this.setData({
+        isFirstEnter:true
+      });
+    }
+    if (this.data.watchStoreId != this.data.indexData.store_id) {
+      this.getIndexData({
+        user_id: getStorage('user_id'),
+        store_id: this.data.indexData.store_id
+      });
+    }
+  },
+  /**
+   * 下拉刷新
+   */
+  onPullDownRefresh: function () {
+    this.getIndexData({
+      user_id: getStorage('user_id'),
+      store_id: this.data.indexData.store_id
     });
+  },
+  getLocationInfo(){//获取位置
+    let _self = this;
+    utils.getLocation().then((res)=>{
+      _self.setData({
+        locationInfo: res
+      });
+      _self.getIndexData({
+        user_id: getStorage('user_id'),
+        lng: res.longitude,
+        lat: res.latitude
+      });
+    });
+  },
+  getIndexData(data){//获取首页商品列表
+    let _self = this;
+    getIndex(data).then((res) => {
+      wx.stopPullDownRefresh();
+      _self.setData({
+        indexData: res.data.data,
+        watchStoreId: res.data.data.store_id
+      });
+    })
   }
 })

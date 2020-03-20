@@ -1,11 +1,15 @@
 <!--首页-->
-
 <view class="z-wrap">
   <view class="z-main">
     <!-- 门店地址 -->
-    <navigator url="/main/pages/nearby-store/nearby-store" hover-class="none" class="z-shop-info">
-      <text class="z-shop-name">万达广场18楼900号</text>
-      <text class="z-shop-address">地址：万达广场18楼900号</text>
+    <navigator 
+      url="{{'/main/pages/nearby-store/nearby-store?lng=' + locationInfo.longitude + '&lat=' + locationInfo.latitude + '&store_id=' + indexData.store_id}}" 
+      hover-class="none" 
+      class="z-shop-info z-text-hidden"
+      wx:if="{{indexData.store_name}}"
+    >
+      <text class="z-shop-name">{{indexData.store_name}}</text>
+      <text class="z-shop-address">{{indexData.store_address}}</text>
     </navigator>
 
     <!-- banner头部链接 -->
@@ -16,10 +20,10 @@
     <!-- 轮播 -->
     <view class="z-swiper-container">
       <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" indicator-color="rgba(178,10,10)" class="z-swiper-wrap">
-        <swiper-item wx:for="{{swiper.item}}" wx:key="index">
+        <swiper-item wx:for="{{indexData.banner}}" wx:key="index">
           <view class="z-swiper-img-box">
             <view class="z-swiper-img-container">
-              <image width="100%" height="100%" src="{{item.img}}" mode="aspectFill" />
+              <image width="100%" height="100%" src="{{item.img_url}}" mode="aspectFill" />
             </view>
           </view>
         </swiper-item>
@@ -38,10 +42,15 @@
         <navigator class="c-999999" hover-class="none">查看更多<image src="/main/assets/img/arrow-r.png"></image></navigator>
       </view>
       <view class="z-shop-box z-cl">
-        <shop-item class="z-fl" link="/main/pages/shop-details/shop-details"></shop-item>
-        <shop-item class="z-fl z-mr-0"></shop-item>
-        <shop-item class="z-fl"></shop-item>
-        <shop-item class="z-fl z-mr-0"></shop-item>
+        <shop-item 
+          class="z-fl z-shop-item" 
+          link="/main/pages/shop-details/shop-details"
+          wx:for="{{indexData.hot_product}}"
+          wx:key="index"
+          title="{{item.name}}"
+          img-url="{{item.img}}"
+          price="{{item.price}}"
+        ></shop-item>
       </view>
     </view>
   </view>

@@ -8,6 +8,7 @@ import network from '../../network/network.js';
 export function getIndex(data) {
   return network({
     url: 'getIndex',
-    data: data
+    data: data,
+    hideloading:true
   })
 }

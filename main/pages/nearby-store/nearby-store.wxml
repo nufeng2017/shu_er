@@ -4,20 +4,20 @@
     <view class="z-main-container">
       <view class="z-main-container-tips">当前您所在的位置附近门店有：</view>
       <view class="z-main-list">
-        <view class="z-main-list-item">
-          <view class="z-icon">
+        <view class="z-main-list-item" wx:for="{{storeList}}" wx:key="index" bindtap="selStore" data-id="{{item.store_id}}">
+          <view class="z-icon" wx:if="{{defaultStore===item.store_id}}">
             <image src="./img/selected-icon.png"></image>
           </view>
           <shop-car-item img-url="/main/pages/nearby-store/img/position.png" class="z-my-comment">
-            <view slot="head-title">雨花台区自在城大方路店</view>
-            <view slot="head">2.0km</view>
+            <view slot="head-title">{{item.store_name}}</view>
+            <view slot="head">{{item.distance}}km</view>
             <view slot="body">
-              <view class="z-store-info">在店销售82个</view>
+              <view class="z-store-info">在店销售{{item.sell_num}}个</view>
             </view>
             <view slot="foot">
               <view class="z-address">
-                <view>地址：金地自在城跌街区1幢101室内</view>
-                <view>门店营业时间：8:00-20:00</view>
+                <view>地址：{{item.store_address}}</view>
+                <view>门店营业时间：{{item.open_time}}-{{item.close_time}}</view>
               </view>
             </view>
           </shop-car-item>
