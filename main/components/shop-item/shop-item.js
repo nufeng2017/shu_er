@@ -1,10 +1,9 @@
+import { addCart } from './network/shop-item.js';
+
 Component({
   properties: {
-    imgUrl: {//图片地址
-      type: String,
-    },
-    title: {//标题
-      type: String,
+    item: {
+      type: Object,
     },
     linkType: {//转跳链接类型
       type: String,
@@ -13,14 +12,12 @@ Component({
     link: {//转跳链接
       type: String,
       value: ''
-    },
-    price: String,
+    }
   },
   methods: {
     enterPage() {
       switch (this.data.linkType) {
         case 'navigateTo':
-          console.log(this.data.link)
           wx.navigateTo({
             url: this.data.link
           })
@@ -41,6 +38,17 @@ Component({
           })
           break;
       }
+    },
+    addCar(e){
+      let item = e.currentTarget.dataset.item;
+      addCart({
+        user_id: wx.getStorageSync('user_id'),
+        type:item.type,
+        pid:item.pid,
+        num:1
+      }).then((res)=>{
+        console.log(res)
+      });
     }
   }
 })

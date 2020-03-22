@@ -1,5 +1,14 @@
+.z-scroll{
+  position: fixed;
+  width:100%;
+  top:0;
+  left: 0;
+  box-sizing: border-box;
+  height: 100%;
+  margin-top: 91rpx;
+}
 .z-list-container{
-  padding: 40rpx 45rpx;
+  padding: 40rpx 45rpx 150rpx;
 }
 .z-shop-block{
   margin-right: 40rpx;

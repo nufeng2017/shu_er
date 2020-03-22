@@ -14,7 +14,6 @@ Page({
     this.getListData(0);
   },
   reachBottom	(){
-    console.log(1)
     this.getListData(1);
   },
   resetData(){
@@ -35,13 +34,14 @@ Page({
   },
   getListData(pageCount){
     let _self = this;
+
     getProductList({
       type: this.data.tabActive + 1,
       page: this.data['page' + this.data.tabActive] + pageCount
     }).then((res) => {
       _self.setData({
         ['productList.' + _self.data.tabActive]: _self.data.productList[_self.data.tabActive].concat(res.data.data),
-        ['page.' + _self.data.tabActive]: _self.data['page' + _self.data.tabActive] + pageCount
+        ['page' + _self.data.tabActive]: _self.data['page' + _self.data.tabActive] + pageCount
       });
       _self.isShowEmptyDataTips();//是否显示空数据提示
     });

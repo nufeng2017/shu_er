@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "shop-car-item": "/main/components/shop-car-item/shop-car-item",
-    "goods-action": "/main/components/goods-action/goods-action"
+    "goods-action": "/main/components/goods-action/goods-action",
+    "lazy-load": "//components/lazy-load/lazy-load"
   },
   "navigationBarTitleText": "商品详情"
 }

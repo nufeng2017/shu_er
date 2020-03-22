@@ -1,6 +1,6 @@
 <!-- 商城 -->
 
-<scroll-view class="z-wrap" scroll-y="{{true}}" bindscrolltolower="reachBottom">
+<view class="z-wrap">
   <view class="z-main">
     <van-tabs 
       active="{{tabActive}}" 
@@ -12,22 +12,22 @@
       tab-active-class="z-tab-active"
       custom-class="z-tabs"
     >
-      <van-tab title="{{item.title}}" wx:for="{{tabs}}" wx:key="index">
-        <view class="z-list-container z-cl" >
-          <shop-item class="z-fl z-shop-block" 
-            wx:for="{{productList[index]}}" 
-            wx:key="index"
-            link="/main/pages/shop-details/shop-details"
-            title="{{item.name}}"
-            img-url="{{item.img}}"
-            price="{{item.price}}"
-          ></shop-item>
-          <view class="z-empty z-flex z-flex-center z-flex-direction" wx:if="{{item.empty}}">
-            <image src="/main/assets/img/empty.png"></image>
-            <view>暂无此类商品~</view>
+      <scroll-view class="z-scroll" scroll-y="{{true}}" bindscrolltolower="reachBottom">
+        <van-tab title="{{item.title}}" wx:for="{{tabs}}" wx:key="index">
+          <view class="z-list-container z-cl" >
+            <shop-item class="z-fl z-shop-block" 
+              wx:for="{{productList[index]}}" 
+              wx:key="index"
+              link="/main/pages/shop-details/shop-details?type={{item.type}}&pid={{item.pid}}"
+              item="{{item}}"
+            ></shop-item>
+            <view class="z-empty z-flex z-flex-center z-flex-direction" wx:if="{{item.empty}}">
+              <image src="/main/assets/img/empty.png"></image>
+              <view>暂无此类商品~</view>
+            </view>
           </view>
-        </view>
-      </van-tab>
+        </van-tab>
+      </scroll-view>
     </van-tabs>
   </view>
-</scroll-view>
+</view>

@@ -1,4 +1,4 @@
-// main/pages/shop-details/shop-details.js
+import { getProductInfo } from '../../network/shop-details.js';
 Page({
 
   /**
@@ -9,20 +9,27 @@ Page({
       indicatorDots: true,
       autoplay: false,
       interval: 3000,
-      duration: 500,
-      item: [{
-        img: '/main/assets/img/default-avatar.png',
-      }, {
-        img: '/main/assets/img/default-avatar.png',
-      }],
-    }
+      duration: 500
+    },
+    pruductInfo:{},//商品具体信息
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.getProductInfo(options);
+  },
+  getProductInfo(options){
+    getProductInfo({
+      pid: options.pid,
+      type:options.type
+    }).then((res)=>{
+      this.setData({
+        pruductInfo:res.data.data
+      })
+    });
   },
   checkImg(){ 
     wx.navigateTo({

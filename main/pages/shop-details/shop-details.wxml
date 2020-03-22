@@ -5,37 +5,37 @@
     <!-- 轮播 -->
     <view class="z-swiper-container">
       <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" indicator-color="rgba(178,10,10)" class="z-swiper-wrap">
-        <swiper-item wx:for="{{swiper.item}}" wx:key="index" bindtap="checkImg">
-          <image width="100%" height="100%" src="{{item.img}}" mode="aspectFill" />
+        <swiper-item wx:for="{{pruductInfo.img.length>0?pruductInfo.img:1}}" wx:key="index" bindtap="checkImg">
+          <lazy-load default-image="/main/assets/img/df-img.png" mode="aspectFill" original-image="{{item}}"/>
         </swiper-item>
       </swiper>
     </view>
 
     <!-- 商品信息 -->
     <view class="z-shop-info z-shop-info-head">
-      <view class="z-shop-title z-text-hidden">专业采耳理疗服务套餐一次</view>
+      <view class="z-shop-title z-text-hidden">{{pruductInfo.name}}</view>
       <view class="z-flex z-flex-justify z-flex-align-center">
         <view class="z-shop-pirce z-flex z-flex-align-center">
-          <view class="z-price-txt">￥89.00</view>
-          <view class="z-last-price">原价￥99.00</view>
+          <view class="z-price-txt">￥{{pruductInfo.price}}</view>
+          <view class="z-last-price">原价￥{{pruductInfo.old_price}}</view>
           <view class="z-price-icon">不限价</view>
         </view>
         <view class="z-shop-num">
-          <text>已抢：</text>1017件</view>
+          <text>已抢：</text>{{pruductInfo.sell_num}}件</view>
       </view>
       <view class="z-support-service z-flex z-flex-align-center">支持到店服务</view>
     </view>
 
     <!-- 产品详情 -->
-    <view class="z-shop-introduction z-shop-info">
+    <view class="z-shop-introduction z-shop-info" wx:if="{{pruductInfo.description}}">
       <view class="z-shop-block-title">产品详情</view>
-      <view class="z-shop-intruduction-text">采耳是一个专业术语，意思指掏耳朵。起源于民间，民间的掏耳朵，工具比较简陋，一般都是就地取材，一支竹签，一根细棍子，就是简单的掏耳工具。掏耳朵兴起于剃头匠，他们发明了专业的掏耳朵工具，并且发明了专业的操作手法。</view>
+      <view class="z-shop-intruduction-text">{{pruductInfo.description}}</view>
     </view>
 
     <!-- 评论 -->
     <view class="z-shop-info z-comment">
       <view class="z-check-more z-flex z-flex-justify ">
-        <view class="z-shop-block-title">精彩评论(20)</view>
+        <view class="z-shop-block-title">精彩评论({{pruductInfo.comment_total}})</view>
         <navigator class="c-999999" hover-class="none" url="/main/pages/all-comment/all-comment">查看更多
           <image src="/main/assets/img/arrow-r.png"></image>
         </navigator>

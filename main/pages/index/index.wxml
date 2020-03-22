@@ -47,9 +47,7 @@
           link="/main/pages/shop-details/shop-details"
           wx:for="{{indexData.hot_product}}"
           wx:key="index"
-          title="{{item.name}}"
-          img-url="{{item.img}}"
-          price="{{item.price}}"
+          item="{{item}}"
         ></shop-item>
       </view>
     </view>

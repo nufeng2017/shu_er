@@ -306,6 +306,27 @@
 					"id": -1,
 					"name": "main/pages/mall/mall",
 					"pathName": "main/pages/mall/mall",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/mall/mall",
+					"pathName": "main/pages/mall/mall",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/shop-details/shop-details",
+					"pathName": "main/pages/shop-details/shop-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/mall/mall",
+					"pathName": "main/pages/mall/mall",
 					"scene": null
 				}
 			]
