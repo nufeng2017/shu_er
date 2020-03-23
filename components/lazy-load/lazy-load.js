@@ -6,11 +6,9 @@ Component({
     //默认图片
     defaultImage: {
       type:String,
-      value:'/main/assets/img/df-img.png'
     },
     //原始图片
     originalImage: String,
-    //图片剪裁mode，同Image组件的mode
     mode: {
       type:String,
       value:'aspectFill'
@@ -21,6 +19,7 @@ Component({
   },
   methods: {
     finishLoad: function (e) {
+      console.log(1)
       this.setData({
         finishLoadFlag: true
       })

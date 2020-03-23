@@ -6,7 +6,7 @@
     <view class="z-swiper-container">
       <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" indicator-color="rgba(178,10,10)" class="z-swiper-wrap">
         <swiper-item wx:for="{{pruductInfo.img.length>0?pruductInfo.img:1}}" wx:key="index" bindtap="checkImg">
-          <lazy-load default-image="/main/assets/img/df-img.png" mode="aspectFill" original-image="{{item}}"/>
+          <lazy-load default-image="/main/assets/img/df-img.png" mode="aspectFill" original-image="{{item?item:''}}"/>
         </swiper-item>
       </swiper>
     </view>

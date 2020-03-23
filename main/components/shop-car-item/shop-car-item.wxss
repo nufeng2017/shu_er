@@ -6,7 +6,8 @@
 .z-shop-car-item van-checkbox{
   position: absolute;
   left: 0;
-  top:53rpx;
+  top:0rpx;
+  height: 146rpx;
 }
 .z-shop-car-item-main{
   height: 100%;
@@ -37,7 +38,7 @@
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 10rpx;
-  border:1px solid #5b4335;
+  border:1px solid #cfcfcf;
   width:200rpx;
   height: 146rpx;
   position: absolute;

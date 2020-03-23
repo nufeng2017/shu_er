@@ -28,7 +28,7 @@ Page({
     }).then((res)=>{
       this.setData({
         pruductInfo:res.data.data
-      })
+      });
     });
   },
   checkImg(){ 

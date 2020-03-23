@@ -20,6 +20,8 @@
               wx:key="index"
               link="/main/pages/shop-details/shop-details?type={{item.type}}&pid={{item.pid}}"
               item="{{item}}"
+              default-image="http://www.sekjce.com/statics/public/img/zwtp.jpg"
+              original-image="{{item.img}}"
             ></shop-item>
             <view class="z-empty z-flex z-flex-center z-flex-direction" wx:if="{{item.empty}}">
               <image src="/main/assets/img/empty.png"></image>

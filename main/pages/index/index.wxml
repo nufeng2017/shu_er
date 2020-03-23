@@ -48,6 +48,8 @@
           wx:for="{{indexData.hot_product}}"
           wx:key="index"
           item="{{item}}"
+          default-image="http://www.sekjce.com/statics/public/img/zwtp.jpg"
+          original-image="{{item.img}}"
         ></shop-item>
       </view>
     </view>

@@ -9,7 +9,7 @@ export function getStoreList(data) {
   return network({
     url: 'getStoreList',
     data: data,
-    hideloading:true
+    hideLoading:true
   })
 }
 

@@ -12,13 +12,13 @@ if (env === 'develop'){
  * data:数据,类型见小程序文档,
  * header:请求头,
  * timeout:网络延时,
- * hideloading:隐藏加载框,
+ * hideLoading:隐藏加载框,
  * notNeedHideLoding:不需要隐藏加载框的函数
  * loadTitle:加载框文字
  * method:请求方式
  */
 function network (config){
-  if (!config.hideloading){
+  if (!config.hideLoading){
     wx.showLoading({
       title: config.loadTitle ? config.loadTitle : '加载中',
       mask: true

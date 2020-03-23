@@ -1,1 +1,62 @@
-/* 底部提交栏 */
+.z-main{
+  padding-bottom: 200rpx;
+}
+.z-cell,.z-inf-body{
+  padding:0 30rpx !important; 
+}
+.z-cell:after{
+  left: -28rpx !important;
+}
+.z-inf-head{
+  padding-left: 58rpx;
+  position: relative;
+}
+.z-cell{
+  font-size: 30rpx !important;
+}
+.z-inf-body{
+  padding-top: 40rpx !important;
+}
+.z-inf-body .z-shop-car-item{
+  margin-bottom: 50rpx  !important;
+}
+.z-checkbox{
+  position: absolute;
+  left: 30rpx;
+  top:0rpx;
+  width:40rpx;
+  height: 100%;
+}
+.z-shop-title{
+  font-size:26rpx;
+  color:#584133;
+  font-weight: 900;
+}
+.z-shop-body{
+  font-size: 24rpx;
+  color:#999;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: #f4f4f4;
+  border-radius: 6rpx;
+  padding: 0 14rpx;
+  display: inline-block;
+}
+.z-select-shop-item{
+  height: 40rpx;
+  margin: 12rpx 0 !important;
+}
+.z-shop-foot{
+  font-size: 26rpx;
+  color:#ff3e3e;
+  font-weight: 900;
+  line-height: 44rpx;
+}
+.z-shop-delete{
+  height: 40rpx;
+  width:100%;
+}
+.z-shop-delete image{
+  height: 100%;
+  width:40rpx;
+}

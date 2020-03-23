@@ -1,7 +1,7 @@
 <!-- 商品列表项 -->
 <view class="z-item" bindtap="enterPage">
   <view class="z-item-img">
-    <lazy-load mode="aspectFill" original-image="{{item.img}}"></lazy-load>
+    <lazy-load mode="aspectFill" original-image="{{item.img}}" default-image="{{defaultImage}}"></lazy-load>
   </view>
   <view class="~z-text-hidden z-item-title ~c-584133">{{item.name}}</view>
   <view class="~z-cl">

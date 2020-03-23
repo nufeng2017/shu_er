@@ -5,10 +5,9 @@ import network from '../../network/network.js';
 /**
  * 获取首页数据
 */
-export function getIndex(data) {
+export function getCartList(data) {
   return network({
-    url: 'getIndex',
-    data: data,
-    hideLoading:true
+    url: 'getCartList',
+    data: data
   })
 }

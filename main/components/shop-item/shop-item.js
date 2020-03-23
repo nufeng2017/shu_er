@@ -1,5 +1,4 @@
 import { addCart } from './network/shop-item.js';
-
 Component({
   properties: {
     item: {
@@ -12,7 +11,8 @@ Component({
     link: {//转跳链接
       type: String,
       value: ''
-    }
+    },
+    defaultImage:String
   },
   methods: {
     enterPage() {
@@ -40,6 +40,12 @@ Component({
       }
     },
     addCar(e){
+      if (!wx.getStorageSync('user_id')) {
+        wx.navigateTo({
+          url: '/main/pages/logs/logs',
+        });
+        return;
+      } 
       let item = e.currentTarget.dataset.item;
       addCart({
         user_id: wx.getStorageSync('user_id'),
@@ -47,7 +53,11 @@ Component({
         pid:item.pid,
         num:1
       }).then((res)=>{
-        console.log(res)
+        wx.showToast({
+          title: '添加成功',
+          icon: 'success',
+          duration: 2000
+        })
       });
     }
   }

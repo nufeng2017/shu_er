@@ -9,6 +9,7 @@ export function addCart(data) {
   return network({
     url: 'addCart',
     data: data,
-    method: 'POST'
+    method: 'POST',
+    hideLoading:true
   })
 }

@@ -1,6 +1,13 @@
 <!-- 购物车列表项 -->
 <view class="z-shop-car-item" style="{{!showSelect?'padding-left:0':''}}" bindtap="navigateTo">
-  <van-checkbox value="{{ checkAll }}" bind:change="change" checked-color="#b20a0a" icon-size="40rpx" wx:if="{{showSelect}}"/>
+  <van-checkbox 
+    value="{{ selected }}" 
+    bindtap="change" 
+    checked-color="#b20a0a" 
+    icon-size="40rpx" 
+    wx:if="{{showSelect}}"
+    class="~z-flex ~z-flex-center"
+  />
   <view class="z-shop-car-item-main {{showArrow?'z-show-arrow':''}}">
     <view class="z-shop-car-item-img"><lazy-load original-image="{{imgUrl}}" default-image="{{defaultImg}}"/></view>
     <view class="z-shop-car-item-title"> 
@@ -14,7 +21,7 @@
       <view class="~z-fl"><slot name="foot"></slot></view>
       <view class="~z-fr" wx:if="{{showStepper}}">
         <van-stepper 
-          value="{{ 1 }}" 
+          value="{{ item.num }}" 
           bind:change="onChange" 
           input-class="z-stepper-input" 
           disable-input="{{true}}"
