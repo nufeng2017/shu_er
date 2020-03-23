@@ -8,6 +8,8 @@ import network from '../../network/network.js';
 export function getCartList(data) {
   return network({
     url: 'getCartList',
-    data: data
+    data: data,
+    hideLoading:true,
+    hideErrToast:true
   })
 }

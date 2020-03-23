@@ -16,6 +16,7 @@ if (env === 'develop'){
  * notNeedHideLoding:不需要隐藏加载框的函数
  * loadTitle:加载框文字
  * method:请求方式
+ * hideErrToast:隐藏错误提示
  */
 function network (config){
   if (!config.hideLoading){
@@ -36,14 +37,16 @@ function network (config){
         if (res.data.result === 1) {
           resolve(res);
         } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none'
-          });
+          reject(res);
+          if (!config.hideErrToast){
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            });
+          }
         }
       },
       fail:(err) => {
-        reject(err);
         wx.showToast({
           title: '无网络连接',
           icon: 'none'

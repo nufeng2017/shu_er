@@ -9,8 +9,9 @@
           icon-size="40rpx" 
           class="z-checkbox  z-flex z-flex-center" 
           bindtap="allTypeSel" 
-          value="{{itemName.selected}}" 
+          value="{{itemName.type==1?service:product}}" 
           data-item="{{itemName}}"
+          data-pro="{{itemName.type==1?'service':'product'}}"
         />
       </view>
       <view class="z-inf-body">
@@ -33,6 +34,12 @@
           <view slot="foot" class="z-shop-foot">￥{{item.price}}</view>
         </shop-car-item>
       </view>
+    </view>
+
+    <!-- 列表为空 -->
+    <view class="z-empty z-flex z-flex-center z-flex-direction" wx:if="{{submitList.length === 0}}">
+      <image src="/main/assets/img/empty.png"></image>
+      <view>购物车是空的，快去选购吧~</view>
     </view>
   </view>
 </view>

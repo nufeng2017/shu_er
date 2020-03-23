@@ -9,16 +9,6 @@ Component({
     showArrow:Boolean,
     item:Object
   },
-  data:{
-    selected:false,
-  },
-  lifetimes: {
-    attached: function () {
-      this.setData({
-        selected: this.data.item.selected?true:false
-      });
-    },
-  },
   options: {
     styleIsolation: 'apply-shared',
     multipleSlots: true
@@ -31,11 +21,8 @@ Component({
     },
     change(){
       let item = this.data.item;
-      item.selected = !this.data.selected
+      item.selected = !this.data.item.selected;
       this.triggerEvent('select', item);
-      this.setData({
-        selected: !this.data.selected
-      });
     },
     onChange(e){
       let item = this.data.item;

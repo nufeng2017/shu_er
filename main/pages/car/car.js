@@ -12,6 +12,8 @@ Page({
     listType:[],//页面渲染列表
     showSubmitBar:false,//显示提交栏
     submitList:[],//将要提交的数据
+    product:false,//全部勾选商品
+    service:false,//是否全部勾选服务
   },
 
   /**
@@ -28,7 +30,7 @@ Page({
       user_id:wx.getStorageSync('user_id')
     }).then((res) => {
       this.resetData(res.data.data.list);
-    })
+    }).catch((err)=>{});
   },
   resetData(data){
     let arr1 = [];
@@ -37,14 +39,12 @@ Page({
       if ( i === 'product'){
         arr1.push({
           typeTxt: '实物类商品',
-          selected:false,
           type:2
         })
       }
       if ( i === 'service'){
         arr1.push({
           typeTxt: '服务类商品',
-          selected:false,
           type: 1
         })
         Object.values(data[i]).map((item,idnex)=>{
@@ -59,12 +59,15 @@ Page({
       submitList: submitList,
       listType:arr1
     });
+    this.checkSelected(submitList);
   },
   onChange(val){ //底部栏点击全选
-    console.log(val)
-    this.setData({
-      checkAll: val.detail
+    let submitList = this.data.submitList;
+    submitList = submitList.map((item) => {
+      item.selected = !this.data.checkAll
+      return item;
     });
+    this.checkSelected(submitList);
   },
   barSubmit(){
     wx.navigateTo({
@@ -81,22 +84,39 @@ Page({
       }
       return item;
     })
-    this.setData({
-      submitList: submitList
-    });
+    this.checkSelected(submitList);
   },
-  allTypeSel(e){//查看类型是否全选
+  allTypeSel(e){//全选此类型
     let type = e.currentTarget.dataset.item.type;
     let submitList = this.data.submitList;
-    submitList = submitList.map((item) => {
-      if (item.type == type) {
-        
+    let pro = e.currentTarget.dataset.pro;
+    submitList = submitList.map((item)=>{
+      if (item.type == type){
+        item.selected = !this.data[pro]
       }
       return item;
-    })
+    });
+    this.checkSelected(submitList);
   },
-  checkSelectedAll(){//查看是否全选
-    let submitList = this.data.submitList ;
-
+  checkSelected(submitList){//查看是否全选此类型
+    let service = true;
+    let product = true;
+    let checkAll = true;
+    for (let i = 0; i < submitList.length ; i ++){
+      if (!submitList[i].selected){
+        if (submitList[i].type == 1){//服务类
+          service = false;
+        } else {
+          product = false;
+        }
+        checkAll = false;
+      } 
+    }
+    this.setData({
+      service: service,
+      product: product,
+      checkAll: checkAll,
+      submitList: submitList
+    });
   }
 })
