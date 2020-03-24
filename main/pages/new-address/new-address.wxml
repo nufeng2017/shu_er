@@ -54,4 +54,6 @@
 </view>
 
 <!-- picker -->
-<van-picker columns="{{ columns }}" bind:change="onChange"/>
+<van-overlay show="{{popupShow}}">
+  <van-area area-list="{{ areaList }}" class="z-area"/>
+</van-overlay>

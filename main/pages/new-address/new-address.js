@@ -1,4 +1,5 @@
 import { addAddress,getArea } from '../../network/manage-address.js';
+import  areaList from '../../../utils/area.js';
 Page({
 
   /**
@@ -16,6 +17,7 @@ Page({
     },
     areaVal:'',//区域
     columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],//区域数据
+    popupShow:false
   },
 
   /**
@@ -33,12 +35,17 @@ Page({
     });
   },
   getArea(){
-    getArea().then((res)=>{
+    // getArea({
+    //   parent_id: '32'
+    // }).then((res)=>{
       
+    // });
+    this.setData({
+      areaList: areaList
     });
   },
   popupShow(){
-
+    this.setData({ popupShow: true });
   },
   selectCity(){
     console.log(1111)

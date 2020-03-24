@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "新增收货地址",
   "usingComponents": {
-    "van-picker":"/miniprogram_npm/@vant/weapp/picker/index"
+    "van-area":"/miniprogram_npm/@vant/weapp/area/index",
+    "van-overlay": "/miniprogram_npm/@vant/weapp/overlay/index"
   }
 }

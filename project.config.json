@@ -349,6 +349,13 @@
 					"id": -1,
 					"name": "main/pages/new-address/new-address",
 					"pathName": "main/pages/new-address/new-address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/new-address/new-address",
+					"pathName": "main/pages/new-address/new-address",
 					"scene": null
 				}
 			]
