@@ -43,7 +43,6 @@
   display: inline-block;
 }
 .z-select-shop-item{
-  height: 40rpx;
   margin: 12rpx 0 !important;
 }
 .z-shop-foot{

@@ -1,4 +1,5 @@
-import { getCartList } from '../../network/car.js';
+import { getCartList, editCart } from '../../network/car.js';
+import { getStorage, setStorage } from '../../../cache/cache.js';
 Page({
 
   /**
@@ -6,24 +7,52 @@ Page({
    */
   data: {
     checkAll:false,//是否全选
-    price:12.3,//价格
-    submitCount:'结算(2)',//提交数量
     hasFreight:'（不包含运费）',
-    listType:[],//页面渲染列表
-    showSubmitBar:false,//显示提交栏
+    listType: [{
+      typeTxt: '服务类商品',
+      type: 1,
+      show:false
+    }, {
+      typeTxt: '实物类商品',
+      type: 2,
+      show:false
+    }],
     submitList:[],//将要提交的数据
     product:false,//全部勾选商品
     service:false,//是否全部勾选服务
+    totalPrice:0,//总价格
+    productNum:0,//选中商品数
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getList();//获取购物车列表数据
   },
   onShow(){
-    this.getList();//获取购物车列表数据
+    let car_list = getStorage('car_list');
+    if (Array.isArray(car_list)) {
+      if (car_list.length != this.data.submitList.length){
+        this.setData({
+          submitList: car_list,
+          product:false,
+          service:false,
+          checkAll:false,
+        });
+      } else {
+        let submitList = this.data.submitList;
+        submitList = submitList.map((item,index)=>{
+          item.num = car_list[index].num;
+          return item;
+        })
+        this.setData({
+          submitList: submitList
+        });
+      }
+    } 
+    this.showBlock();
+    this.calculationPrice();
   },
   getList(){
     getCartList({
@@ -33,20 +62,9 @@ Page({
     }).catch((err)=>{});
   },
   resetData(data){
-    let arr1 = [];
     let submitList = [];
     for (let i in data){
-      if ( i === 'product'){
-        arr1.push({
-          typeTxt: '实物类商品',
-          type:2
-        })
-      }
       if ( i === 'service'){
-        arr1.push({
-          typeTxt: '服务类商品',
-          type: 1
-        })
         Object.values(data[i]).map((item,idnex)=>{
           submitList = submitList.concat(item)
         });
@@ -55,11 +73,27 @@ Page({
       submitList = submitList.concat(data[i]);
     }
     this.setData({
-      showSubmitBar: submitList.length > 0 ? true :false,
-      submitList: submitList,
-      listType:arr1
+      submitList: submitList
     });
-    this.checkSelected(submitList);
+    if (submitList.length>0){
+      setStorage('car_list', submitList);
+    }
+    this.showBlock();//检查是否显示模块
+  },
+  showBlock(){
+    let showType1 = false;
+    let showType2 = false;
+    this.data.submitList.map((i)=>{
+      if (i.type == 1){
+        showType1 = true
+      } else if (i.type == 2){
+        showType2 = true;
+      }
+    });
+    this.setData({
+      ['listType[0].show']: showType1,
+      ['listType[1].show']: showType2,
+    });
   },
   onChange(val){ //底部栏点击全选
     let submitList = this.data.submitList;
@@ -70,12 +104,34 @@ Page({
     this.checkSelected(submitList);
   },
   barSubmit(){
-    wx.navigateTo({
-      url: '/main/pages/confirm-order/confirm-order'
-    })
+    if (this.data.productNum > 0){
+      wx.navigateTo({
+        url: '/main/pages/confirm-order/confirm-order?list=' + JSON.stringify(this.data.submitList)
+      })
+    } else {
+      wx.showToast({
+        title:'请选择商品',
+      })
+    }
   },
   select(e){//选取单个商品
     this.checkList(this.data.submitList,e.detail);
+  },
+  stepper(e){//加减数量
+    this.editCar(e.detail, e.detail.num, () => {
+      let submitList = this.data.submitList;
+      submitList = submitList.map((item) => {
+        if (item.pid == e.detail.pid) {
+          item = e.detail;
+        }
+        return item;
+      })
+      this.setData({
+        submitList: submitList
+      });
+      setStorage('car_list', submitList);
+      this.calculationPrice();
+    });
   },
   checkList(submitList,data){//筛查选中数据
     submitList = submitList.map((item) => {
@@ -87,6 +143,7 @@ Page({
     this.checkSelected(submitList);
   },
   allTypeSel(e){//全选此类型
+    console.log(e)
     let type = e.currentTarget.dataset.item.type;
     let submitList = this.data.submitList;
     let pro = e.currentTarget.dataset.pro;
@@ -117,6 +174,47 @@ Page({
       product: product,
       checkAll: checkAll,
       submitList: submitList
+    });
+    this.calculationPrice();
+  },
+  calculationPrice(){
+    let submitList = this.data.submitList;
+    let price = 0;
+    let productNum = 0;
+    submitList.map((item) => {
+      if (item.selected){
+        productNum++
+        price += parseFloat(item.price) * parseInt(item.num);
+      }
+    });
+    this.setData({
+      totalPrice: price,
+      productNum: productNum
+    });
+  },
+  deleteCar(e){//删除购物车
+    let item = e.currentTarget.dataset.item;
+    this.editCar(item,0,() => {
+      let submitList = this.data.submitList;
+      submitList = submitList.filter((i, index) => {
+        return i.pid != item.pid
+      });
+      this.setData({
+        submitList: submitList
+      })
+      setStorage('car_list', submitList);
+      this.showBlock();
+      this.calculationPrice();
+    });
+  },
+  editCar(item,num,fn){
+    editCart({
+      user_id: wx.getStorageSync('user_id'),
+      type:item.type,
+      pid:item.pid,
+      num:num
+    }).then((res)=>{
+      fn(res);
     });
   }
 })

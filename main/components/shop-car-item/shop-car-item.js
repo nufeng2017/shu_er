@@ -27,7 +27,7 @@ Component({
     onChange(e){
       let item = this.data.item;
       item.num = e.detail;
-      this.triggerEvent('select', item);
+      this.triggerEvent('stepper', item);
     }
   }
 })

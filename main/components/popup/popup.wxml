@@ -3,8 +3,9 @@
   show="{{ show }}"
   show-cancel-button="{{false}}"
   showConfirmButton="{{false}}"
-  close-on-click-overlay="{{true}}"
+  close-on-click-overlay="{{false}}"
   use-title-slot="{{true}}"
+  overlay="{{overlay}}"
 >
   <view class="z-popup">
     <slot></slot>
@@ -15,7 +16,8 @@
   </view>
   <view slot="title" class="z-title">
       {{title}}
-    <view class="z-icon" bindtap="closePopup">
-    <image src="./img/close.png"></image>
-  </view></view>
+    <view class="z-icon" bindtap="closePopup" wx:if="{{showCloseBtn}}">
+      <image src="./img/close.png"></image>
+    </view>
+  </view>
 </van-dialog>

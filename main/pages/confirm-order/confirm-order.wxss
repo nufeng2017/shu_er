@@ -14,3 +14,8 @@
   background-size:100%;
   margin-right: 10rpx;
 }
+.z-add-adress-tips{
+  padding: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+}

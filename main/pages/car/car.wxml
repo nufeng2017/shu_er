@@ -1,7 +1,7 @@
 <!--购物车-->
 <view class="z-wrap">
   <view class="z-main">
-    <view class="z-inf-box" wx:for="{{listType}}" wx:key="index" wx:for-item="itemName">
+    <view class="z-inf-box" wx:for="{{listType}}" wx:key="index" wx:for-item="itemName" wx:if="{{itemName.show}}">
       <view class="z-inf-head">
         <van-cell title="{{itemName.typeTxt}}" custom-class="z-cell" />
         <van-checkbox 
@@ -24,10 +24,10 @@
           item ="{{item}}"
           wx:if="{{itemName.type==item.type}}"
           bind:select="select"
-          bind:stepper="select"
+          bind:stepper="stepper"
         >
           <view slot="head-title" class="z-shop-title">{{item.name}}</view>
-          <view slot="head" class="z-shop-delete">
+          <view slot="head" class="z-shop-delete" bindtap="deleteCar" data-item="{{item}}">
             <image src="/main/assets/img/delete.jpg"></image>
           </view>
           <view slot="body" class="z-shop-body" wx:if="{{item.type_ch}}">{{item.type_ch}}</view>
@@ -48,11 +48,11 @@
 <submit-bar 
   bind:checkall="onChange" 
   check-all="{{checkAll}}" 
-  price="{{price}}" 
+  price="{{totalPrice}}" 
   board-text="合计：" 
-  btn-text="{{submitCount}}" 
+  btn-text="结算({{productNum}})" 
   has-freight="{{hasFreight}}" 
   bind:submit="barSubmit" 
   no-tabbar="{{false}}" 
-  wx:if="{{showSubmitBar}}"
+  wx:if="{{submitList.length}}"
 />

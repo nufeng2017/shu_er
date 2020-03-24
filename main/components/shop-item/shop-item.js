@@ -1,4 +1,5 @@
 import { addCart } from './network/shop-item.js';
+import { getStorage, setStorage } from '../../../cache/cache.js';
 Component({
   properties: {
     item: {
@@ -58,6 +59,20 @@ Component({
           icon: 'success',
           duration: 2000
         })
+        let car_list = getStorage('car_list');
+        if (!Array.isArray(car_list)){
+          car_list = [];
+        } 
+        item.num = 1;
+        for (let i = 0; i < car_list.length; i++) {
+          if (car_list[i].pid == item.pid) {
+            car_list[i].num = parseInt(car_list[i].num) + 1;
+            setStorage('car_list', car_list);
+            return;
+          }
+        }
+        car_list.push(item);
+        setStorage('car_list', car_list);
       });
     }
   }

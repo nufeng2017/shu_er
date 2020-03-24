@@ -7,6 +7,10 @@ Component({
       type:Boolean,
       value:true
     },
+    overlay:{
+      type:Boolean,
+      value:true
+    },
     cancelTxt:{
       type:String,
       value:'取消'
@@ -15,6 +19,10 @@ Component({
       type: String,
       value: '确定'
     },
+    showCloseBtn:{
+      type:Boolean,
+      value:true
+    }
   },
   methods: {
     confirm(){

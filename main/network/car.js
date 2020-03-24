@@ -1,9 +1,9 @@
-/*首页接口
+/*购物车接口
 */
 import network from '../../network/network.js';
 
 /**
- * 获取首页数据
+ * 获取购物车列表
 */
 export function getCartList(data) {
   return network({
@@ -11,5 +11,18 @@ export function getCartList(data) {
     data: data,
     hideLoading:true,
     hideErrToast:true
+  })
+}
+
+/**
+ * 购物车列表购买项修改
+*/
+export function editCart(data) {
+  return network({
+    url: 'editCart',
+    data: data,
+    method:'POST',
+    hideLoading: true,
+    hideErrToast: true
   })
 }
