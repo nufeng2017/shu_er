@@ -1,0 +1,17 @@
+<view class="z-city-picker">
+  <view class="z-btn-group ~z-cl">
+    <view class="~z-fl" bindtap="cancel">取消</view>
+    <view class="~z-fr z-confirm" bindtap="confirm">确定</view>
+  </view>
+  <picker-view class="z-city-picker-main" value="{{value}}" bindchange="bindChange" indicator-class="z-indicator-class">
+    <picker-view-column>
+      <view class="z-picker-item" wx:for="{{list}}" wx:key="index">{{item.title}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class="z-picker-item" wx:for="{{list[value[0]].children}}" wx:key="index">{{item.title}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class="z-picker-item" wx:for="{{list[value[0]].children[value[1]].children}}" wx:key="index">{{item.title}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

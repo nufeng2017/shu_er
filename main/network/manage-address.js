@@ -21,8 +21,6 @@ export function addAddress(data) {
   return network({
     url: 'addAddress',
     data: data,
-    hideLoading: true,
-    hideErrToast: true,
     method:'POST'
   })
 }
@@ -34,8 +32,6 @@ export function getArea(data) {
   return network({
     url: 'getArea',
     data: data,
-    hideLoading: true,
-    hideErrToast: true,
     method: 'POST'
   })
 }

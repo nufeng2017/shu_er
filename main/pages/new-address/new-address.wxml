@@ -4,44 +4,41 @@
     <view class="z-inf-box">
       <view class="z-inf-body">
           <van-field
-            value="{{ submitData.receive_username }}"
             label="收货人："
             placeholder="请输入收货人姓名"
             bind:click-icon="onClickIcon"
             title-width="150rpx"
-            bindinput="inputTxt"
+            bind:input="inputTxt"
             data-item="receive_username"
           />
 
           <van-field
-            value="{{ submitData.receive_phone }}"
             type="number"
             label="手机号码："
             placeholder="请输入收货人手机号码"
             title-width="150rpx"
             data-item="receive_phone"
-            bindinput="inputTxt"
+            bind:input="inputTxt"
           />
           <van-field
             label="所在区域："
             placeholder="请选择"
             title-width="150rpx"
             disabled
-            bindtap="selectCity"
-            value="{{areaVal}}"
+            value="{{province?province+' '+city+' '+area:''}}"
             bindtap="popupShow"
+            input-class="z-sel-area"
           />
           <van-field
-            value="{{ submitData.address }}"
             label="详细地址："
             placeholder="街道、楼栋、门牌号等，例:6号楼501室"
             title-width="150rpx"
             data-item="address"
-            bindinput="inputTxt"
+            bind:input="inputTxt"
           />
           <label class="z-checkbox z-flex z-flex-justify z-flex-align-center">  
             <view>设为默认地址</view>
-            <van-checkbox bind:change="change" checked-color="#b20a0a" icon-size="40rpx"/>
+            <van-checkbox bind:change="checkbox" checked-color="#b20a0a" icon-size="40rpx" value="{{submitData.is_default}}"/>
           </label>
       </view>
     </view>
@@ -49,11 +46,9 @@
 </view>
 
 <!-- 提交按钮 -->
-<view class="z-btn-box">
-  <navigator class="z-btn z-btn-1" url="/main/pages/new-address/new-address" hover-class="none">保存地址</navigator>
+<view class="z-btn-box" bindtap="saveAddress">
+  <view class="z-btn z-btn-1"  hover-class="none">保存地址</view>
 </view>
-
-<!-- picker -->
 <van-overlay show="{{popupShow}}">
-  <van-area area-list="{{ areaList }}" class="z-area"/>
+  <city-picker list="{{areaList}}" value="{{value}}" bind:change="change" bind:confirm="confirm" bind:cancel="cancel"/>
 </van-overlay>

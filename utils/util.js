@@ -1,4 +1,4 @@
-import { getStorage,setStorage } from '../cache/cache.js';
+import { getStorage, setStorage } from '../cache/cache.js';
 
 const formatTime = date => { //获得日期格式
   const year = date.getFullYear()
@@ -29,7 +29,7 @@ const login = (e) => {
 }
 
 const getLocation = () => {
-  return new Promise((resolve,reject)=>{
+  return new Promise((resolve, reject) => {
     wx.showLoading({
       title: '加载中',
       mask: true

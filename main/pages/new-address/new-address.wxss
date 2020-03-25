@@ -42,3 +42,9 @@
   padding-bottom: 60rpx;
   background: #fff;
 }
+.van-picker__cancel,.van-picker__confirm{
+  color:#b20a0a !important;
+}
+.z-sel-area{
+  color:#333 !important;
+}

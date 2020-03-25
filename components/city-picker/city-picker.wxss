@@ -1,0 +1,48 @@
+.z-city-picker{
+  position: fixed;
+  width:100%;
+  height: 50%;
+  background: #fff;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 100rpx 0 60rpx;
+}
+.z-btn-group{
+  position: absolute;
+  height: 100rpx;
+  width:100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  left: 0;
+  top:0;
+}
+.z-btn-group>view{
+  color:#ccc;
+  height: 100%;
+  width:150rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.z-btn-group .z-confirm{
+  color:#ff3333;
+}
+picker-view{
+  width:100%;
+  height:100%;
+}
+picker-view-column{
+  width:33.3333333%;
+}
+.z-indicator-class{
+  height: 80rpx;
+}
+picker-view-column .z-picker-item{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  width:100%;
+  font-size: 30rpx;
+}

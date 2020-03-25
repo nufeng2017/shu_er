@@ -1,5 +1,5 @@
 import { addAddress,getArea } from '../../network/manage-address.js';
-import  areaList from '../../../utils/area.js';
+import areaList from '../../../utils/area.js';
 Page({
 
   /**
@@ -16,8 +16,9 @@ Page({
       is_default:0,//是否默认
     },
     areaVal:'',//区域
-    columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],//区域数据
-    popupShow:false
+    popupShow:false,
+    areaList:[],//本地列表
+    value:[0,0,0]
   },
 
   /**
@@ -27,7 +28,6 @@ Page({
     this.getArea();//获得区域列表
   },
   inputTxt(e){
-    console.log(e)
     let val = e.detail;
     let item = e.currentTarget.dataset.item;
     this.setData({
@@ -35,19 +35,43 @@ Page({
     });
   },
   getArea(){
-    // getArea({
-    //   parent_id: '32'
-    // }).then((res)=>{
-      
-    // });
     this.setData({
       areaList: areaList
+    });
+  },
+  change(e){
+    this.setData({
+      value: e.detail
     });
   },
   popupShow(){
     this.setData({ popupShow: true });
   },
-  selectCity(){
-    console.log(1111)
+  confirm(e){
+    console.log(this.data.value)
+    this.setData({
+      'province': this.data.areaList[this.data.value[0]].title,
+      'city': this.data.areaList[this.data.value[0]].children[this.data.value[1]].title,
+      'area': this.data.areaList[this.data.value[0]].children[this.data.value[1]].children ? this.data.areaList[this.data.value[0]].children[this.data.value[1]].children[this.data.value[2]].title : '',
+      'submitData.province_id': this.data.areaList[this.data.value[0]].aid,
+      'submitData.city_id': this.data.areaList[this.data.value[0]].children[this.data.value[1]].aid,
+      'submitData.area_id': this.data.areaList[this.data.value[0]].children[this.data.value[1]].children ? this.data.areaList[this.data.value[0]].children[this.data.value[1]].children[this.data.value[2]].aid:'',
+      popupShow: false
+    });
+  },
+  cancel(){
+    this.setData({ popupShow: false });
+  },
+  checkbox(e){
+    this.setData({
+      'submitData.is_default': Number(!this.data.submitData.is_default)
+    })
+  },
+  saveAddress(){
+    let data = this.data.submitData;
+    data.user_id = wx.getStorageSync('user_id');
+    addAddress(data).then((res) => {
+      wx.navigateBack();
+    });
   }
 })
