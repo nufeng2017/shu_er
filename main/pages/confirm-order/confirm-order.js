@@ -14,7 +14,7 @@ Page({
     delivery_price:0,//运费
     totalPrice:0,//总价
     addressList:[],//地址列表
-    showPopup:false
+    showPopup:false,
   },
 
   /**
@@ -30,7 +30,7 @@ Page({
     }).then((res) =>{
       this.setData({
         addressList:res.data.data,
-        showPopup: res.data.data.length>0?false:true
+        showPopup:false
       });
     });
   },
@@ -42,6 +42,7 @@ Page({
       user_id: getStorage('user_id'),
       list: JSON.stringify(list)
     }).then((res) =>{
+      this.lastPageFn();
       getConfirmOrder({
         user_id: getStorage('user_id'),
         oid: res.data.data.ids
@@ -51,6 +52,20 @@ Page({
         });
         this.getInfo(res.data.data);
       });
+    }).catch((err) => {//订单下架
+      this.lastPageFn();
+      setTimeout(()=>{
+        wx.navigateBack();
+      },2000);
+    });
+  },
+  lastPageFn(){
+    let pages = getCurrentPages();
+    pages[pages.length - 2].getList();
+    pages[pages.length - 2].setData({
+      product: false,//全部勾选商品
+      service: false,//是否全部勾选服务
+      checkAll: false,//是否全选
     });
   },
   getInfo(data){
@@ -81,4 +96,9 @@ Page({
   cancel() {//弹窗取消
     wx.navigateBack();
   },
+  submit(){
+    this.setData({
+      showPopup: this.data.addressList.length > 0 ? false : true
+    });
+  }
 })

@@ -26,3 +26,16 @@ export function editCart(data) {
     hideErrToast: true
   })
 }
+
+/**
+ * 购物车清空下架产品
+*/
+export function delInvaildCart(data) {
+  return network({
+    url: 'delInvaildCart',
+    data: data,
+    hideLoading: true,
+    hideErrToast: true
+  })
+}
+

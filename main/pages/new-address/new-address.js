@@ -1,4 +1,4 @@
-import { addAddress,getArea } from '../../network/manage-address.js';
+import { addAddress } from '../../network/manage-address.js';
 import areaList from '../../../utils/area.js';
 Page({
 
@@ -15,10 +15,13 @@ Page({
       address:'',//详细地址
       is_default:0,//是否默认
     },
-    areaVal:'',//区域
     popupShow:false,
     areaList:[],//本地列表
-    value:[0,0,0]
+    value:[0,0,0],
+    province:'',
+    city:'',
+    area:'',
+    showCheckbox:true
   },
 
   /**
@@ -26,6 +29,29 @@ Page({
    */
   onLoad: function (options) {
     this.getArea();//获得区域列表
+    if (options.item){
+      this.getInfo(JSON.parse(options.item));
+    }
+  },
+  getInfo(data){
+    console.log(data)
+    let o = {
+      receive_username: data.receive_username,//收货人姓名
+      receive_phone: data.receive_phone,//手机号码
+      province_id: data.province_id,//省ID
+      city_id: data.city_id,//城市ID
+      area_id: data.area_id,//区域ID
+      address: data.address,//详细地址
+      is_default: data.is_default,//是否默认
+      address_id: data.address_id
+    }
+    this.setData({
+      submitData:o,
+      area: data.area_name,
+      city: data.city_name,
+      province: data.province_name,
+      showCheckbox:false
+    })
   },
   inputTxt(e){
     let val = e.detail;

@@ -59,3 +59,36 @@
   height: 100%;
   width:40rpx;
 }
+/* 下架商品 */
+.z-lower-shop{
+  padding-left: 30rpx;
+}
+.z-cell-1{
+  padding-left: 0 !important;
+}
+.z-cell-1:after{
+  left: 0rpx !important;
+}
+.z-lower-shop-title{
+  color:#999999;
+}
+.z-lower-shop-icon{
+  background: #a8a8a8;
+  color:#fff;
+}
+.z-lower-shop-foot{
+  font-size: 24rpx;
+  color:#666;
+  font-weight: 400;
+}
+.z-lower-shop-delete{
+  position: absolute;
+  height:100%;
+  width:100rpx;
+  top:0;
+  right: 0;
+}
+.z-lower-shop-delete image{
+  width:40rpx;
+  height: 40rpx;
+}

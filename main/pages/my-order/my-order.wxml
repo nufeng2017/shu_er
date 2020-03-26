@@ -10,50 +10,72 @@
       sticky="{{true}}"
       custom-class="z-tab"
     >
-      <van-tab title="{{item}}" wx:for="{{tabs}}" wx:key="index">
-        <view class="z-list-container z-cl" >
-          <view class="z-inf-box">
-            <view class="z-inf-head" bindtap="checkDetails">
-              <van-cell 
-                title="订单号24234234242"
-                custom-class="z-cell"
-                is-link 
-                url="{{item.url}}"
-              />
-            </view>
-            <view class="z-inf-body">
-              <view class="z-inf-main">
-                <shop-car-item show-select="{{false}}" show-stepper="{{false}}">
-                  <view slot="head" class="z-price">￥30.00</view>
-                  <view slot="body" class="z-service z-cl">
-                    <view class="z-fl">常规服务</view>
-                    <view class="z-fr">X1</view>
-                  </view>
-                </shop-car-item>
-                <shop-car-item show-select="{{false}}" show-stepper="{{false}}">
-                  <view slot="head" class="z-price">￥30.00</view>
-                  <view slot="body" class="z-service z-cl">
-                    <view class="z-fl">常规服务</view>
-                    <view class="z-fr">X1</view>
-                  </view>
-                </shop-car-item>
+      <scroll-view class="z-scroll" scroll-y="{{true}}" bindscrolltolower="reachBottom">
+        <van-tab title="{{item}}" wx:for="{{tabs}}" wx:key="index">
+          <view class="z-list-container z-cl" >
+            <view class="z-inf-box" wx:for="{{list}}" wx:key="index">
+              <view class="z-inf-head" bindtap="checkDetails">
+                <van-cell 
+                  title="订单号{{item.order_no}}"
+                  custom-class="z-cell"
+                  is-link 
+                />
               </view>
-              <view class="z-inf-tips z-cl">
-                <view class="z-fl c-999999">2020.07.14 13:00:30</view>
-                <view class="z-fr z-total">
-                  <text>共三件商品 合计：</text>
-                  <text class="z-total-num"><text class="z-unit">￥</text>337.00</text>
+              <view class="z-inf-body">
+                <view class="z-inf-main">
+                  <shop-car-item 
+                    show-select="{{false}}" 
+                    show-stepper="{{false}}"
+                    wx:for="{{item.products}}" 
+                    wx:key="index"
+                    default-img="http://www.sekjce.com/statics/public/img/zwtp.jpg" 
+                    img-url="{{item.img}}"
+                  >
+                    <view slot="head" class="z-price">￥{{item.price}}</view>
+                    <view slot="head-title" class="z-shop-title">{{item.name}}地方挂单给地方官发给飞地方</view>
+                    <view slot="body" class="z-service z-cl">
+                      <view class="z-fl">{{item.type_name}}</view>
+                      <view class="z-fr">X{{item.num}}</view>
+                    </view>
+                  </shop-car-item>
+                </view>
+                <view class="z-inf-tips z-cl">
+                  <view class="z-fr z-total">
+                    <text>运费：</text>
+                    <text class="z-total-num"><text class="z-unit">￥</text>{{item.delivery_price}}</text>
+                  </view>
+                </view>
+                <view class="z-inf-tips z-cl">
+                  <view class="z-fl c-999999">{{item.add_time}}</view>
+                  <view class="z-fr z-total">
+                    <text>共{{item.total_num}}件商品 合计：</text>
+                    <text class="z-total-num"><text class="z-unit">￥</text>{{item.total_price}}</text>
+                  </view>
                 </view>
               </view>
+              <view class="z-inf-foot">
+                <view class="z-btn" wx:if="{{item.status == 1}}" bindtap="cancelOrder" data-oid="{{item.oid}}" data-index="{{index}}">取消订单</view>
+                <view class="z-btn z-btn-1" wx:if="{{item.status == 1}}">立即付款</view>
+                <view class="z-btn z-btn-2" wx:if="{{item.status == 2}}">确认收货</view>
+              </view>
             </view>
-            <view class="z-inf-foot">
-              <view class="z-btn">取消订单</view>
-              <view class="z-btn z-btn-1">立即付款</view>
-            </view>
+            
           </view>
-          
-        </view>
-      </van-tab>
+        </van-tab>
+      </scroll-view>
     </van-tabs>
   </view>
 </view>
+
+<!-- 弹窗 -->
+<popup 
+  show="{{showPopup}}" 
+  cancelTxt="取消" 
+  confirmTxt="确定" 
+  bind:confirm="confirm" 
+  bind:cancel="cancel"
+  showCloseBtn="{{true}}"
+  title="提示"
+>
+  <view class="z-add-adress-tips">是否确认取消该订单？</view>
+</popup>

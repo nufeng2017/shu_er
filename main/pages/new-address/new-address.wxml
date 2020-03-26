@@ -10,6 +10,7 @@
             title-width="150rpx"
             bind:input="inputTxt"
             data-item="receive_username"
+            value="{{submitData.receive_username}}"
           />
 
           <van-field
@@ -19,6 +20,7 @@
             title-width="150rpx"
             data-item="receive_phone"
             bind:input="inputTxt"
+            value="{{submitData.receive_phone}}"
           />
           <van-field
             label="所在区域："
@@ -35,8 +37,9 @@
             title-width="150rpx"
             data-item="address"
             bind:input="inputTxt"
+            value="{{submitData.address}}"
           />
-          <label class="z-checkbox z-flex z-flex-justify z-flex-align-center">  
+          <label class="z-checkbox z-flex z-flex-justify z-flex-align-center" wx:if="{{showCheckbox}}">  
             <view>设为默认地址</view>
             <van-checkbox bind:change="checkbox" checked-color="#b20a0a" icon-size="40rpx" value="{{submitData.is_default}}"/>
           </label>

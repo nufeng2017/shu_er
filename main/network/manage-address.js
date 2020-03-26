@@ -26,11 +26,11 @@ export function addAddress(data) {
 }
 
 /**
- * 获取区域列表
+ * 删除收货地址
  */
-export function getArea(data) {
+export function deleteAddress(data) {
   return network({
-    url: 'getArea',
+    url: 'deleteAddress',
     data: data,
     method: 'POST'
   })

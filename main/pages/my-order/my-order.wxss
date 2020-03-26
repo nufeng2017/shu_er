@@ -1,3 +1,14 @@
+
+.z-scroll{
+  position: fixed;
+  width:100%;
+  top:0;
+  left: 0;
+  box-sizing: border-box;
+  height: 100%;
+  margin-top: 91rpx;
+  padding-bottom: 100rpx;
+}
 .z-tab .van-tabs__wrap{
   height: 90rpx;
   border-bottom: 1px solid #eaeaea;
@@ -64,4 +75,13 @@
 }
 .z-shop-car-item{
   margin-top: 40rpx;
+}
+.z-shop-title{
+  font-size: 30rpx;
+  color:#584133;
+  font-weight: 900;
+}
+.z-btn-2{
+  color:#b20a0a;
+  border-color:#b20a0a;
 }

@@ -1,26 +1,26 @@
 <!--地址管理-->
 <view class="z-wrap">
   <view class="z-main">
-    <view class="z-inf-box">
+    <view class="z-inf-box" wx:for="{{list}}" wx:key="index">
       <view class="z-inf-body">
         <shop-car-item 
           img-url="/main/assets/img/cell-2.png"
           class="z-address"
         >   
-          <view slot="head-title">方晓华 112312323</view>
-          <view slot="body" class="z-address-info">方小花  13478978978 收货地址：江苏省 南京市 雨花区 板桥街道金地自在城XX 小区XX号XXX室</view>
+          <view slot="head-title">{{item.receive_username}} {{item.receive_phone}}</view>
+          <view slot="body" class="z-address-info">收货地址：{{item.province_name}} {{item.city_name}} {{item.area_name}} {{item.address}}</view>
         </shop-car-item>
       </view>
       <view class="z-inf-foot">
         <view class="z-address-set z-flex z-flex-align-center z-flex-justify">
           <view>
-            <van-checkbox bind:change="change" checked-color="#b20a0a" icon-size="40rpx">
-              <text class="z-checkbox-title">设为默认地址</text>
+            <van-checkbox bind:change="change" checked-color="#b20a0a" icon-size="40rpx" data-item="{{item}}" value="{{item.is_default==1}}">
+              <text class="z-checkbox-title">{{item.is_default==1?'已设为默认地址':'设为默认地址'}}</text>
             </van-checkbox>
           </view>
           <view class="z-address-btns z-flex z-flex-center">
-            <view class="z-edit">编辑</view>
-            <view class="z-delete">删除</view>
+            <view class="z-edit" data-item="{{item}}" bindtap="edit">编辑</view>
+            <view class="z-delete" bindtap="deleteAddress" data-item="{{item}}">删除</view>
           </view>
         </view>
       </view>

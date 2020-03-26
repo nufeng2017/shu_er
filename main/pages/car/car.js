@@ -1,4 +1,4 @@
-import { getCartList, editCart } from '../../network/car.js';
+import { getCartList, editCart, delInvaildCart } from '../../network/car.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
 Page({
 
@@ -18,6 +18,7 @@ Page({
       show:false
     }],
     submitList:[],//将要提交的数据
+    lowerList:[],//下架商品
     product:false,//全部勾选商品
     service:false,//是否全部勾选服务
     totalPrice:0,//总价格
@@ -72,13 +73,24 @@ Page({
       }
       submitList = submitList.concat(data[i]);
     }
+    let arr = this.getOtherData(submitList);
     this.setData({
-      submitList: submitList
+      submitList: arr[0],
+      lowerList:arr[1]
     });
-    if (submitList.length>0){
-      setStorage('car_list', submitList);
-    }
+    setStorage('car_list', this.data.submitList);
     this.showBlock();//检查是否显示模块
+  },
+  getOtherData(submitList){
+    let arr = [[], []];
+    submitList.map((item,index)=>{
+      if (item.status == 0){
+        arr[1].push(item);
+        return;
+      }
+      arr[0].push(item);
+    });
+    return arr;
   },
   showBlock(){
     let showType1 = false;
@@ -111,6 +123,7 @@ Page({
     } else {
       wx.showToast({
         title:'请选择商品',
+        icon:'none'
       })
     }
   },
@@ -216,5 +229,14 @@ Page({
     }).then((res)=>{
       fn(res);
     });
+  },
+  deleteLower(){//清空失效产品
+    delInvaildCart({
+      user_id: wx.getStorageSync('user_id')
+    }).then((res)=>{
+      this.setData({
+        lowerList:[]
+      });
+    })
   }
 })

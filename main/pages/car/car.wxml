@@ -25,6 +25,8 @@
           wx:if="{{itemName.type==item.type}}"
           bind:select="select"
           bind:stepper="stepper"
+          img-url="{{item.img}}"
+
         >
           <view slot="head-title" class="z-shop-title">{{item.name}}</view>
           <view slot="head" class="z-shop-delete" bindtap="deleteCar" data-item="{{item}}">
@@ -32,6 +34,27 @@
           </view>
           <view slot="body" class="z-shop-body" wx:if="{{item.type_ch}}">{{item.type_ch}}</view>
           <view slot="foot" class="z-shop-foot">￥{{item.price}}</view>
+        </shop-car-item>
+      </view>
+    </view>
+    <!-- 下架商品 -->
+    <view class="z-inf-box" wx:if="{{lowerList.length>0}}">
+      <view class="z-inf-head z-lower-shop">
+        <van-cell title="已下架商品" custom-class="z-cell-1" />
+        <view class="z-shop-delete z-lower-shop-delete z-flex z-flex-center" bindtap="deleteLower">
+          <image src="/main/assets/img/delete.jpg"></image>
+        </view>
+      </view>
+      <view class="z-inf-body">
+        <shop-car-item 
+          default-img="http://www.sekjce.com/statics/public/img/zwtp.jpg" 
+          wx:for="{{lowerList}}" 
+          wx:key="index"
+          item ="{{item}}"
+        >
+          <view slot="head-title" class="z-shop-title z-lower-shop-title">{{item.name}}</view>
+          <view slot="body" class="z-shop-body z-lower-shop-icon">已下架</view>
+          <view slot="foot" class="z-shop-foot z-lower-shop-foot">宝贝已经不能购买</view>
         </shop-car-item>
       </view>
     </view>
