@@ -40,10 +40,10 @@ Page({
     let item = e.currentTarget.dataset.item;
     deleteAddress({
       user_id: getStorage('user_id'),
-      address_id: item.id
+      address_id: item.address_id
     }).then((res) => {
       let list = this.data.list.filter((i,index)=>{
-        return i.id != item.id;
+        return i.address_id != item.address_id;
       });
       this.setData({
         list: list
@@ -55,5 +55,17 @@ Page({
     wx.navigateTo({
       url: '/main/pages/new-address/new-address?item=' + JSON.stringify(item),
     })
+  },
+  selectAddress(e){
+    let item = e.currentTarget.dataset.item;
+    let pages = getCurrentPages();
+    let lastPage = pages[pages.length-2];
+    if (lastPage.changeAddress){
+      lastPage.setData({
+        addressList:[item]
+      });
+      lastPage.changeAddress();
+      wx.navigateBack();
+    }
   }
 })

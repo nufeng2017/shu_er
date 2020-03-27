@@ -1,4 +1,4 @@
-import { getStoreList,getConfig } from '../../network/nearby-store.js';
+import { getStoreList} from '../../network/nearby-store.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
 Page({
 
@@ -37,19 +37,14 @@ Page({
   },
   getStoreList(options){
     let _slef = this;
-    getConfig({
+    getStoreList({
       lat: options.lat,
-      lng: options.lng
+      lng: options.lng,
+      city_id: getStorage('config').citys[0].tag_id
     }).then((res) => {
-      getStoreList({
-        lat: options.lat,
-        lng: options.lng,
-        city_id:res.data.data.citys[0].tag_id
-      }).then((res) => {
-        wx.stopPullDownRefresh();
-        _slef.setData({
-          storeList:res.data.data
-        });
+      wx.stopPullDownRefresh();
+      _slef.setData({
+        storeList: res.data.data
       });
     });
   },

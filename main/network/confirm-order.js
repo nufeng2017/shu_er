@@ -26,3 +26,14 @@ export function getConfirmOrder(data) {
     method: 'POST'
   })
 }
+/**
+ * 获取确认订单信息
+ */
+export function changeAddress(data) {
+  return network({
+    url: 'changeAddress',
+    data: data,
+    hideLoading: true,
+    hideErrToast:true
+  })
+}

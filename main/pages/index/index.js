@@ -1,4 +1,4 @@
-import { getIndex } from '../../network/index.js';
+import { getIndex, getConfig } from '../../network/index.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
 import utils from '../../../utils/util.js';
 Page({
@@ -89,6 +89,10 @@ Page({
         lng: res.longitude,
         lat: res.latitude
       });
+      _self.getConfig({
+        lng: res.longitude,
+        lat: res.latitude
+      });
     });
   },
   getIndexData(data){//获取首页商品列表
@@ -100,5 +104,10 @@ Page({
         watchStoreId: res.data.data.store_id
       });
     })
+  },
+  getConfig(data){
+    getConfig(data).then((res)=>{
+      setStorage('config',res.data.data);
+    });
   }
 })

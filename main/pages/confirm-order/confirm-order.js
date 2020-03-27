@@ -1,4 +1,4 @@
-import { confirmOrder, getConfirmOrder } from '../../network/confirm-order.js';
+import { confirmOrder, getConfirmOrder, changeAddress } from '../../network/confirm-order.js';
 import { getAddressList } from '../../network/manage-address.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
 
@@ -15,6 +15,7 @@ Page({
     totalPrice:0,//总价
     addressList:[],//地址列表
     showPopup:false,
+    showAddress:true
   },
 
   /**
@@ -24,15 +25,47 @@ Page({
     let list = JSON.parse(options.list);
     this.filterData(list);
   },
-  onShow(){
+  getAddressList(){
     getAddressList({
       user_id: getStorage('user_id'),
-    }).then((res) =>{
+    }).then((res) => {
+      let data = this.getDefaultAddress(res.data.data);
       this.setData({
-        addressList:res.data.data,
-        showPopup:false
+        addressList: [data],
+        showPopup: false
       });
+      this.changeAddress();
     });
+  },
+  changeAddress(data){
+    changeAddress({
+      user_id:getStorage('user_id'),
+      address_id: this.data.addressList[0].address_id,
+      order_id:this.getOid(),
+    }).catch((err) => {
+      this.setData({
+        showAddress:false
+      })
+    })
+  },
+  getDefaultAddress(data){
+    let o = {};
+    data.map((item,index) => {
+      if (item.is_default == 1){
+        o = item;
+      }
+    });
+    return o;
+  },
+  getOid(){
+    let list = this.data.submitList;
+    let oid = '';
+    list.map((item)=>{
+      if (item.type == 2){
+        oid = item.oid;
+      }
+    });
+    return oid;
   },
   filterData(list){
     list = list.filter((item)=>{
@@ -50,6 +83,7 @@ Page({
         this.setData({
           submitList:res.data.data
         });
+        this.getAddressList();
         this.getInfo(res.data.data);
       });
     }).catch((err) => {//订单下架
@@ -94,11 +128,15 @@ Page({
     })
   },
   cancel() {//弹窗取消
-    wx.navigateBack();
+    this.setData({
+      showPopup: false
+    });
   },
   submit(){
-    this.setData({
-      showPopup: this.data.addressList.length > 0 ? false : true
-    });
+    if (this.data.showAddress){
+      this.setData({
+        showPopup: this.data.addressList.length > 0 ? false : true
+      });
+    }
   }
 })

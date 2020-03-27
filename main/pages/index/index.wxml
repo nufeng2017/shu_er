@@ -38,7 +38,7 @@
     <!-- 热销产品 -->
     <view class="z-hot-production z-view-box">
       <view class="z-check-more z-flex z-flex-justify">
-        <view class="z-check-more-title">热销成品</view>
+        <view class="z-check-more-title">热销产品</view>
         <navigator class="c-999999" hover-class="none">查看更多<image src="/main/assets/img/arrow-r.png"></image></navigator>
       </view>
       <view class="z-shop-box z-cl">

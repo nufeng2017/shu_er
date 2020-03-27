@@ -4,13 +4,17 @@
 
     <!-- 通知 -->
     <view class="z-notice z-flex z-flex-center">因购买商品分类不同，订单已拆分显示</view>
-
-    <view class="z-inf-box" wx:for="{{addressList}}" wx:key="index" wx:if="{{item.is_default == 1}}">
-      <view class="z-inf-body">
-        <shop-car-item img-url="/main/assets/img/cell-2.png" class="z-address" show-arrow="{{true}}" url="/main/pages/manage-address/manage-address">
-          <view slot="head-title">{{item.receive_username}} {{item.receive_phone}}</view>
-          <view slot="body" class="z-address-info">收货地址：{{item.province_name}} {{item.city_name}} {{item.area_name}} {{item.address}}</view>
-        </shop-car-item>
+    <view wx:if="{{showAddress}}">
+      <navigator class="z-inf-box" wx:if="{{addressList.length==0}}" url="/main/pages/manage-address/manage-address">
+        <view class="z-inf-body">添加收货地址 ></view>
+      </navigator>
+      <view class="z-inf-box" wx:for="{{addressList}}" wx:key="index">
+        <view class="z-inf-body">
+          <shop-car-item img-url="/main/assets/img/cell-2.png" class="z-address" show-arrow="{{true}}" url="/main/pages/manage-address/manage-address">
+            <view slot="head-title">{{item.receive_username}} {{item.receive_phone}}</view>
+            <view slot="body" class="z-address-info">收货地址：{{item.province_name}} {{item.city_name}} {{item.area_name}} {{item.address}}</view>
+          </shop-car-item>
+        </view>
       </view>
     </view>
 

@@ -12,14 +12,3 @@ export function getStoreList(data) {
     hideLoading:true
   })
 }
-
-/**
- * 获取城市ID
-*/
-export function getConfig(data) {
-  return network({
-    url: 'getConfig',
-    data: data,
-    notNeedHideLoding:true
-  })
-}

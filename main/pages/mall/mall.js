@@ -41,7 +41,7 @@ Page({
     }).then((res) => {
       _self.setData({
         ['productList.' + _self.data.tabActive]: _self.data.productList[_self.data.tabActive].concat(res.data.data),
-        ['page' + _self.data.tabActive]: _self.data['page' + _self.data.tabActive] + pageCount
+        ['page' + _self.data.tabActive]: res.data.data.length > 0 ? _self.data['page' + _self.data.tabActive] + pageCount : _self.data['page' + _self.data.tabActive]
       });
       _self.isShowEmptyDataTips();//是否显示空数据提示
     });

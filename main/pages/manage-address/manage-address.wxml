@@ -2,7 +2,7 @@
 <view class="z-wrap">
   <view class="z-main">
     <view class="z-inf-box" wx:for="{{list}}" wx:key="index">
-      <view class="z-inf-body">
+      <view class="z-inf-body" bindtap="selectAddress" data-item="{{item}}">
         <shop-car-item 
           img-url="/main/assets/img/cell-2.png"
           class="z-address"

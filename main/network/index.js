@@ -12,3 +12,15 @@ export function getIndex(data) {
     hideLoading:true
   })
 }
+
+
+/**
+ * 配置列表
+*/
+export function getConfig(data) {
+  return network({
+    url: 'getConfig',
+    data: data,
+    notNeedHideLoding: true
+  })
+}
