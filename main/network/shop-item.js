@@ -1,6 +1,6 @@
 /*购物车接口
 */
-import network from '../../../../network/network.js';
+import network from '../../network/network.js';
 
 /**
  * 添加购物车

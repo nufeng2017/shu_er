@@ -1,7 +1,7 @@
 const app = getApp();
 Component({
   properties: {
-    btn1:Number,
+    btn1:String,
     btn2: Boolean,
     btn3: Boolean
   },

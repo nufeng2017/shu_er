@@ -7,7 +7,12 @@
         <view>购物车</view>
         <view class="z-info-num">{{btn1}}</view>
       </button>
-      <button class="~z-flex ~z-flex-center ~z-flex-direction z-left-btn" wx:if="{{btn2}}">
+      <button 
+        class="~z-flex ~z-flex-center ~z-flex-direction z-left-btn" 
+        wx:if="{{btn2}}"
+        open-type="contact" 
+        bindcontact="handleContact"
+      >
         <view class="z-left-btn-icon"><image src="/main/components/goods-action/img/kefu-icon.png"></image></view>
         <view>客服</view>
       </button>

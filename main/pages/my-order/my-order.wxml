@@ -37,7 +37,7 @@
                     img-url="{{item.img}}"
                   >
                     <view slot="head" class="z-price">￥{{item.price}}</view>
-                    <view slot="head-title" class="z-shop-title">{{item.name}}地方挂单给地方官发给飞地方</view>
+                    <view slot="head-title" class="z-shop-title">{{item.name}}</view>
                     <view slot="body" class="z-service z-cl">
                       <view class="z-fl">{{item.type_name}}</view>
                       <view class="z-fr">X{{item.num}}</view>
@@ -85,3 +85,6 @@
 >
   <view class="z-add-adress-tips">是否确认取消该订单？</view>
 </popup>
+
+<!-- 支付页面 -->
+<pay />

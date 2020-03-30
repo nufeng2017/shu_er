@@ -6,7 +6,7 @@
     <view class="z-swiper-container">
       <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" indicator-color="rgba(178,10,10)" class="z-swiper-wrap">
         <swiper-item wx:for="{{pruductInfo.img.length>0?pruductInfo.img:1}}" wx:key="index" bindtap="checkImg">
-          <lazy-load default-image="/main/assets/img/df-img.png" mode="aspectFill" original-image="{{item?item:''}}"/>
+          <lazy-load default-image="http://www.sekjce.com/statics/public/img/zwtp.jpg" mode="aspectFill" original-image="{{item?item:''}}"/>
         </swiper-item>
       </swiper>
     </view>
@@ -23,7 +23,7 @@
         <view class="z-shop-num">
           <text>已抢：</text>{{pruductInfo.sell_num}}件</view>
       </view>
-      <view class="z-support-service z-flex z-flex-align-center">支持到店服务</view>
+      <view class="z-support-service z-flex z-flex-align-center" wx:if="{{pruductInfo.type==1}}">支持到店服务</view>
     </view>
 
     <!-- 产品详情 -->
@@ -60,9 +60,9 @@
 </view>
 
 <!-- 商品导航 -->
-<goods-action btn2="{{true}}" btn1="{{12}}" btn3="{{true}}">
+<goods-action btn2="{{true}}" btn1="{{carLen}}" btn3="{{true}}">
   <view class="z-btn-box">
-    <view class="z-btn">加入购物车</view>
+    <view class="z-btn" bindtap="addCar">加入购物车</view>
     <view class="z-btn z-btn-1">立即抢购</view>
   </view>
 </goods-action>

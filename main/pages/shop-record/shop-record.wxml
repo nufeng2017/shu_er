@@ -1,0 +1,22 @@
+<!--消费记录-->
+<view class="z-wrap">
+  <view class="z-main" style="{{'background-image:url(' + bg + ')'}}">
+    <view class="z-content-container">
+      <view class="z-info-box">
+        <view class="z-info-item">
+          <view class="z-text-hidden">消费项目:<text style="font-weight:900">asdada</text> </view>
+          <view class="z-text-hidden">消费门店：</view>
+          <view class="z-text-hidden z-cl">
+            <view class="z-fl">消费数量：123123</view>
+            <view class="z-fr">消费金额：￥22432423</view>
+          </view>
+          <view class="z-text-hidden z-cl">
+            <view class="z-fl">消费时间：123123</view>
+            <view class="z-fr">支付方式：￥22432423</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

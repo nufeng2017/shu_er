@@ -12,7 +12,10 @@
             <view slot="head-title">{{item.store_name}}</view>
             <view slot="head">{{item.distance}}km</view>
             <view slot="body">
-              <view class="z-store-info">在店销售{{item.sell_num}}个</view>
+              <view class="z-store-info z-flex z-flex-justify z-align-center">
+                <view>在店销售{{item.sell_num}}个</view>
+                <view class="z-check-map" catchtap="checkMap" data-item="{{item}}">查看地图</view>
+              </view>
             </view>
             <view slot="foot">
               <view class="z-address">

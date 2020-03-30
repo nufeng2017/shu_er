@@ -1,4 +1,4 @@
-import { addCart } from './network/shop-item.js';
+import { addCart } from '../../network/shop-item.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
 Component({
   properties: {

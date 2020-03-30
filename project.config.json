@@ -384,6 +384,62 @@
 					"id": -1,
 					"name": "main/pages/mall/mall",
 					"pathName": "main/pages/mall/mall",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/vip-code/vip-code",
+					"pathName": "main/pages/vip-code/vip-code",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/my-order/my-order",
+					"pathName": "main/pages/my-order/my-order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/vip-code/vip-code",
+					"pathName": "main/pages/vip-code/vip-code",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/my/my",
+					"pathName": "main/pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/shop-record/shop-record",
+					"pathName": "main/pages/shop-record/shop-record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/map/map",
+					"pathName": "main/pages/map/map",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/my-order/my-order",
+					"pathName": "main/pages/my-order/my-order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/webview/webview",
+					"pathName": "main/pages/webview/webview",
 					"scene": null
 				}
 			]

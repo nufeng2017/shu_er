@@ -53,5 +53,11 @@ Page({
     this.setData({
       defaultStore:id
     });
+  },
+  checkMap(e){
+    let item = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/main/pages/map/map?item=' + JSON.stringify(item),
+    })
   }
 })

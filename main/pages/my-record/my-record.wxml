@@ -1,4 +1,4 @@
-<!--消费记录-->
+<!--账户流水-->
 <view class="z-wrap">
   <view class="z-main" style="{{'background-image:url(' + bg + ')'}}">
     <view class="z-content-container">

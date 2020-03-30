@@ -25,7 +25,7 @@ Page({
       title:'我的投诉',
       icon:'/main/pages/my/img/cell-4.png'
     },{
-      url: '/main/pages/my-record/my-record',
+      url: '/main/pages/shop-record/shop-record',
       title:'消费记录',
       icon:'/main/pages/my/img/cell-5.png'
     },{
@@ -67,5 +67,10 @@ Page({
         user_id: getStorage('user_id')
       });
     }
+  },
+  checkRerord(){
+    wx.navigateTo({
+      url: '/main/pages/my-record/my-record',
+    })
   }
 })

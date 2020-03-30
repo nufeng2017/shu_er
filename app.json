@@ -21,7 +21,9 @@
     "main/pages/all-comment/all-comment",
     "main/pages/check-img/check-img",
     "main/pages/message-login/message-login",
-    "main/pages/complaint/complaint"
+    "main/pages/complaint/complaint",
+    "main/pages/shop-record/shop-record",
+    "main/pages/map/map"
   ],
   "tabBar": {
     "color": "#999",
