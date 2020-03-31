@@ -1,2 +1,24 @@
-<!--main/pages/check-img/check-img.wxml-->
-<text>main/pages/check-img/check-img.wxml</text>
+<!--查看大图-->
+<view class="z-wrap">
+  <movable-area style="height: 100%; width: 100%; background: #000;" scale-area="{{true}}">
+    <movable-view 
+      style="height: 100%; width:100%; background: #000;" 
+      direction="all"
+      scale="{{true}}"
+    >
+      <swiper  class="z-swiper-wrap" current="{{index}}">
+        <swiper-item 
+          wx:for="{{imgs}}" 
+          wx:key="index" 
+          class="z-flex z-flex-center"
+        >
+          <lazy-load 
+            default-image="http://www.sekjce.com/statics/public/img/zwtp.jpg" 
+            mode="widthFix" 
+            original-image="{{item?item:''}}"
+          />
+        </swiper-item>
+      </swiper>
+    </movable-view>
+  </movable-area>
+</view>

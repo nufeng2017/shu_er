@@ -8,12 +8,12 @@
 }
 .z-title .z-icon{
   position: absolute;
-  top:-10rpx;
+  top:-50rpx;
   right: 28rpx;
   box-sizing: border-box;
-  height: 50rpx;
+  height: 120rpx;
   width:100rpx;
-  padding:  10rpx 35rpx;
+  padding:  45rpx 35rpx;
 }
 .z-popup-foot{
   padding: 0rpx 50rpx 60rpx;

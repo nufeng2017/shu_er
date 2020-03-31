@@ -14,7 +14,8 @@ Page({
         link: '/main/pages/vip-code/vip-code'
       },{
         imgUrl: '/main/pages/index/img/recharge-icon.png',
-        title: '会员充值'
+        title: '会员充值',
+        link:'/main/pages/recharge/recharge'
       },{
         imgUrl: '/main/pages/index/img/shop-icon.png',
         title: '招商加盟',

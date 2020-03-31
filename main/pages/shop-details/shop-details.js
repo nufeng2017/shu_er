@@ -36,9 +36,11 @@ Page({
       });
     });
   },
-  checkImg(){ 
+  checkImg(e){ 
+    let imgs = e.currentTarget.dataset.imgs;
+    let index = e.currentTarget.dataset.index;
     wx.navigateTo({
-      url: '/main/pages/check-img/check-img',
+      url: '/main/pages/check-img/check-img?imgs=' + JSON.stringify(imgs) + '&index=' + index,
     })
   },
   addCar(e) {

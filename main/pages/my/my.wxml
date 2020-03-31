@@ -6,7 +6,13 @@
       <image src="./img/bg.jpg"></image>
 
       <!-- 会员码 -->
-      <grid img-url="/main/assets/img/member-code-icon.png" title="会员码"  link="" class="z-member-code" wx:if="{{user_id}}"/>
+      <grid 
+        img-url="/main/assets/img/member-code-icon.png" 
+        title="会员码"  
+        link="/main/pages/vip-code/vip-code" 
+        class="z-member-code" 
+        wx:if="{{user_id}}"
+      />
 
       <!-- 会员信息 -->
       <view class="z-member-info-box z-flex z-flex-align-center" bindtap="login">
@@ -37,7 +43,7 @@
           wx:key="index"
           icon="{{item.icon}}" 
           is-link 
-          url="{{user_id?item.url:''}}"
+          data-url="{{item.url}}"
           border="{{index===cells.length-1?false:true}}"
         >
           <view slot="title">

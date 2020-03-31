@@ -4,7 +4,7 @@
     "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
     "shop-car-item":"/main/components/shop-car-item/shop-car-item",
     "popup": "/main/components/popup/popup",
-    "pay": "/components/pay/pay"
+    "comment": "/main/components/comment/comment"
   },
   "navigationBarTitleText": "我的订单"
 }

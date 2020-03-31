@@ -1,6 +1,9 @@
 {
-  "usingComponents": {},
   "navigationBarBackgroundColor":"#000",
   "backgroundColor":"#000",
-  "navigationBarTextStyle":"white"
+  "navigationBarTextStyle":"white",
+  "navigationBarTitleText": "查看大图",
+  "usingComponents": {
+    "lazy-load": "/components/lazy-load/lazy-load"
+  }
 }

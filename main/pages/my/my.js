@@ -59,7 +59,8 @@ Page({
       popopShow: false,
       user_id:''
     })
-    wx.clearStorageSync();
+    wx.removeStorageSync('user_id');
+    wx.removeStorageSync('car_list');
   },
   checkLogin(){
     if (getStorage('user_id')){

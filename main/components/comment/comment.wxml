@@ -1,0 +1,24 @@
+<popup 
+  show="{{show}}" 
+  confirmTxt="确认提交" 
+  bind:confirm="confirm" 
+  showCloseBtn="{{true}}" 
+  title="商品评价" 
+  show-cancel="{{false}}"
+>
+  <view class="z-comment">
+    <view class="z-comment-star">
+      <text>总体评分</text>
+      <van-rate value="{{ value }}" bind:change="onChange" />
+    </view>
+    <view class="z-comment-txt">
+      <text>评价内容</text>
+      <view class="z-textarea">
+        <textarea
+          placeholder="请填写您的对本次服务的评价"
+          bindinput="inputTxt"
+        ></textarea>
+      </view>
+    </view>
+  </view>
+</popup>

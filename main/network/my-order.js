@@ -22,3 +22,13 @@ export function cancelOrder(data) {
     data: data
   })
 }
+
+/**
+ * 确认收货
+*/
+export function confirmReceive(data) {
+  return network({
+    url: 'confirmReceive',
+    data: data
+  })
+}

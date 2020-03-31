@@ -44,7 +44,7 @@
       <view class="z-shop-box z-cl">
         <shop-item 
           class="z-fl z-shop-item" 
-          link="/main/pages/shop-details/shop-details"
+          link="/main/pages/shop-details/shop-details?type={{item.type}}&pid={{item.pid}}"
           wx:for="{{indexData.hot_product}}"
           wx:key="index"
           item="{{item}}"

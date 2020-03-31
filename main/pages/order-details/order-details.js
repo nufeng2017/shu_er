@@ -1,4 +1,5 @@
 import { getOrderInfo } from '../../network/order-details.js';
+import { cancelOrder, confirmReceive } from '../../network/my-order.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
 Page({
 

@@ -1,2 +1,0 @@
-
-<button class="payment-button" class="z-pay" bindtap="payout">支付 0.01 元</button>

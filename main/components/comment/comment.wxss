@@ -1,0 +1,27 @@
+.z-comment{
+  padding: 10rpx 50rpx;
+  color:#333;
+  font-size: 30rpx;
+}
+.z-comment text{
+  margin-right: 44rpx;
+  display: inline-block;
+}
+.z-comment .z-comment-star{
+  line-height: 140rpx;
+}
+.z-comment .z-comment-star text{
+  vertical-align:4%;
+}
+.z-comment .z-textarea{
+  margin-top: 30rpx;
+  padding: 30rpx;
+  border:1px solid #ededed;
+  box-sizing: border-box;
+  height: 277rpx;
+  margin-bottom: 30rpx;
+}
+.z-comment .z-textarea textarea{
+  width:100%;
+  height: 100%;
+}

@@ -1,5 +1,6 @@
-import { getOrderList, cancelOrder } from '../../network/my-order.js';
+import { getOrderList, cancelOrder, confirmReceive } from '../../network/my-order.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
+import pay from '../../../utils/pay.js';
 let oid;
 let index;
 Page({
@@ -31,6 +32,15 @@ Page({
       page: 1
     },
     showPopup:false,
+    popupTypeConfig:{
+      '取消订单': '是否确认取消该订单？',
+      '确认收货': '是否确认收货？'
+    },
+    popupType:'',
+    commentPopup:{
+      show: false,
+      info:{}
+    },
   },
 
   /**
@@ -44,9 +54,7 @@ Page({
     this.setData({
       tabActive:index
     });
-    if (this.data['list'+ (index + 1)].data.length == 0) {
-      this.getList(1,index);
-    }
+    this.getList(1, index,1);
   },
   setTabs(data){
     data = data.filter((item)=>{
@@ -57,9 +65,9 @@ Page({
     this.setData({
       tabs:data
     });
-    this.getList(1,0);//获得订单列表
+    this.getList(1,0,1);//获得订单列表
   },
-  getList(page,index){
+  getList(page,index,isFirst){
     let status;
     switch (index) {
       case 0:
@@ -78,14 +86,19 @@ Page({
         status = 6;
         break;
     }
-    this.getItemList(page, 'list' + (index + 1), status);
+    this.getItemList(page, 'list' + (index + 1), isFirst,status);
   },
-  getItemList(page, pro, status){
+  getItemList(page, pro, isFirst,status){
     getOrderList({
       user_id: getStorage('user_id'),
       page: page,
       status: status
     }).then((res) => {
+      if (isFirst == 1){//是第一次请求数据
+        this.setData({
+          [pro + '.data']: [],
+        });
+      }
       this.setData({
         [pro + '.data']: this.data[pro].data.concat(res.data.data),
         [pro + '.page']: res.data.data.length > 0 ? page : (page - 1 == 0) ? 1 : page - 1
@@ -101,8 +114,10 @@ Page({
   cancelOrder(e){//取消订单
     oid = e.currentTarget.dataset.oid;
     index = e.currentTarget.dataset.index;
+    let popupType = e.currentTarget.dataset.popup;
     this.setData({
-      showPopup:true
+      showPopup:true,
+      popupType: popupType
     });
   },
   cancel(){//弹窗取消
@@ -111,17 +126,43 @@ Page({
     });
   },
   confirm(){//弹窗确定
-    cancelOrder({
-      user_id: getStorage('user_id'),
-      oid:oid
-    });
-    let list2 = this.data.list2.data;
-    list2.splice(this.findListData(list2, oid),1);
-    this.setData({
-      showPopup: false,
-      ['list1' + '.data[' + this.findListData(this.data.list1.data, oid) + '].status']:8,
-      'list2.data': list2,
-    });
+    if (this.data.popupType == '取消订单'){
+      cancelOrder({
+        user_id: getStorage('user_id'),
+        oid:oid
+      }).then(()=>{
+        this.changePageShow(8);
+      });
+      
+    } else if (this.data.popupType == '确认收货'){
+    console.log(oid)
+      confirmReceive({
+        user_id: getStorage('user_id'),
+        oid: oid
+      }).then(()=>{
+        this.setData({
+          tabActive:4,
+          showPopup: false
+        });
+      });
+    }
+  },
+  changePageShow(status){
+    let list = this.data['list' + (this.data.tabActive + 1)].data;
+    let i = this.findListData(list, oid);
+    console.log(i)
+    if (this.data.tabActive == 0){
+      this.setData({
+        showPopup: false,
+        ['list' + (this.data.tabActive + 1) + '.data[' + i + '].status']: status,
+      });
+    } else {
+      list.splice(i,1);
+      this.setData({
+        showPopup: false,
+        ['list' + (this.data.tabActive + 1) + '.data']: list,
+      });
+    }
   },
   findListData(data,oid){//找到符合条件的数据
     let i;
@@ -136,5 +177,31 @@ Page({
     let active = this.data.tabActive;
     let page = this.data['list' + (active + 1)].page + 1;
     this.getList(page, active);//获得订单列表
+  },
+  payout(e){
+    let item = e.currentTarget.dataset.item;
+    pay(item.oid,(res)=>{
+      this.setData({
+        tabActive: Number(item.type) + 1
+      });
+    });
+  },
+  limitComment(e){
+    let item = e.currentTarget.dataset.item;
+    this.setData({
+      commentPopup:{
+        show:true,
+        info:item
+      }
+    });
+  },
+  comment(){
+    wx.showToast({
+      title: '感谢您的评价！',
+      icon:'none'
+    });
+    this.setData({
+      'commentPopup.show':false
+    });
   }
 })
