@@ -188,6 +188,8 @@ Page({
   },
   limitComment(e){
     let item = e.currentTarget.dataset.item;
+    oid = e.currentTarget.dataset.oid;
+    index = e.currentTarget.dataset.index;
     this.setData({
       commentPopup:{
         show:true,
@@ -203,5 +205,6 @@ Page({
     this.setData({
       'commentPopup.show':false
     });
+    this.changePageShow(7);
   }
 })

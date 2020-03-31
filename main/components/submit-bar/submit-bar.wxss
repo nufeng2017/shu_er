@@ -34,7 +34,9 @@
   font-size: 34rpx;
 }
 .z-submit-bar-container .z-submit-price-count{
-  color:#ff3e3e
+  color:#ff3e3e;
+  display:inline-block;
+  max-width:200rpx;
 }
 .z-submit-bar-container .z-has-freight{
   color:#acacac;

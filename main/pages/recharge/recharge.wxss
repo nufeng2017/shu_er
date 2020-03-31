@@ -62,3 +62,16 @@
 .z-submit-bar-container .z-submit-bar-btn{
   width:300rpx !important;
 }
+.z-other-num{
+  margin-top: 15rpx;
+}
+.z-input-box{
+  padding:10rpx 0 200rpx;
+}
+.z-input-box input{
+  display: inline-block;
+  border-bottom: 1px solid #ccc;
+  width:200rpx;
+  vertical-align: text-bottom;
+  font-size: 50rpx;
+}

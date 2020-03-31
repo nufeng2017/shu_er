@@ -3,9 +3,9 @@
   <view class="z-main" style="{{'background-image:url(' + bg + ')'}}">
     <view class="z-content-container">
       <view class="z-info-box">
-        <view class="z-vip-code">普卡：134****5124</view>
-        <view class="z-bar-code">2185 1384 4883 0091 1</view>
-        <view class="z-bar-code-img"><image src=""></image></view>
+        <view class="z-vip-code">普卡：{{card.card_no}}</view>
+        <view class="z-bar-code">{{card.code_num}}</view>
+        <view class="z-bar-code-img"><image src="{{card.code_img}}"></image></view>
         <view class="z-bar-code-tips">
           <view><image src="./img/icon.png"></image></view>  
           每30S自动更新，请在店内消费时出示

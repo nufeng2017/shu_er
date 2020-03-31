@@ -11,11 +11,14 @@ Component({
   },
   methods: {
     confirm(){
+      console.log(this.data.info)
       addComment({
         user_id:wx.getStorageSync('user_id'),
-        pid: this.data.info.pid,
+        pid: this.data.info.products[0].pid,
         star:this.data.value,
-        content: this.data.content
+        content: this.data.content,
+        type: this.data.info.products[0].type,
+        oid: this.data.info.oid
       }).then((res)=>{
         this.triggerEvent('comment');
       });

@@ -447,6 +447,13 @@
 					"id": -1,
 					"name": "main/pages/my-order/my-order",
 					"pathName": "main/pages/my-order/my-order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/recharge/recharge",
+					"pathName": "main/pages/recharge/recharge",
 					"scene": null
 				}
 			]

@@ -76,7 +76,14 @@
                   data-oid="{{item.oid}}" 
                   data-index="{{index}}"
                 >确认收货</view>
-                <view class="z-btn z-btn-2" wx:if="{{item.status == 6}}" bindtap="limitComment" data-item="{{item}}">立即评价</view>
+                <view 
+                  class="z-btn z-btn-2" 
+                  wx:if="{{item.status == 6}}" 
+                  bindtap="limitComment"
+                  data-oid="{{item.oid}}" 
+                  data-index="{{index}}"
+                  data-item="{{item}}"
+                >立即评价</view>
               </view>
             </view>
             
@@ -102,4 +109,4 @@
 </popup>
 
 <!-- 评价弹窗 -->
-<comment show="{{commentPopup.show}}" info="{{commentPopup.info.products[0]}}" bind:comment="comment"/>
+<comment show="{{commentPopup.show}}" info="{{commentPopup.info}}" bind:comment="comment"/>

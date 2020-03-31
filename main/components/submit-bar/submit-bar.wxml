@@ -11,9 +11,9 @@
     </view>
     <view class="~z-flex z-submit-main ~z-flex-item">
       <view class="z-submit-bar-txt ~z-flex-direction ~z-flex ~z-flex-center">
-        <view class="z-submit-price">
+        <view class="z-submit-price ~z-flex ~z-flex-center">
           <text>{{boardText}}</text>
-          <text class="z-submit-price-count">￥{{price}}</text>
+          <text class="z-submit-price-count ~z-text-hidden">￥{{price}}</text>
         </view>
         <view class="z-has-freight" wx:if="{{hasFreight}}">{{hasFreight}}</view>
       </view>

@@ -17,11 +17,21 @@
         data-index="{{index+1}}"
         bindtap="selectPrice"
       >
-        <view class="z-price"><text>￥</text>{{item.price}}</view>
-        <view class="z-gift">{{item.gift}}</view>
+        <view class="z-price"><text>￥</text>{{item.money}}</view>
+        <view class="z-gift">赠{{item.bonus}}元</view>
       </view>
+    </view>
+    <view class="z-other-num">
+      <view class="z-block-title">其他金额</view>
+      <view class="z-input-box"><text>￥</text><input bindfocus="focus" bindinput="inputVal" type="number"></input></view>
     </view>
   </view>
 </view>
 
-<submit-bar show-checkbox="{{false}}" board-text="已选充值金额：" price="{{active==0?0:rechargeItem[active-1].price}}" btn-text="立即充值" bind:submit="submit"/>
+<submit-bar 
+  show-checkbox="{{false}}" 
+  board-text="充值金额：" 
+  price="{{money}}" 
+  btn-text="立即充值" 
+  bind:submit="submit"
+/>
