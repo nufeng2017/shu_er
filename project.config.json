@@ -517,6 +517,13 @@
 					"id": -1,
 					"name": "main/pages/my-comment/my-comment",
 					"pathName": "main/pages/my-comment/my-comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main/pages/my-record/my-record",
+					"pathName": "main/pages/my-record/my-record",
 					"scene": null
 				}
 			]

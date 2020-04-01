@@ -4,7 +4,7 @@
     <view class="z-content-container">
       <view class="z-last-money-show">
         <view>账户余额（元）</view>
-        <view class="z-last-num">￥450.24</view>
+        <view class="z-last-num">￥{{pageInfo.account}}</view>
       </view>
       <view class="z-info-box">
         <view class="z-info-box-head z-cl">
