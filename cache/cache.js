@@ -5,6 +5,7 @@ const storage = {//登记要存的数据
   "user_id":"user_id",//登录所存ID
   "car_list":"car_list",//购物车列表缓存
   "config":"config",//配置信息
+  "user_info": "user_info"//用户信息
 };
 
 export function setStorage (key,data){

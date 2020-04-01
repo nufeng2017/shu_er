@@ -356,7 +356,7 @@ image{
   font-size: 24rpx;
 }
 /* 空数据 */
-.z-empty{
+.z-empty,.z-no-data{
   width:100%;
   padding-top: 200rpx;
   font-size: 32rpx;
@@ -365,5 +365,10 @@ image{
 .z-empty image{
   width:372rpx;
   height: 293rpx;
+  margin-bottom: 56rpx;
+}
+.z-no-data image{
+  width:320rpx;
+  height: 331rpx;
   margin-bottom: 56rpx;
 }

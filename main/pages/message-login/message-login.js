@@ -75,6 +75,7 @@ Page({
               icon: 'none'
             });
             setStorage('user_id', res.data.data.user_id);
+            setStorage('user_info', res.data.data);
             that.closeLoginPage();
           })
         } else {

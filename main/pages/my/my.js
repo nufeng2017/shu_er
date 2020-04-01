@@ -32,7 +32,8 @@ Page({
       url: '',
       title:'客服帮助',
       icon:'/main/pages/my/img/cell-6.png'
-    }]
+    }],
+    user_info:{}
   },
 
   /**
@@ -60,12 +61,14 @@ Page({
       user_id:''
     })
     wx.removeStorageSync('user_id');
+    wx.removeStorageSync('user_info');
     wx.removeStorageSync('car_list');
   },
   checkLogin(){
     if (getStorage('user_id')){
       this.setData({
-        user_id: getStorage('user_id')
+        user_id: getStorage('user_id'),
+        user_info: getStorage('user_info')
       });
     }
   },

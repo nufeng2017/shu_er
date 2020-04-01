@@ -1,7 +1,7 @@
 import { confirmOrder, getConfirmOrder, changeAddress } from '../../network/confirm-order.js';
 import { getAddressList } from '../../network/manage-address.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
-
+import pay from '../../../utils/pay.js';
 Page({
 
   /**
@@ -22,6 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     let list = JSON.parse(options.list);
     this.filterData(list);
   },
@@ -34,7 +35,7 @@ Page({
         addressList: [data],
         showPopup: false
       });
-      this.changeAddress();
+      this.changeAddress(res.data.data);
     });
   },
   changeAddress(data){
@@ -95,12 +96,14 @@ Page({
   },
   lastPageFn(){
     let pages = getCurrentPages();
-    pages[pages.length - 2].getList();
-    pages[pages.length - 2].setData({
-      product: false,//全部勾选商品
-      service: false,//是否全部勾选服务
-      checkAll: false,//是否全选
-    });
+    if (pages[pages.length - 2].getList){
+      pages[pages.length - 2].getList();
+      pages[pages.length - 2].setData({
+        product: false,//全部勾选商品
+        service: false,//是否全部勾选服务
+        checkAll: false,//是否全选
+      });
+    }
   },
   getInfo(data){
     let productNum = 0;
@@ -138,5 +141,15 @@ Page({
         showPopup: this.data.addressList.length > 0 ? false : true
       });
     }
-  }
+    let oids = [];
+    this.data.submitList.map((item)=>{
+      oids.push(item.oid);
+    });
+    oids = oids.join(',');
+    pay(oids, (res) => {
+      wx.redirectTo({
+        url: '/main/pages/my-order/my-order'
+      })
+    });
+  },
 })

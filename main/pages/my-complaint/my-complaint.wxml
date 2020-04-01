@@ -1,27 +1,36 @@
 <!--我的投诉-->
 <view class="z-wrap">
-  <view class="z-main">
-    <view class="z-inf-box">
+  <scroll-view class="z-main" scroll-y="{{true}}">
+    <view class="z-inf-box" wx:key="index" wx:for="{{list}}">
       <view class="z-inf-body">
         <shop-car-item 
           img-url="/main/assets/img/cell-2.png"
           class="z-my-comment"
         >   
-          <view slot="head-title">方晓华 112312323</view>
-          <view slot="foot" class="z-comment-txt">老板很热情，采耳手法很好，感觉很舒服哈~</view>
+          <view slot="head-title">{{item.phone}}</view>
+          <view slot="body" class="z-comment-txt">{{item.content}}</view>
+          <view slot="foot" class="z-comment--time">{{item.add_time}}</view>
         </shop-car-item>
       </view>
-      <view class="z-inf-foot">
+      <view class="z-inf-foot" wx:if="{{item.reply_content}}">
         <shop-car-item 
           class="z-comment-reply"
           img-url="/main/assets/img/cell-2.png"
         >   
           <view slot="head-title">平台回复：</view>
-          <view slot="body" class="z-comment-reply-content">感谢您对本服务的认可！欢迎下次再来~ </view>
-          <view slot="foot" class="z-comment-reply-time">2020.02.03 13:20:22 拷贝</view>
+          <view slot="body" class="z-comment-reply-content">{{item.reply_content}}</view>
+          <view slot="foot" class="z-comment-reply-time">{{item.replay_time}}</view>
         </shop-car-item>
       </view>
     </view>
+    <view class="z-no-data z-flex z-flex-direction z-flex-align-center" wx:if="{{list.length<=0}}">
+      <image src="/main/assets/img/no-data.png"></image>
+      <text>暂无投诉记录</text>
+    </view>
+  </scroll-view>
+  <!-- 我要投诉 -->
+  <view class="z-btn-box">
+    <view class="z-btn z-btn-1" bindtap="complaint">我要投诉</view>
   </view>
 </view>
 

@@ -7,7 +7,7 @@
   </view>
   <view class="z-main-box">
     <view class="z-block-title">账户余额（元）</view>
-    <view class="z-last-money"><text>￥</text>0.00</view>
+    <view class="z-last-money"><text>￥</text>{{user_info.account}}</view>
     <view class="z-block-title">请选择充值金额</view>
     <view class="z-cl z-sel-item-box">
       <view 
@@ -23,7 +23,7 @@
     </view>
     <view class="z-other-num">
       <view class="z-block-title">其他金额</view>
-      <view class="z-input-box"><text>￥</text><input bindfocus="focus" bindinput="inputVal" type="number"></input></view>
+      <view class="z-input-box"><text>￥</text><input bindfocus="focus" bindinput="inputVal" type="digit"></input></view>
     </view>
   </view>
 </view>

@@ -1,66 +1,42 @@
-// main/pages/my-comment/my-comment.js
+import { getMyCommentList, deleteComment } from '../../network/my-comment.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[],
+    page:1,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getList(this.data.page);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getList(page,addPage){
+    if (addPage){
+      page += addPage;
+    }
+    getMyCommentList({
+      user_id:wx.getStorageSync('user_id'),
+      page:page
+    }).then((res)=>{
+      this.setData({
+        list:this.data.list.concat(res.data.data.comment_list),
+        page: res.data.data.comment_list.length > 0 ? page : page - addPage
+      });
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  reachBottom(page,addPage){
+    this.getList(this.data.page,1);
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  deleteItem(){
+    deleteComment({
+      user_id: wx.getStorageSync('user_id'),
+    }).then((res)=>{
+      
+    });
   }
 })

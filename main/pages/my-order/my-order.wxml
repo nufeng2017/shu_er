@@ -15,6 +15,13 @@
         <van-tab title="{{item.tag_name}}" wx:for="{{tabs}}" wx:key="index">
           <view class="z-list-container z-cl" >
             <view 
+              class="z-no-data z-flex z-flex-direction z-flex-align-center" 
+              wx:if="{{item.tag_id== 0&&list1.data.length==0||item.tag_id==1&&list2.data.length==0||item.tag_id==2&&list3.data.length==0||item.tag_id==5&&list4.data.length==0||item.tag_id==6&&list5.data.length==0}}"
+            >
+              <image src="/main/assets/img/no-data.png"></image>
+              <text>暂无数据</text>
+            </view>
+            <view 
               class="z-inf-box" 
               wx:for="{{item.tag_id== 0&&list1.data||item.tag_id==1&&list2.data||item.tag_id==2&&list3.data||item.tag_id==5&&list4.data||item.tag_id==6&&list5.data}}" 
               wx:key="index"

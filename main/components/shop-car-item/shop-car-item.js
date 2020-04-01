@@ -15,6 +15,7 @@ Component({
   },
   methods: {
     navigateTo(){
+      console.log(this.data.url)
       wx.navigateTo({
         url:this.data.url
       });

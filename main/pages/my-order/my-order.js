@@ -46,7 +46,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow(){
     this.setTabs(getStorage('config').order_status);
   },
   onChange(e) {
@@ -65,7 +65,7 @@ Page({
     this.setData({
       tabs:data
     });
-    this.getList(1,0,1);//获得订单列表
+    this.getList(1, this.data.tabActive,1);//获得订单列表
   },
   getList(page,index,isFirst){
     let status;

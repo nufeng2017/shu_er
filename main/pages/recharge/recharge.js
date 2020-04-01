@@ -1,15 +1,22 @@
 import { getStorage, setStorage } from '../../../cache/cache.js';
-import { rechargeCard } from '../../network/recharge.js';
+import { rechargeCard, getAccount } from '../../network/recharge.js';
 import pay from '../../../utils/pay.js';
 Page({
   data: {
     active:0,
     rechargeItem: [],
-    money:0
+    money:0,
+    user_info:{}
   },
   onLoad(){
     this.setData({
       rechargeItem:getStorage('config').bonus
+    });
+    this.getInfo();
+  },
+  getInfo(){
+    this.setData({
+      user_info: getStorage('user_info')
     });
   },
   selectPrice(e){
@@ -32,6 +39,7 @@ Page({
     });
   },
   submit(){
+    let _self = this;
     rechargeCard({
       user_id: getStorage('user_id'),
       money: this.data.money
@@ -39,13 +47,23 @@ Page({
       wx.requestPayment({
         timeStamp: res.data.data.nowTime.toString(),
         nonceStr: res.data.data.nonce_str,
-        package: 'prepay_id =' + res.data.data.prepay_id,
-        signType: 'MD5',
+        package: res.data.data.package,
+        signType:'MD5',
         paySign: res.data.data.paysign,
         success(res) {
           wx.showToast({
             title: '充值成功',
             icon: 'none'
+          })
+          getAccount({
+            user_id: getStorage('user_id')
+          }).then((res) => {
+            let user_info = _self.data.user_info;
+            user_info.account = res.data.data.account;
+            _self.setData({
+              user_info: user_info
+            })
+            getStorage('user_info', user_info)
           })
         },
         fail(res) {

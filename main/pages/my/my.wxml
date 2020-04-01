@@ -21,10 +21,10 @@
         </view>
         <view class="z-member-info z-flex z-flex-direction z-flex-align-center">
           <view class="z-member-num z-flex  z-flex-align-center">
-            <text>{{user_id?'已经登录':'注册/登录'}}</text>
-            <view wx:if="{{user_id}}" bindtap="checkRerord">普卡会员 <text>></text> </view>
+            <text>{{user_id?user_info.phone:'注册/登录'}}</text>
+            <view wx:if="{{user_id}}" bindtap="checkRerord">{{user_info.card_type}} <text>></text></view>
           </view>
-          <view class="z-last-money" wx:if="{{user_id}}">账户余额 <text>￥470.23</text></view>
+          <view class="z-last-money" wx:if="{{user_id}}">账户余额 <text>￥{{user_info.account}}</text></view>
         </view>
       </view>
 

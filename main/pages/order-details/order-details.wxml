@@ -1,4 +1,4 @@
-<!--地址管理-->
+<!--订单详情-->
 <view class="z-wrap">
   <view class="z-main">
     <view class="z-inf-box" wx:if="{{info.type==2}}">
@@ -63,7 +63,7 @@
       <view class="z-inf-body z-shops-item">
         <view class="z-flex">
           <view>订单编号：</view>
-          <view class="z-blue">{{info.order_no}}</view>
+          <view class="z-blue" bindtap="copyText" data-txt="{{info.order_no}}">{{info.order_no}}</view>
         </view>
         <view class="z-flex">
           <view>下单时间：</view>
@@ -79,11 +79,27 @@
 </view>
 
 <!-- 提交按钮 -->
-<goods-action btn2="{{true}}" wx:if="{{info.status==1 ||info.status==5}}">
+<goods-action btn2="{{true}}">
   <view class="z-btn-box">
-    <view class="z-btn" wx:if="{{info.status == 1}}" bindtap="cancelOrder" data-oid="{{info.oid}}">取消订单</view>
-    <view class="z-btn z-btn-1" wx:if="{{info.status == 1}}">立即付款</view>
-    <view class="z-btn z-btn-2" wx:if="{{info.status == 5}}">确认收货</view>
-    <view class="z-btn z-btn-2" wx:if="{{info.status == 6}}">立即评价</view>
+    <view class="z-btn" wx:if="{{info.status == 1}}" bindtap="cancelOrder" data-popup="取消订单">取消订单</view>
+    <view class="z-btn z-btn-2" wx:if="{{info.status == 1}}" bindtap="payout">立即付款</view>
+    <view class="z-btn" wx:if="{{info.status == 5}}" data-popup="确认收货" bindtap="cancelOrder">确认收货</view>
+    <view class="z-btn z-btn-2" wx:if="{{info.status == 6}}" bindtap="limitComment">立即评价</view>
   </view>
 </goods-action>
+
+<!-- 弹窗 -->
+<popup 
+  show="{{showPopup}}" 
+  cancelTxt="取消" 
+  confirmTxt="确定" 
+  bind:confirm="confirm" 
+  bind:cancel="cancel"
+  showCloseBtn="{{true}}"
+  title="提示"
+>
+  <view class="z-add-adress-tips">{{popupTypeConfig[popupType]}}</view>
+</popup>
+
+<!-- 评价弹窗 -->
+<comment show="{{commentPopup.show}}" info="{{commentPopup.info}}" bind:comment="comment"/>

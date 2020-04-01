@@ -2,3 +2,29 @@
 .z-my-comment .z-shop-car-item{
   min-height:auto; 
 }
+.z-wrap{
+  padding-bottom: 200rpx;
+  box-sizing: border-box;
+}
+.z-main{
+  height: 100%;
+}
+.z-inf-box{
+  padding-bottom: 20rpx;
+}
+.z-btn-box{
+  position: fixed;
+  width:100%;
+  padding:0 40rpx;
+  height: 200rpx;
+  box-sizing: border-box;
+  padding-top: 10rpx;
+}
+.z-btn-box .z-btn{
+  width:100%;
+}
+.z-comment--time{
+  color: #ccc;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}

@@ -67,11 +67,13 @@
 }
 .z-input-box{
   padding:10rpx 0 200rpx;
+  height: 80rpx;
 }
 .z-input-box input{
   display: inline-block;
   border-bottom: 1px solid #ccc;
   width:200rpx;
-  vertical-align: text-bottom;
+  vertical-align: middle;
   font-size: 50rpx;
+  height: 100%;
 }

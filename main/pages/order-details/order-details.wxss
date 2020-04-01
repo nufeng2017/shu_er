@@ -94,3 +94,8 @@
 .z-btn{
   margin-right: 20rpx;
 }
+.z-add-adress-tips{
+  padding: 50rpx;
+  font-size: 36rpx;
+  text-align: center;
+}

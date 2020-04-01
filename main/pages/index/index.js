@@ -110,5 +110,10 @@ Page({
     getConfig(data).then((res)=>{
       setStorage('config',res.data.data);
     });
+  },
+  checkMore(){
+    wx.switchTab({
+      url: '/main/pages/mall/mall',
+    })
   }
 })

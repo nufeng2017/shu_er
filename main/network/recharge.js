@@ -13,3 +13,12 @@ export function rechargeCard(data) {
   })
 }
 
+/**
+ * 查询余额
+ */
+export function getAccount(data) {
+  return network({
+    url: 'getAccount',
+    data: data
+  })
+}

@@ -35,7 +35,7 @@
     <!-- 产品详情 -->
     <view class="z-shop-introduction z-shop-info" wx:if="{{pruductInfo.description}}">
       <view class="z-shop-block-title">产品详情</view>
-      <view class="z-shop-intruduction-text">{{pruductInfo.description}}</view>
+      <rich-text class="z-shop-intruduction-text" nodes="{{pruductInfo.description}}"></rich-text>
     </view>
 
     <!-- 评论 -->
@@ -69,6 +69,6 @@
 <goods-action btn2="{{true}}" btn1="{{carLen}}" btn3="{{true}}">
   <view class="z-btn-box">
     <view class="z-btn" bindtap="addCar">加入购物车</view>
-    <view class="z-btn z-btn-1">立即抢购</view>
+    <view class="z-btn z-btn-1" bindtap="buy">立即抢购</view>
   </view>
 </goods-action>

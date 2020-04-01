@@ -4,17 +4,17 @@
     <view class="z-page-title">您的问题或建议？</view>
     <view class="z-input-box">
       <view class="z-textarea">
-        <van-field value="{{ username }}" placeholder="请输入您的投诉内容" type="textarea" show-confirm-bar></van-field>
-        <view class="z-textarea-text-num">0/200</view>
+        <van-field  placeholder="请输入您的投诉内容" type="textarea" show-confirm-bar bind:input="inputContent" maxlength="200"></van-field>
+        <view class="z-textarea-text-num">{{content.length}}/200</view>
       </view>
 
       <view class="z-phone-num">
         <view class="z-phone-num-title">您的联系方式</view>
-        <van-field value="{{ phone }}" placeholder="请输入您的手机号码" clearable type="number" />
+        <van-field placeholder="请输入您的手机号码" clearable type="number" bind:input="inputNum"/>
       </view>
     </view>
     <view class="z-login-btn">
-      <button class="z-flex z-flex-center z-authorized-login">
+      <button class="z-flex z-flex-center z-authorized-login" bindtap="submit">
         <text>提交</text>
       </button>
     </view>

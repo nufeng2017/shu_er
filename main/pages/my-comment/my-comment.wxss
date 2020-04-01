@@ -1,3 +1,6 @@
+.z-main{
+  height: 100%;
+}
 .z-inf-box .z-inf-body{
   padding: 40rpx 30rpx 35rpx;
 }
@@ -48,12 +51,14 @@
   font-size: 28rpx;
   color:#333;
   line-height: 35rpx;
+
 }
 .z-comment-item-box{
   margin-left: 80rpx;
   border-radius: 8rpx;
   background: #f2f2f2;
   padding: 28rpx;
+  margin-top: 10rpx;
 }
 .z-comment-item .z-shop-car-item-main{
   padding-left: 180rpx;
@@ -79,4 +84,7 @@
 }
 .z-comment-item .z-comment-item-price{
   font-size: 26rpx;
+}
+.z-inf-box{
+  padding-bottom: 25rpx;
 }

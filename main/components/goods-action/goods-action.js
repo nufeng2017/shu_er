@@ -18,10 +18,14 @@ Component({
   },
   methods: {
     isIPX() {
-      console.log(app.globalData.isIphoneX)
       this.setData({
         isIPX: app.globalData.isIphoneX
       });
+    },
+    checkCar(){
+      wx.switchTab({
+        url: '/main/pages/car/car',
+      })
     }
   }
 })

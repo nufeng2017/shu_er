@@ -80,5 +80,23 @@ Page({
         carLen: getStorage('car_list').length.toString()
       })
     });
+  },
+  onShareAppMessage(e) {
+    return {
+      title: this.data.pruductInfo.name,
+      path: `/main/pages/shop-details/shop-details?type=${this.data.pruductInfo.type}&pid=${this.data.pruductInfo.pid}`,
+      imageUrl: this.data.pruductInfo.img[0],
+    }
+  },
+  buy(){
+    let list = this.data.pruductInfo;
+    let lists = [{}];
+    lists[0].selected = true;
+    lists[0].pid = list.pid;
+    lists[0].num = 1;
+    lists[0].type = list.type;
+    wx.navigateTo({
+      url: '/main/pages/confirm-order/confirm-order?list=' + JSON.stringify(lists)
+    })
   }
 })
