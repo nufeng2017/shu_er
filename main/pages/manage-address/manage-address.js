@@ -56,6 +56,15 @@ Page({
       url: '/main/pages/new-address/new-address?item=' + JSON.stringify(item),
     })
   },
+  onUnload(){
+    let pages = getCurrentPages();
+    let lastPage = pages[pages.length - 2];
+    if (lastPage.getAddressList) {
+      if (lastPage.data.addressList.length == 0){
+        lastPage.getAddressList();
+      }
+    }
+  },
   selectAddress(e){
     let item = e.currentTarget.dataset.item;
     let pages = getCurrentPages();

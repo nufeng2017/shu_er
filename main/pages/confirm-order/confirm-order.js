@@ -32,10 +32,12 @@ Page({
     }).then((res) => {
       let data = this.getDefaultAddress(res.data.data);
       this.setData({
-        addressList: [data],
+        addressList: data.address_id?[data]:[],
         showPopup: false
       });
-      this.changeAddress(res.data.data);
+      if (this.data.addressList.length >0){
+        this.changeAddress(res.data.data);
+      }
     });
   },
   changeAddress(data){
@@ -137,9 +139,12 @@ Page({
   },
   submit(){
     if (this.data.showAddress){
-      this.setData({
-        showPopup: this.data.addressList.length > 0 ? false : true
-      });
+      if (this.data.addressList.length == 0){
+        this.setData({
+          showPopup: true
+        });
+        return;
+      }
     }
     let oids = [];
     this.data.submitList.map((item)=>{
