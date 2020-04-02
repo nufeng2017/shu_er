@@ -10,8 +10,8 @@
   <view class="z-popup">
     <slot></slot>
     <view class="z-popup-foot ~z-flex ~z-flex-center">
-      <view class="~z-btn ~z-flex-item z-foot-btn" wx:if="{{showCancel}}" bindtap="cancel">{{cancelTxt}}</view>
-      <view class="~z-btn ~z-btn-1 ~z-flex-item" bindtap="confirm">{{confirmTxt}}</view>
+      <button class="~z-btn ~z-flex-item z-foot-btn" wx:if="{{showCancel}}" bindtap="cancel">{{cancelTxt}}</button>
+      <button class="~z-btn ~z-btn-1 ~z-flex-item" bindtap="confirm" open-type="{{openType}}" bindgetuserinfo="getUserInfo">{{confirmTxt}}</button>
     </view>
   </view>
   <view slot="title" class="z-title">

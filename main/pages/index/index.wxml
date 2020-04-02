@@ -14,7 +14,15 @@
 
     <!-- banner头部链接 -->
     <view class="z-view-box z-index-head-link z-cl">
-      <grid wx:for="{{headLink}}" wx:key="index" img-url="{{item.imgUrl}}" title="{{item.title}}" class="z-fl" link="{{item.link}}"></grid>
+      <view class="z-fl z-grid-box" wx:for="{{headLink}}" wx:key="index" >
+        <grid 
+          img-url="{{item.imgUrl}}" 
+          title="{{item.title}}" 
+          link="{{item.link}}"
+          bindtap="login"
+        ></grid>
+        <view class="z-login-view" bindtap="login" wx:if="{{index!=2 && !user_id}}"></view>
+      </view>
     </view>
 
     <!-- 轮播 -->
@@ -55,3 +63,18 @@
     </view>
   </view>
 </view>
+
+<!-- 弹窗 -->
+<popup 
+  show="{{showPopup}}" 
+  cancelTxt="取消" 
+  confirmTxt="确定" 
+  bind:confirm="confirm" 
+  bind:cancel="confirm"
+  showCloseBtn="{{true}}"
+  title="提示"
+  open-type="getUserInfo"
+  bind:getUserInfo="getUserInfo"
+>
+  <view class="z-add-adress-tips">舒尔空间申请获得您的公开信息(昵称、头像、地区及性别)</view>
+</popup>

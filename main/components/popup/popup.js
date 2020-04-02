@@ -3,6 +3,7 @@ Component({
   properties: {
     title: String,//弹窗标题
     show: Boolean,//是否显示弹窗
+    openType:String,
     showCancel:{
       type:Boolean,
       value:true
@@ -30,6 +31,9 @@ Component({
     },
     cancel() {
       this.triggerEvent('cancel');
+    },
+    getUserInfo(e){
+      this.triggerEvent('getUserInfo', e.detail);
     },
     closePopup(){
       this.setData({

@@ -32,6 +32,13 @@ Page({
     this.getList();//获取购物车列表数据
   },
   onShow(){
+    if (!getStorage('user_id')) {
+      this.setData({
+        submitList: [],
+      });
+      this.showBlock();
+      return;
+    }
     let car_list = getStorage('car_list');
     if (Array.isArray(car_list)) {
       if (car_list.length != this.data.submitList.length){

@@ -1,6 +1,7 @@
 import { getStorage, setStorage } from '../../../cache/cache.js';
 import { rechargeCard, getAccount } from '../../network/recharge.js';
 import pay from '../../../utils/pay.js';
+import resetUserAccount from '../../../utils/getAccount.js';
 Page({
   data: {
     active:0,
@@ -55,16 +56,11 @@ Page({
             title: '充值成功',
             icon: 'none'
           })
-          getAccount({
-            user_id: getStorage('user_id')
-          }).then((res) => {
-            let user_info = _self.data.user_info;
-            user_info.account = res.data.data.account;
+          resetUserAccount().then((res)=>{
             _self.setData({
-              user_info: user_info
+              user_info: getStorage('user_info')
             })
-            getStorage('user_info', user_info)
-          })
+          });
         },
         fail(res) {
           wx.showToast({

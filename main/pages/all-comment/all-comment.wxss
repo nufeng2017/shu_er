@@ -1,1 +1,5 @@
-@import "/main/pages/shop-details/shop-details.wxss"
+@import "/main/pages/shop-details/shop-details.wxss";
+
+.z-wrap{
+  height: auto;
+}

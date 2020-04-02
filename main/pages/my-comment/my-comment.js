@@ -32,11 +32,18 @@ Page({
   reachBottom(page,addPage){
     this.getList(this.data.page,1);
   },
-  deleteItem(){
+  deleteItem(e){
+    let c_id = e.currentTarget.dataset.id;
+    let index = e.currentTarget.dataset.index;
     deleteComment({
       user_id: wx.getStorageSync('user_id'),
+      c_id:c_id
     }).then((res)=>{
-      
+      let list = this.data.list;
+      list.splice(index,1);
+      this.setData({
+        list:list
+      });
     });
   }
 })

@@ -28,18 +28,25 @@ const login = (e) => {
   }
 }
 
-const getLocation = () => {
+const getLocation = (_self) => {
   return new Promise((resolve, reject) => {
-    wx.showLoading({
-      title: '加载中',
-      mask: true
-    })
-    wx.getLocation({
-      complete(res) {
-        console.log(res)
-        resolve(res);
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.userInfo']) {
+          if (getStorage('user_id')){
+            _self.setData({
+              showPopup: true
+            })
+          }
+        }
+        wx.getLocation({
+          type: 'wgs84',
+          complete(res) {
+            resolve(res)
+          }
+        })
       }
-    })
+    }) 
   })
 }
 module.exports = {

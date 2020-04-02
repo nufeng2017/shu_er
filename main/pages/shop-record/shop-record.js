@@ -7,19 +7,29 @@ Page({
    */
   data: {
     bg: background.arcBg,
+    page:1,
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getList();
+    this.getList(this.data.page,0);
   },
-  getList(){
+  getList(page,addPage){
+    page += addPage;
     getConsumeLog({
-      user_id: wx.getStorageSync('user_id')
+      user_id: wx.getStorageSync('user_id'),
+      page: page
     }).then((res)=>{
-      console.log(res)
+      this.setData({
+        list: this.data.list.concat(res.data.data.list),
+        page: res.data.data.length > 0 ? page : page - addPage
+      });
     });
+  },
+  onReachBottom(){
+    this.getList(this.data.page, 1);
   }
 })

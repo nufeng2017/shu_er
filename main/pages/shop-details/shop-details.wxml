@@ -24,7 +24,7 @@
         <view class="z-shop-pirce z-flex z-flex-align-center">
           <view class="z-price-txt">￥{{pruductInfo.price}}</view>
           <view class="z-last-price">原价￥{{pruductInfo.old_price}}</view>
-          <view class="z-price-icon">不限价</view>
+          <view class="z-price-icon">{{pruductInfo.limit_num==0?'不限购':'限购'+pruductInfo.limit_num+'件'}}</view>
         </view>
         <view class="z-shop-num">
           <text>已抢：</text>{{pruductInfo.sell_num}}件</view>
@@ -39,25 +39,25 @@
     </view>
 
     <!-- 评论 -->
-    <view class="z-shop-info z-comment">
+    <view class="z-shop-info z-comment" wx:if="{{pruductInfo.comment_total != 0}}">
       <view class="z-check-more z-flex z-flex-justify ">
         <view class="z-shop-block-title">精彩评论({{pruductInfo.comment_total}})</view>
-        <navigator class="c-999999" hover-class="none" url="/main/pages/all-comment/all-comment">查看更多
+        <navigator class="c-999999" hover-class="none" url="{{'/main/pages/all-comment/all-comment?type='+pruductInfo.type +'&pid=' +pruductInfo.pid}}">查看更多
           <image src="/main/assets/img/arrow-r.png"></image>
         </navigator>
       </view>
       <view class="z-comment-box">
-        <view class="z-comment-item">
-          <shop-car-item img-url="/main/assets/img/cell-2.png" class="z-my-comment">
-            <view slot="head-title">方晓华 112312323</view>
+        <view class="z-comment-item" wx:for="{{pruductInfo.comment_list}}" wx:key="index">
+          <shop-car-item img-url="{{item.user_img}}" class="z-my-comment">
+            <view slot="head-title">{{item.c_user_name}}</view>
             <view slot="head">
-              <view class="z-comment-time">2020.2.29</view>
+              <view class="z-comment-time">{{item.add_time}}</view>
             </view>
             <view slot="body" class="z-comment-star z-flex z-flex-align-center">
               <text>总体评分：</text>
-              <van-rate value="{{ 1 }}" readonly size="26rpx" />
+              <van-rate value="{{ item.star }}" readonly size="26rpx" />
             </view>
-            <view slot="foot" class="z-comment-txt">老板很热情，采耳手法很好，感觉很舒服哈~</view>
+            <view slot="foot" class="z-comment-txt">{{item.content}}</view>
           </shop-car-item>
         </view>
       </view>

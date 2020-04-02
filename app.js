@@ -23,7 +23,6 @@ App({
       }
     })
   },
-  
   globalData: {
     isIphoneX: false,
     env: wx.getAccountInfoSync().miniProgram.envVersion,//判断版本

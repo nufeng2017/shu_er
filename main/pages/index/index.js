@@ -1,6 +1,7 @@
-import { getIndex, getConfig } from '../../network/index.js';
+import { getIndex, getConfig, editUserInfo } from '../../network/index.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
 import utils from '../../../utils/util.js';
+import resetUserAccount from '../../../utils/getAccount.js';
 Page({
 
   /**
@@ -47,6 +48,8 @@ Page({
     locationInfo:{},//位置信息
     watchStoreId:'',//监视门店ID变化
     isFirstEnter:true,//是否第一次打开这个页面
+    showPopup:false,
+    user_id:false,
   },
 
   /**
@@ -54,13 +57,18 @@ Page({
    */
   onLoad(options) {
     this.getLocationInfo();
+    this.login = utils.login;//获取检查登录ID再选择是否登录的函数
   },
   onShow(){
-    if (this.data.isFirstEnter){
+    this.checkLogin();//检查登录情况
+    this.changeIndexInfo();//检查门店情况更换商品
+  },
+  changeIndexInfo(){
+    if (this.data.isFirstEnter) {
       return;
     } else {
       this.setData({
-        isFirstEnter:true
+        isFirstEnter: true
       });
     }
     if (this.data.watchStoreId != this.data.indexData.store_id) {
@@ -81,7 +89,7 @@ Page({
   },
   getLocationInfo(){//获取位置
     let _self = this;
-    utils.getLocation().then((res)=>{
+    utils.getLocation(this).then((res)=>{
       _self.setData({
         locationInfo: res
       });
@@ -94,6 +102,7 @@ Page({
         lng: res.longitude,
         lat: res.latitude
       });
+      resetUserAccount();//获取余额
     });
   },
   getIndexData(data){//获取首页商品列表
@@ -115,5 +124,27 @@ Page({
     wx.switchTab({
       url: '/main/pages/mall/mall',
     })
-  }
+  },
+  confirm(){
+    this.setData({
+      showPopup:false
+    })
+  },
+  getUserInfo(e){
+    if (e.detail.userInfo){
+      editUserInfo({
+        user_id: getStorage('user_id'),
+        userInfo: JSON.stringify(e.detail.userInfo)
+      })
+    }
+  },
+  checkLogin(){
+    console.log(1)
+    if (getStorage('user_id')) {
+      console.log(1)
+      this.setData({
+        user_id: true
+      });
+    }
+  },
 })

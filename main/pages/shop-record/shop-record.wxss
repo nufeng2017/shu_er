@@ -1,3 +1,6 @@
+.z-wrap{
+  height: auto;
+}
 .z-main{
   background-position: left 500rpx;
   min-height: 100%;

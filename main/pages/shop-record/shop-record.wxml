@@ -3,16 +3,16 @@
   <view class="z-main" style="{{'background-image:url(' + bg + ')'}}">
     <view class="z-content-container">
       <view class="z-info-box">
-        <view class="z-info-item">
-          <view class="z-text-hidden">消费项目:<text style="font-weight:900">asdada</text> </view>
-          <view class="z-text-hidden">消费门店：</view>
+        <view class="z-info-item" wx:for="{{list}}" wx:key="index">
+          <view class="z-text-hidden">消费项目:<text style="font-weight:900">{{item.s_name}}</text> </view>
+          <view class="z-text-hidden">消费门店：{{item.store_name}}</view>
           <view class="z-text-hidden z-cl">
-            <view class="z-fl">消费数量：123123</view>
-            <view class="z-fr">消费金额：￥22432423</view>
+            <view class="z-fl">消费数量：{{item.product_num}}</view>
+            <view class="z-fr">消费金额：￥{{item.pay_money}}</view>
           </view>
           <view class="z-text-hidden z-cl">
-            <view class="z-fl">消费时间：123123</view>
-            <view class="z-fr">支付方式：￥22432423</view>
+            <view class="z-fl">消费时间：{{item.service_time}}</view>
+            <view class="z-fr">支付方式：{{item.pay_type}}</view>
           </view>
         </view>
       </view>

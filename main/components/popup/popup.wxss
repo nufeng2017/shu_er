@@ -18,8 +18,12 @@
 .z-popup-foot{
   padding: 0rpx 50rpx 60rpx;
 }
-.z-popup-foot>view.z-foot-btn{
+.z-popup-foot>.z-foot-btn{
   margin-right: 20rpx;
   color:#b20a0a;
   border-color:#b20a0a;
+}
+button{
+  background: #fff;
+  padding: 0 .40rpx;
 }

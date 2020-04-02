@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "grid": "/components/grid/grid",
-    "shop-item":"/main/components/shop-item/shop-item"
+    "shop-item":"/main/components/shop-item/shop-item",
+    "popup":"/main/components/popup/popup"
   },
   "navigationBarTitleText": "首页",
   "enablePullDownRefresh": true,

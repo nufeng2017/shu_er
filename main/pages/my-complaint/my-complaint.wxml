@@ -4,7 +4,7 @@
     <view class="z-inf-box" wx:key="index" wx:for="{{list}}">
       <view class="z-inf-body">
         <shop-car-item 
-          img-url="/main/assets/img/cell-2.png"
+          img-url="{{item.user_img}}"
           class="z-my-comment"
         >   
           <view slot="head-title">{{item.phone}}</view>
@@ -15,7 +15,7 @@
       <view class="z-inf-foot" wx:if="{{item.reply_content}}">
         <shop-car-item 
           class="z-comment-reply"
-          img-url="/main/assets/img/cell-2.png"
+          img-url="{{item.kefu_img}}"
         >   
           <view slot="head-title">平台回复：</view>
           <view slot="body" class="z-comment-reply-content">{{item.reply_content}}</view>

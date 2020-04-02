@@ -1,3 +1,6 @@
+.z-wrap{
+  height: auto;
+}
 .z-main{
   background-position: left 500rpx;
   min-height: 100%;
@@ -53,10 +56,18 @@
 }
 .z-info-box-body>view>view{
   font-size: 24rpx;
-  width:33.3333333%;
   text-align: center;
   height: 100rpx;
   line-height: 100rpx;
+  width:30%;
+  box-sizing: border-box;
+}
+.z-info-box-body>view>view:first-child{
+  width:40%;
+}
+.z-info-box-body>view>view:nth-child(2){
+  text-align: left;
+  padding-left: 40rpx;
 }
 .z-info-box-body>view:nth-child(2n){
   background: #fafafa;

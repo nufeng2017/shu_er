@@ -24,3 +24,15 @@ export function getConfig(data) {
     notNeedHideLoding: true
   })
 }
+
+/**
+ * 上传用户信息
+*/
+export function editUserInfo(data) {
+  return network({
+    url: 'editUserInfo',
+    data: data,
+    method:'POST'
+  })
+}
+

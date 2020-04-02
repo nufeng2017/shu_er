@@ -89,6 +89,12 @@ Page({
     }
   },
   buy(){
+    if (!wx.getStorageSync('user_id')) {
+      wx.navigateTo({
+        url: '/main/pages/logs/logs',
+      });
+      return;
+    }
     let list = this.data.pruductInfo;
     let lists = [{}];
     lists[0].selected = true;

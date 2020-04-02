@@ -7,6 +7,18 @@
 .z-view-box{
   margin: 0 45rpx;
 }
+.z-grid-box{
+  height: 190rpx;
+  width:220rpx;
+  position: relative;
+}
+.z-login-view{
+  position: absolute;
+  left:0;
+  height:100%;
+  width:100%;
+  top:0;
+}
 .z-index-head-link .z-grid-title{
   color:#fff;
 }
@@ -100,4 +112,10 @@
 }
 .z-shop-box .z-shop-item:nth-child(2n){
   margin-right: 0;
+}
+.z-add-adress-tips{
+ font-size: 30rpx;
+ text-align: center;
+ line-height: 50rpx;
+ padding: 50rpx;
 }
