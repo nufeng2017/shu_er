@@ -5,7 +5,7 @@
     <view class="z-input-box">
       <view class="z-textarea">
         <van-field  placeholder="请输入您的投诉内容" type="textarea" show-confirm-bar bind:input="inputContent" maxlength="200"></van-field>
-        <view class="z-textarea-text-num">{{content.length}}/200</view>
+        <view class="z-textarea-text-num">{{c_content.length}}/200</view>
       </view>
 
       <view class="z-phone-num">
