@@ -182,7 +182,7 @@ Page({
     let item = e.currentTarget.dataset.item;
     pay(item.oid,(res)=>{
       this.setData({
-        tabActive: Number(item.type) + 1
+        tabActive: 0
       });
     });
   },

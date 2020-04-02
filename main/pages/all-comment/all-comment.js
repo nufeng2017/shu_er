@@ -28,7 +28,7 @@ Page({
     }).then((res)=>{
       this.setData({
         listTotal: res.data.data.comment_total,
-        list: res.data.data.comment_list,
+        list: this.data.list.concat(res.data.data.comment_list),
         page: res.data.data.comment_list.length>0?page:page-addPage
       });
     });
