@@ -19,7 +19,6 @@
           img-url="{{item.imgUrl}}" 
           title="{{item.title}}" 
           link="{{item.link}}"
-          bindtap="login"
         ></grid>
         <view class="z-login-view" bindtap="login" wx:if="{{index!=2 && !user_id}}"></view>
       </view>

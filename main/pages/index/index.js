@@ -139,11 +139,13 @@ Page({
     }
   },
   checkLogin(){
-    console.log(1)
     if (getStorage('user_id')) {
-      console.log(1)
       this.setData({
         user_id: true
+      });
+    } else {
+      this.setData({
+        user_id:false
       });
     }
   },
