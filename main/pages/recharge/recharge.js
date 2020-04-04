@@ -60,6 +60,7 @@ Page({
             _self.setData({
               user_info: getStorage('user_info')
             })
+            wx.navigateBack({});
           });
         },
         fail(res) {
