@@ -79,3 +79,16 @@
   no-tabbar="{{false}}" 
   wx:if="{{submitList.length}}"
 />
+
+<!-- 弹窗 -->
+<popup 
+  show="{{showPopup}}" 
+  cancelTxt="取消" 
+  confirmTxt="确定" 
+  bind:confirm="confirm" 
+  bind:cancel="cancel"
+  showCloseBtn="{{true}}"
+  title="提示"
+>
+  <view class="z-add-adress-tips">确定要删除此商品吗？</view>
+</popup>

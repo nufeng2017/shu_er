@@ -16,7 +16,7 @@
           <view class="z-list-container z-cl" >
             <view 
               class="z-no-data z-flex z-flex-direction z-flex-align-center" 
-              wx:if="{{item.tag_id== 0&&list1.data.length==0||item.tag_id==1&&list2.data.length==0||item.tag_id==2&&list3.data.length==0||item.tag_id==5&&list4.data.length==0||item.tag_id==6&&list5.data.length==0}}"
+              wx:if="{{no_data}}"
             >
               <image src="/main/assets/img/no-data.png"></image>
               <text>暂无数据</text>
@@ -42,6 +42,7 @@
                     wx:key="index"
                     default-img="http://www.sekjce.com/statics/public/img/zwtp.jpg" 
                     img-url="{{item.img}}"
+                    url="{{'/main/pages/shop-details/shop-details?type=' + item.type + '&pid=' + item.pid}}"
                   >
                     <view slot="head" class="z-price">￥{{item.price}}</view>
                     <view slot="head-title" class="z-shop-title">{{item.name}}</view>

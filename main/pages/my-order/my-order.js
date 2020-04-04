@@ -41,6 +41,7 @@ Page({
       show: false,
       info:{}
     },
+    no_data:false
   },
 
   /**
@@ -52,7 +53,8 @@ Page({
   onChange(e) {
     let index = e.detail.index;
     this.setData({
-      tabActive:index
+      tabActive:index,
+      no_data:false
     });
     this.getList(1, index,1);
   },
@@ -101,7 +103,8 @@ Page({
       }
       this.setData({
         [pro + '.data']: this.data[pro].data.concat(res.data.data),
-        [pro + '.page']: res.data.data.length > 0 ? page : (page - 1 == 0) ? 1 : page - 1
+        [pro + '.page']: res.data.data.length > 0 ? page : (page - 1 == 0) ? 1 : page - 1,
+        no_data: this.data[pro].data.concat(res.data.data).length>0?false:true
       });
     });
   },

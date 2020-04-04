@@ -3,7 +3,7 @@
   <view class="z-main">
 
     <!-- 通知 -->
-    <view class="z-notice z-flex z-flex-center">因购买商品分类不同，订单已拆分显示</view>
+    <view class="z-notice z-flex z-flex-center" wx:if="{{submitList.length>1}}">因购买商品分类不同，订单已拆分显示</view>
     <view wx:if="{{showAddress}}">
       <navigator class="z-inf-box" wx:if="{{addressList.length==0}}" url="/main/pages/manage-address/manage-address">
         <view class="z-inf-body">添加收货地址 ></view>
@@ -32,6 +32,7 @@
               wx:for="{{item.products}}"
               wx:key="index"
               default-img="http://www.sekjce.com/statics/public/img/zwtp.jpg" 
+              url="{{'/main/pages/shop-details/shop-details?type=' + item.type + '&pid=' + item.pid}}"
             >
               <view slot="head-title">
                 <view class="z-shop-item-title">{{item.name}}</view>

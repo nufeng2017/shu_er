@@ -1,5 +1,6 @@
 import { getCartList, editCart, delInvaildCart } from '../../network/car.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
+let item={};
 Page({
 
   /**
@@ -23,6 +24,7 @@ Page({
     service:false,//是否全部勾选服务
     totalPrice:0,//总价格
     productNum:0,//选中商品数
+    showPopup:false
   },
 
   /**
@@ -212,21 +214,6 @@ Page({
       productNum: productNum
     });
   },
-  deleteCar(e){//删除购物车
-    let item = e.currentTarget.dataset.item;
-    this.editCar(item,0,() => {
-      let submitList = this.data.submitList;
-      submitList = submitList.filter((i, index) => {
-        return i.pid != item.pid
-      });
-      this.setData({
-        submitList: submitList
-      })
-      setStorage('car_list', submitList);
-      this.showBlock();
-      this.calculationPrice();
-    });
-  },
   editCar(item,num,fn){
     editCart({
       user_id: wx.getStorageSync('user_id'),
@@ -245,5 +232,33 @@ Page({
         lowerList:[]
       });
     })
+  },
+  deleteCar(e) {//删除购物车
+    item = e.currentTarget.dataset.item;
+    this.setData({
+      showPopup: true
+    });
+  },
+  confirm(){
+    this.editCar(item, 0, () => {
+      let submitList = this.data.submitList;
+      submitList = submitList.filter((i, index) => {
+        return i.pid != item.pid
+      });
+      this.setData({
+        submitList: submitList
+      })
+      setStorage('car_list', submitList);
+      this.showBlock();
+      this.calculationPrice();
+      this.setData({
+        showPopup: false
+      });
+    });
+  },
+  cancel(){
+    this.setData({
+      showPopup: false
+    });
   }
 })

@@ -2,15 +2,21 @@
 <view class="z-wrap">
   <view class="z-main">
     <!-- 门店地址 -->
-    <navigator 
-      url="{{'/main/pages/nearby-store/nearby-store?lng=' + locationInfo.longitude + '&lat=' + locationInfo.latitude + '&store_id=' + indexData.store_id}}" 
-      hover-class="none" 
-      class="z-shop-info z-text-hidden"
-      wx:if="{{indexData.store_name}}"
-    >
-      <text class="z-shop-name">{{indexData.store_name}}</text>
-      <text class="z-shop-address">{{indexData.store_address}}</text>
-    </navigator>
+    <view wx:if="{{indexData.store_name}}">
+      <navigator 
+        url="{{'/main/pages/nearby-store/nearby-store?lng=' + locationInfo.longitude + '&lat=' + locationInfo.latitude + '&store_id=' + indexData.store_id}}" 
+        hover-class="none" 
+        class="z-shop-info z-text-hidden"
+      >
+        <text class="z-shop-name">{{indexData.store_name}}</text>
+      </navigator>
+      <view
+        class="z-shop-address-info z-text-hidden"
+        bindtap="checkMap"
+      >
+        <text class="z-shop-address">{{indexData.store_address}}</text>
+      </view>
+    </view>
 
     <!-- banner头部链接 -->
     <view class="z-view-box z-index-head-link z-cl">

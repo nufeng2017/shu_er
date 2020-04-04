@@ -92,3 +92,9 @@
   width:40rpx;
   height: 40rpx;
 }
+.z-add-adress-tips{
+ padding: 50rpx;
+ font-size: 30rpx;
+ color:#333;
+ text-align: center;
+}

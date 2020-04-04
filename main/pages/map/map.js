@@ -1,25 +1,23 @@
 // map.js
 Page({
   data: {
-    markers: [{
-      latitude: 23.099994,
-      longitude: 113.324520,
-    }],
+    markers: [],
+    address:'',
   },
   onLoad(options){
     let item = JSON.parse(options.item)
     this.setData({
       markers: [{
-        latitude:item.lat,
-        longitude: item.lng,
+        latitude:parseFloat(item.lat),
+        longitude: parseFloat(item.lng),
       }],
       address: item.store_address
     });
   },
   checkMap(){
     wx.openLocation({
-      latitude: 23.099994,
-      longitude,
+      latitude: this.data.markers[0].latitude,
+      longitude: this.data.markers[0].longitude,
       scale: 18
     })
   }

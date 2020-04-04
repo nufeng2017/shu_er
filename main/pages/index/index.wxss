@@ -30,6 +30,7 @@
   padding-left: 82rpx;
   position: relative;
   font-size: 34rpx;
+  display: inline-block;
 }
 .z-shop-info:before{
   content: '';
@@ -41,11 +42,14 @@
   top:0;
   left: 35rpx;
 }
-.z-shop-info .z-shop-address{
+.z-shop-address-info{
+  display: inline-block;
+}
+.z-shop-address-info .z-shop-address{
   color:#d4bdb1;
   font-size: 24rpx;
 }
-.z-shop-info .z-shop-address::before{
+.z-shop-address-info .z-shop-address::before{
   content: '';
   display: inline-block;
   height: 24rpx;

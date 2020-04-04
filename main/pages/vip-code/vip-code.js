@@ -29,11 +29,13 @@ Page({
   getCode(fresh){
     getCardCode({
       user_id:wx.getStorageSync('user_id'),
-      fresh: fresh
+      fresh: 1
     }).then((res) => {
-        this.setData({
-          card:res.data.data
-        });
+      let num = this.resetNum(res.data.data.code_num);
+      res.data.data.code_num = num;
+      this.setData({
+        card:res.data.data
+      });
     }).catch(()=>{
       wx.showToast({
         title: '抱歉，您还不是会员，请充值！',
@@ -45,6 +47,18 @@ Page({
         })
       },2000);
     });
+  },
+  resetNum(num){
+    num = num.toString(); 
+    let str = '';
+    for (let i = 0; i < num.length ; i++){
+      if (i % 3 == 2){
+        str += num[i] + ' '
+      } else {
+        str += num[i];
+      }
+    }
+    return str;
   },
   fresh(){
     this.getCode(1);

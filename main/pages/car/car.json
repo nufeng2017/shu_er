@@ -2,7 +2,8 @@
   "usingComponents": {
     "lazy-load": "/components/lazy-load/lazy-load",
     "submit-bar":"/main/components/submit-bar/submit-bar",
-    "shop-car-item": "/main/components/shop-car-item/shop-car-item"
+    "shop-car-item": "/main/components/shop-car-item/shop-car-item",
+    "popup": "/main/components/popup/popup"
   },
   "navigationBarTitleText": "购物车"
 }
