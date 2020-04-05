@@ -154,6 +154,7 @@ Page({
     item.lat = this.data.locationInfo.latitude;
     item.lng = this.data.locationInfo.longitude;
     item.store_address = this.data.indexData.store_address;
+    item.store_name = this.data.indexData.store_name;
     wx.navigateTo({
       url: '/main/pages/map/map?item=' + JSON.stringify(item),
     })

@@ -6,6 +6,10 @@ Page({
   },
   onLoad(options){
     let item = JSON.parse(options.item)
+    console.log(item)
+    wx.setNavigationBarTitle({
+      title: item.store_name
+    })
     this.setData({
       markers: [{
         latitude:parseFloat(item.lat),
