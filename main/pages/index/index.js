@@ -113,6 +113,7 @@ Page({
         indexData: res.data.data,
         watchStoreId: res.data.data.store_id
       });
+      setStorage('store_id', res.data.data.store_id);
     })
   },
   getConfig(data){

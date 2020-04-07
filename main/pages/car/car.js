@@ -68,7 +68,8 @@ Page({
   },
   getList(){
     getCartList({
-      user_id:wx.getStorageSync('user_id')
+      user_id:wx.getStorageSync('user_id'),
+      store_id: wx.getStorageSync('store_id')
     }).then((res) => {
       this.resetData(res.data.data.list);
     }).catch((err)=>{});
