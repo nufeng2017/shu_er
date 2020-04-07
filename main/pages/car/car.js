@@ -43,14 +43,14 @@ Page({
     }
     let car_list = getStorage('car_list');
     if (Array.isArray(car_list)) {
-      if (car_list.length != this.data.submitList.length){
+      if (car_list.length != this.data.submitList.length){//增加种类
         this.setData({
           submitList: car_list,
           product:false,
           service:false,
           checkAll:false,
         });
-      } else {
+      } else {//增加数量
         let submitList = this.data.submitList;
         submitList = submitList.map((item,index)=>{
           item.num = car_list[index].num;
@@ -60,7 +60,9 @@ Page({
           submitList: submitList
         });
       }
-    } 
+    } else {//切换门店
+      this.getList();//获取购物车列表数据
+    }
     this.showBlock();
     this.calculationPrice();
   },

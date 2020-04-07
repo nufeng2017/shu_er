@@ -19,10 +19,10 @@
         <text>注册/登录</text>
       </button>
     </view>
-    <view class="z-checkbox z-flex z-flex-center">
+    <!-- <view class="z-checkbox z-flex z-flex-center">
       <van-checkbox value="{{isRead}}" checked-color="#a06541" icon-size="26rpx" bind:change="onChange">
         <text>我已阅读并同意</text><text class="z-xy">《舒耳空间会员服务协议》</text>
       </van-checkbox >
-    </view>
+    </view> -->
   </view>
 </view>

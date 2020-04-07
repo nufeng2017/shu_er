@@ -10,7 +10,7 @@
 
       <view class="z-phone-num">
         <view class="z-phone-num-title">您的联系方式</view>
-        <van-field placeholder="请输入您的手机号码" clearable type="number" bind:input="inputNum"/>
+        <van-field placeholder="请输入您的手机号码" clearable type="number" bind:input="inputNum" value="{{phone}}"/>
       </view>
     </view>
     <view class="z-login-btn">

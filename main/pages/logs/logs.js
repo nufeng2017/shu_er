@@ -62,7 +62,9 @@ Page({
     } 
   },
   closeLoginPage(){
-    wx.navigateBack();
+    wx.switchTab({
+      url: '/main/pages/mall/mall'
+    })
   },
   messageLogin(e){
     wx.redirectTo({

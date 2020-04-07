@@ -8,6 +8,11 @@ Page({
     c_content: '',
     phone: ''
   },
+  onLoad(){
+    this.setData({
+      phone:wx.getStorageSync('user_info').phone
+    })
+  },
   inputContent(e){
     let val = e.detail;
     this.setData({

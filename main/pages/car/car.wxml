@@ -26,10 +26,10 @@
           bind:select="select"
           bind:stepper="stepper"
           img-url="{{item.img}}"
-
+          url="{{'/main/pages/shop-details/shop-details?type=' + item.type + '&pid=' + item.pid}}"
         >
           <view slot="head-title" class="z-shop-title">{{item.name}}</view>
-          <view slot="head" class="z-shop-delete" bindtap="deleteCar" data-item="{{item}}">
+          <view slot="head" class="z-shop-delete" catchtap="deleteCar" data-item="{{item}}">
             <image src="/main/assets/img/delete.jpg"></image>
           </view>
           <view slot="body" class="z-shop-body" wx:if="{{item.type_ch}}">{{item.type_ch}}</view>
@@ -51,6 +51,7 @@
           wx:for="{{lowerList}}" 
           wx:key="index"
           item ="{{item}}"
+          url="{{'/main/pages/shop-details/shop-details?type=' + item.type + '&pid=' + item.pid}}"
         >
           <view slot="head-title" class="z-shop-title z-lower-shop-title">{{item.name}}</view>
           <view slot="body" class="z-shop-body z-lower-shop-icon">已下架</view>

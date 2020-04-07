@@ -28,6 +28,7 @@ Page({
       'indexData.store_id': this.data.defaultStore,
       isFirstEnter:false
     });
+    wx.removeStorageSync('car_list');
   },
   /**
    * 下拉刷新
