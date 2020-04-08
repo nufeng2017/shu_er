@@ -73,7 +73,7 @@ Component({
         }
         car_list.push(item);
         setStorage('car_list', car_list);
-      });
+      }).catch((err)=>{});
     }
   }
 })

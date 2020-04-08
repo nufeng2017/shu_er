@@ -237,7 +237,7 @@ Page({
   barSubmit() {
     let isShowPopup = false;
     for (let i = 0; i < this.data.submitList.length ; i++){
-      if (this.data.submitList[i].type == 1) {//含有服务类商品需要弹窗提示哪个商店消费
+      if (this.data.submitList[i].selected === true && this.data.submitList[i].type == 1) {//含有服务类商品需要弹窗提示哪个商店消费
         isShowPopup = true;
         break;
       }
