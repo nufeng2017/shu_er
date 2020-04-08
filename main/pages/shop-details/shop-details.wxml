@@ -6,11 +6,11 @@
     <view class="z-swiper-container">
       <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" indicator-color="rgba(178,10,10)" class="z-swiper-wrap">
         <swiper-item 
-          wx:for="{{pruductInfo.img.length>0?pruductInfo.img:1}}" 
+          wx:for="{{pruductInfo.imgs.length>0?pruductInfo.imgs:1}}" 
           wx:key="index" 
           bindtap="checkImg"
           data-index="{{index}}"
-          data-imgs="{{pruductInfo.img}}"
+          data-imgs="{{pruductInfo.imgs}}"
         >
           <lazy-load default-image="http://www.sekjce.com/statics/public/img/zwtp.jpg" mode="aspectFill" original-image="{{item?item:''}}"/>
         </swiper-item>
@@ -69,6 +69,19 @@
 <goods-action btn2="{{true}}" btn1="{{carLen}}" btn3="{{true}}">
   <view class="z-btn-box">
     <view class="z-btn" bindtap="addCar">加入购物车</view>
-    <view class="z-btn z-btn-1" bindtap="buy">立即抢购</view>
+    <view class="z-btn z-btn-1" bindtap="hasPopup">立即抢购</view>
   </view>
 </goods-action>
+
+<!-- 弹窗 -->
+<popup 
+  show="{{showPopup}}" 
+  cancelTxt="取消" 
+  confirmTxt="确定" 
+  bind:confirm="confirm" 
+  bind:cancel="cancel"
+  showCloseBtn="{{true}}"
+  title="提示"
+>
+  <view class="z-add-adress-tips">当前服务类产品需定点“{{store_name}}”消费，是否确认提交订单？</view>
+</popup>

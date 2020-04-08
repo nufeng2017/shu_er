@@ -1,5 +1,6 @@
 import { sendCode, loginByCode } from '../../network/logs.js';
 import { getStorage, setStorage } from '../../../cache/cache.js';
+import { getIndex } from '../../network/index.js';
 Page({
 
   /**
@@ -76,7 +77,7 @@ Page({
             });
             setStorage('user_id', res.data.data.user_id);
             setStorage('user_info', res.data.data);
-            that.closeLoginPage();
+            that.getStoreInfo();
           })
         } else {
           console.log('登录失败！' + res.errMsg)
@@ -91,11 +92,35 @@ Page({
     })
   },
   closeLoginPage() {
-    wx.navigateBack();
+    wx.switchTab({
+      url: '/main/pages/mall/mall'
+    })
   },
   wxLogin(){
     wx.redirectTo({
       url: '/main/pages/logs/logs',
+    })
+  },
+  getStoreInfo() {
+    let _self = this;
+    wx.getLocation({
+      type: 'wgs84',
+      complete(res) {
+        getIndex({
+          user_id: getStorage('user_id'),
+          lng: res.longitude,
+          lat: res.latitude
+        }).then((res) => {
+          let o = {};
+          o.store_id = res.data.data.store_id;
+          o.store_name = res.data.data.store_name;
+          o.lat = res.data.data.store_lat;
+          o.lng = res.data.data.store_lng;
+          o.store_address = res.data.data.store_address;
+          setStorage('store', o);
+          _self.closeLoginPage();
+        });
+      }
     })
   },
   onChange(event) {

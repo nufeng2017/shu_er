@@ -91,5 +91,5 @@
   showCloseBtn="{{true}}"
   title="提示"
 >
-  <view class="z-add-adress-tips">确定要删除此商品吗？</view>
+  <view class="z-add-adress-tips">{{popupContent}}</view>
 </popup>

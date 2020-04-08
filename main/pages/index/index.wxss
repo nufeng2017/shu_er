@@ -29,7 +29,7 @@
   line-height: 38rpx;
   padding-left: 82rpx;
   position: relative;
-  font-size: 34rpx;
+  font-size: 28rpx;
   display: inline-block;
 }
 .z-shop-info:before{
@@ -47,7 +47,7 @@
 }
 .z-shop-address-info .z-shop-address{
   color:#d4bdb1;
-  font-size: 24rpx;
+  font-size: 20rpx;
 }
 .z-shop-address-info .z-shop-address::before{
   content: '';

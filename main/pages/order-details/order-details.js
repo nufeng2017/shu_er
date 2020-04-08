@@ -19,6 +19,7 @@ Page({
       show: false,
       info: {}
     },
+    store:{}
   },
 
   /**
@@ -34,7 +35,8 @@ Page({
     }).then((res)=>{
       if (res.data.data.length>0){
         this.setData({
-          info: res.data.data[0]
+          info: res.data.data[0],
+          store: getStorage('store')
         });
       }
     });
@@ -104,6 +106,11 @@ Page({
           }
         })
       }
+    })
+  },
+  checkMap(){
+    wx.navigateTo({
+      url: '/main/pages/map/map?item=' + JSON.stringify(getStorage('store')),
     })
   }
 })

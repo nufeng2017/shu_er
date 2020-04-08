@@ -47,7 +47,6 @@ Page({
     indexData:{},//首页数据
     locationInfo:{},//位置信息
     watchStoreId:'',//监视门店ID变化
-    isFirstEnter:true,//是否第一次打开这个页面
     showPopup:false,
     user_id:false,
   },
@@ -64,18 +63,18 @@ Page({
     this.changeIndexInfo();//检查门店情况更换商品
   },
   changeIndexInfo(){
-    if (this.data.isFirstEnter) {
-      return;
-    } else {
-      this.setData({
-        isFirstEnter: true
-      });
-    }
-    if (this.data.watchStoreId != this.data.indexData.store_id) {
-      this.getIndexData({
-        user_id: getStorage('user_id'),
-        store_id: this.data.indexData.store_id
-      });
+    if (this.data.watchStoreId !== ''){
+      if (this.data.watchStoreId != this.data.indexData.store_id ) {
+        this.getIndexData({
+          user_id: getStorage('user_id'),
+          store_id: this.data.indexData.store_id
+        });
+      } else if (this.data.watchStoreId != getStorage('store').store_id){
+        this.getIndexData({
+          user_id: getStorage('user_id'),
+          store_id: getStorage('store').store_id
+        });
+      }
     }
   },
   /**
@@ -109,11 +108,17 @@ Page({
     let _self = this;
     getIndex(data).then((res) => {
       wx.stopPullDownRefresh();
+      let o = {};
+      o.store_id = res.data.data.store_id;
+      o.store_name = res.data.data.store_name;
+      o.lat = res.data.data.store_lat;
+      o.lng = res.data.data.store_lng;
+      o.store_address = res.data.data.store_address;
+      setStorage('store', o);
       _self.setData({
         indexData: res.data.data,
         watchStoreId: res.data.data.store_id
       });
-      setStorage('store_id', res.data.data.store_id);
     })
   },
   getConfig(data){

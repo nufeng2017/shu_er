@@ -16,6 +16,8 @@ Page({
     pruductInfo:{},//商品具体信息
     carLen:0,//购物车数量
     options:{},
+    showPopup:false,
+    store_name:''
   },
 
   /**
@@ -32,7 +34,8 @@ Page({
       this.setData({
         pruductInfo:res.data.data,
         carLen: getStorage('car_list').length.toString(),
-        options: options
+        options: options,
+        store_name: getStorage('store').store_name
       });
     });
   },
@@ -67,6 +70,7 @@ Page({
         car_list = [];
       }
       item.num = 1;
+      item.description = '';
       for (let i = 0; i < car_list.length; i++) {
         if (car_list[i].pid == item.pid) {
           car_list[i].num = parseInt(car_list[i].num) + 1;
@@ -89,6 +93,7 @@ Page({
     }
   },
   buy(){
+    console.log(222)
     if (!wx.getStorageSync('user_id')) {
       wx.navigateTo({
         url: '/main/pages/logs/logs',
@@ -104,5 +109,25 @@ Page({
     wx.navigateTo({
       url: '/main/pages/confirm-order/confirm-order?list=' + JSON.stringify(lists)
     })
+  },
+  cancel(){
+    this.setData({
+      showPopup:false
+    });
+  },
+  confirm(){
+    this.buy();
+    this.setData({
+      showPopup: false
+    });
+  },
+  hasPopup(){
+    if (this.data.pruductInfo.type == 1){
+      this.setData({
+        showPopup: true
+      });
+    } else {
+      this.buy()
+    }
   }
 })

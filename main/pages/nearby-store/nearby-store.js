@@ -25,8 +25,7 @@ Page({
     let pageInfo = getCurrentPages();
     let indexPage = pageInfo[0];
     indexPage.setData({
-      'indexData.store_id': this.data.defaultStore,
-      isFirstEnter:false
+      'indexData.store_id': this.data.defaultStore
     });
     wx.removeStorageSync('car_list');
   },
@@ -41,7 +40,8 @@ Page({
     getStoreList({
       lat: options.lat,
       lng: options.lng,
-      city_id: getStorage('config').citys[0].tag_id
+      city_id: getStorage('config').citys[0].tag_id,
+      user_id: getStorage('user_id')
     }).then((res) => {
       wx.stopPullDownRefresh();
       _slef.setData({

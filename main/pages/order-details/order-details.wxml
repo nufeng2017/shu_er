@@ -74,6 +74,18 @@
           <view >订单状态：</view>
           <view class="z-red">{{info.status_ch}}</view>
         </view>
+        <view class="z-flex" wx:if="{{info.type==1}}">
+          <view >服务门店：</view>
+          <view>{{store.store_name}} <text class="z-gray z-check-map" bindtap="checkMap">点击查看</text></view>
+        </view>
+        <view class="z-flex" wx:if="{{info.status==5}}">
+          <view >发货时间：</view>
+          <view class="z-gray">{{info.delivery_time}}</view>
+        </view>
+        <view class="z-flex" wx:if="{{info.status==5}}">
+          <view >物流信息：</view>
+          <view bindtap="copyText" data-txt="{{info.delivery_no}}">{{info.delivery_name}} <text>{{info.delivery_no}}</text></view>
+        </view>
       </view>
     </view>
   </view>

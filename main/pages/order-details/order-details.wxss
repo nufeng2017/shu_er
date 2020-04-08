@@ -99,3 +99,7 @@
   font-size: 36rpx;
   text-align: center;
 }
+.z-check-map{
+  font-size: 26rpx;
+  margin-left: 15rpx;
+}

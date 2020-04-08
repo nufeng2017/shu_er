@@ -84,10 +84,10 @@
 }
 
 /* 商品导航栏 */
-.z-btn-box{
+.z-goods-action .z-btn-box{
   height: 100%;
 }
-.z-btn{
+.z-goods-action .z-btn{
   height: 100%;
   width:230rpx;
   background-color:#ff963a;
@@ -96,9 +96,14 @@
   border: none;
   border-radius: 0;
 }
-.z-btn.z-btn-1{
+.z-goods-action .z-btn.z-btn-1{
   background: #ff3938;
 }
 .z-goods-action .z-goods-action-main{
   height: 98rpx !important;
+}
+.z-add-adress-tips{
+  padding: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
 }

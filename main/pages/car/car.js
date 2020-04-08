@@ -24,7 +24,9 @@ Page({
     service:false,//是否全部勾选服务
     totalPrice:0,//总价格
     productNum:0,//选中商品数
-    showPopup:false
+    showPopup:false,
+    popupContent:'确定要删除此商品吗？',
+    popupType:'delete'
   },
 
   /**
@@ -69,7 +71,7 @@ Page({
   getList(){
     getCartList({
       user_id:wx.getStorageSync('user_id'),
-      store_id: wx.getStorageSync('store_id')
+      store_id: wx.getStorageSync('store').store_id
     }).then((res) => {
       this.resetData(res.data.data.list);
     }).catch((err)=>{});
@@ -126,18 +128,6 @@ Page({
       return item;
     });
     this.checkSelected(submitList);
-  },
-  barSubmit(){
-    if (this.data.productNum > 0){
-      wx.navigateTo({
-        url: '/main/pages/confirm-order/confirm-order?list=' + JSON.stringify(this.data.submitList)
-      })
-    } else {
-      wx.showToast({
-        title:'请选择商品',
-        icon:'none'
-      })
-    }
   },
   select(e){//选取单个商品
     this.checkList(this.data.submitList,e.detail);
@@ -239,10 +229,52 @@ Page({
   deleteCar(e) {//删除购物车
     item = e.currentTarget.dataset.item;
     this.setData({
-      showPopup: true
+      showPopup: true,
+      popupContent: '确定要删除此商品吗？',
+      popupType:'delete'
     });
   },
+  barSubmit() {
+    let isShowPopup = false;
+    for (let i = 0; i < this.data.submitList.length ; i++){
+      if (this.data.submitList[i].type == 1) {//含有服务类商品需要弹窗提示哪个商店消费
+        isShowPopup = true;
+        break;
+      }
+    }
+    if (isShowPopup){
+      this.setData({
+        popupType:'submit',
+        popupContent: '当前服务类产品需定点“' + getStorage('store').store_name +'”消费，是否确认提交订单?',
+        showPopup:true
+      });
+    } else {
+      this.submitData();
+    }
+  },
+  submitData(){
+    if (this.data.productNum > 0) {
+      wx.navigateTo({
+        url: '/main/pages/confirm-order/confirm-order?list=' + JSON.stringify(this.data.submitList)
+      })
+    } else {
+      wx.showToast({
+        title: '请选择商品',
+        icon: 'none'
+      })
+    }
+  },
   confirm(){
+    if (this.data.popupType == 'delete'){
+      this.deleteCarItem();
+    } else if (this.data.popupType == 'submit'){
+      this.submitData();
+      this.setData({
+        showPopup: false
+      });
+    }
+  },
+  deleteCarItem(){
     this.editCar(item, 0, () => {
       let submitList = this.data.submitList;
       submitList = submitList.filter((i, index) => {

@@ -15,14 +15,14 @@ Page({
     totalPrice:0,//总价
     addressList:[],//地址列表
     showPopup:false,
-    showAddress:true
+    showAddress:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    console.log(JSON.parse(options.list))
     let list = JSON.parse(options.list);
     this.filterData(list);
   },
@@ -45,11 +45,11 @@ Page({
       user_id:getStorage('user_id'),
       address_id: this.data.addressList[0].address_id,
       order_id:this.getOid(),
-    }).catch((err) => {
+    }).then((res) => {
       this.setData({
-        showAddress:false
+        showAddress:true
       })
-    })
+    }).catch((err)=>{})
   },
   getDefaultAddress(data){
     let o = {};

@@ -13,6 +13,15 @@ Page({
     this.resetData();//根据tabs选项动态扩展数据
     this.getListData(0);
   },
+  onShow(){
+    if (this.data.store_id != wx.getStorageSync('store').store_id){
+      this.setData({
+        tabActive:0,
+        store_id: wx.getStorageSync('store').store_id
+      });
+      this.getListData(0);
+    }
+  },
   reachBottom	(){
     this.getListData(1);
   },
@@ -20,7 +29,8 @@ Page({
     for ( let i = 0 ; i < this.data.tabs.length ; i ++){
       this.setData({
         ['page' + i]:1,
-        ['productList.' + i]:[]
+        ['productList.' + i]:[],
+        store_id:wx.getStorageSync('store').store_id
       });
     }
   },
@@ -37,7 +47,8 @@ Page({
 
     getProductList({
       type: this.data.tabActive + 1,
-      page: this.data['page' + this.data.tabActive] + pageCount
+      page: this.data['page' + this.data.tabActive] + pageCount,
+      store_id: wx.getStorageSync('store').store_id
     }).then((res) => {
       _self.setData({
         ['productList.' + _self.data.tabActive]: _self.data.productList[_self.data.tabActive].concat(res.data.data),
