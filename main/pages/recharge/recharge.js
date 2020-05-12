@@ -1,5 +1,5 @@
 import { getStorage, setStorage } from '../../../cache/cache.js';
-import { rechargeCard, getAccount } from '../../network/recharge.js';
+import { rechargeCard, getAccount, getStorePeople } from '../../network/recharge.js';
 import pay from '../../../utils/pay.js';
 import resetUserAccount from '../../../utils/getAccount.js';
 Page({
@@ -7,7 +7,11 @@ Page({
     active:0,
     rechargeItem: [],
     money:0,
-    user_info:{}
+    user_info:{},
+    person:[],
+    show:false,
+    personVal:'',
+    personId:''
   },
   onLoad(){
     this.setData({
@@ -15,9 +19,31 @@ Page({
     });
     this.getInfo();
   },
+  onClose() {
+    this.setData({ show: !this.data.show });
+  },
+  selectPerson(e){
+    let id = e.currentTarget.dataset.id;
+    let name = e.currentTarget.dataset.name;
+    this.setData({
+      show:false,
+      personVal:name,
+      personId:id
+    });
+  },
+  onGetUserInfo(e) {
+    console.log(e.detail);
+  },
   getInfo(){
     this.setData({
       user_info: getStorage('user_info')
+    });
+    getStorePeople({
+      store_id: getStorage('store').store_id
+    }).then((res)=>{
+      this.setData({
+         person:res.data.data
+      });
     });
   },
   selectPrice(e){
@@ -43,7 +69,8 @@ Page({
     let _self = this;
     rechargeCard({
       user_id: getStorage('user_id'),
-      money: this.data.money
+      money: this.data.money,
+      i_to_user: this.data.personId
     }).then((res)=>{
       wx.requestPayment({
         timeStamp: res.data.data.nowTime.toString(),

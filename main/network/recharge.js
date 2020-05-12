@@ -22,3 +22,14 @@ export function getAccount(data) {
     data: data
   })
 }
+
+/**
+ * 查询员工
+ */
+export function getStorePeople(data) {
+  return network({
+    url: 'getStorePeople',
+    data: data
+  })
+}
+

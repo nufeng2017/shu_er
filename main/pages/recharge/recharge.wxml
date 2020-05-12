@@ -8,6 +8,12 @@
   <view class="z-main-box">
     <view class="z-block-title">账户余额（元）</view>
     <view class="z-last-money"><text>￥</text>{{user_info.account}}</view>
+    <view class="z-block-title z-flex z-flex-align-center" style="margin-bottom:60rpx;" bindtap="onClose">
+      <text>选择店员</text>
+      <view class="z-select-person">
+        <input placeholder="请选择" disabled="{{true}}" value="{{personVal}}"></input>
+      </view>
+    </view>
     <view class="z-block-title">请选择充值金额</view>
     <view class="z-cl z-sel-item-box">
       <view 
@@ -18,7 +24,7 @@
         bindtap="selectPrice"
       >
         <view class="z-price"><text>￥</text>{{item.money}}</view>
-        <view class="z-gift">赠{{item.bonus}}元</view>
+        <view class="z-gift" wx:if="{{item.bonus>0}}">赠{{item.bonus}}元</view>
       </view>
     </view>
     <view class="z-other-num">
@@ -35,3 +41,11 @@
   btn-text="立即充值" 
   bind:submit="submit"
 />
+
+<van-action-sheet
+  show="{{ show }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+>
+  <view wx:for="{{person}}" wx:key="index" class="z-select-person-box" bindtap="selectPerson" data-id="{{item.id}}" data-name="{{item.truename}}">{{item.truename}}</view> 
+</van-action-sheet>

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "submit-bar": "/main/components/submit-bar/submit-bar"
+    "submit-bar": "/main/components/submit-bar/submit-bar",
+    "van-action-sheet": "/miniprogram_npm/@vant/weapp/action-sheet/index"
   },
   "navigationBarTitleText": "充值有礼"
 }
